@@ -1,4 +1,28 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
+		block
 		.container
-			h2 footer
+			.row.justify-content-between
+				.col.d-lg-none
+					+e.write
+						span Напишите нам, мы онлайн:
+						+messengers()
+					+e.soc Подписывайтесь в соц. сетях:
+						+soc()
+				+e.col.col-lg
+					p Юридический адрес и реквизиты:
+					p.text-light 455038, Челябинская область, г. Магнитогорск <br> ИП Симонов Евгений Анатольевич / ИНН 026701658200 / ОГРНИП 316745600179104
+					+e.polite(href="#") Политика конфиденциальности
+					p © 2020 Все права защищены.
+				.col
+					.d-none.d-lg-block
+						+e.write
+							span Напишите нам, мы онлайн:
+							+messengers()
+						+e.soc Подписывайтесь в соц. сетях:
+							+soc()
+					+e.dev Разработка сайта —
+						+e.logo(href="#")
+							+icon('logo')
+							+icon('logo-text')
+

@@ -1,0 +1,19 @@
+mixin sAbout()
+	// start sAbout
+	+b.sAbout#sAbout&attributes(attributes)
+		.container
+			.row
+				+e.leftCol.col-lg-auto
+					+e.item
+						+icon('flag')
+						p Работаем с&nbsp;2015 года в&nbsp;интернет-маркетинге
+					+e.item
+						+icon('rocket')
+						p Находимся в&nbsp;Магнитогорске &mdash; работаем по&nbsp;всему миру
+					+e.item
+						+icon('clock')
+						p с&nbsp;7:00 до&nbsp;18:00 по&nbsp;мск, без&nbsp;выходных и&nbsp;перерыва
+				+e.col.col-lg
+					+e.tel(href="tel:+79630970990") +7 (963) 097-09-90
+					+e.call.btn(href="#") Перезвоните мне
+	// end sAbout

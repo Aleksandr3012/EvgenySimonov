@@ -114,8 +114,8 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.png);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -165,8 +165,8 @@ function eventHandler() {
 	$('.s-gal__slider\
 	,.slider-for2 ').on('lazyLoaded', function (event, slick, image, imageSource) {
 		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-	});
-	slider;
+	}); // slider
+
 	var swiper4 = new Swiper('.color-slider', (_Swiper = {
 		// slidesPerView: 5,
 		slidesPerView: 'auto',

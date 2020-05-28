@@ -1,0 +1,110 @@
+mixin workItem(img,p,pr,t,title,link)
+	.row
+		.col-lg
+			+e.body.d-lg-none
+				.h2= title
+				+e.link(href=`${link}`) 
+					+icon('link')
+					span= link
+
+			+e.preview
+				a(href=`img/@2x/${img}-xl.jpg` data-fancybox=`${img}`)
+					img.res-i(src=`img/@2x/${img}.jpg` alt="")
+			+e.indicators.d-none.d-lg-flex
+				+e.indicatorsItem
+					.h2= p
+					p Конверсия на&nbsp;сайте с&nbsp;форм обратной связи
+				+e.indicatorsItem
+					.h2= pr
+					p Стоимость заявки с&nbsp;контекстной рекламы
+				+e.indicatorsItem
+					.h2= t
+					p Среднее время пребывания на&nbsp;сайте
+		.col
+			+e.body
+				.d-none.d-lg-block
+					.h2= title
+					+e.link(href=`https://${link}`) 
+						+icon('link')
+						span= link
+				block
+			+e.indicators.d-lg-none
+				+e.indicatorsItem
+					.h2= p
+					p Конверсия на&nbsp;сайте с&nbsp;форм обратной связи
+				+e.indicatorsItem
+					.h2= pr
+					p Стоимость заявки с&nbsp;контекстной рекламы
+				+e.indicatorsItem
+					.h2= t
+					p Среднее время пребывания на&nbsp;сайте
+
+
+mixin sOurWork()
+	// start sOurWork
+	+b.SECTION.sOurWork.section#sOurWork&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				.h1 Посмотрите наши свежие проекты
+			+b.tabs
+				+e.caption
+					+e.btn.btn.btn-light.active Урал Маф
+					+e.btn.btn.btn-light А Блок
+					+e.btn.btn.btn-light Зубная Фея
+					+e.btn.btn.btn-light Евразия
+					+e.btn.btn.btn-light Антарес
+				+e.wrap
+					+e.content.active
+						+workItem('uralmaf','8.56 %','232 ₽','95 сек','Продажа малых архитектурных форм','uralmaf.ru')
+							+e.bodyItem
+								.h6 Задача:
+								p.text-dark Создать небольшой сайт компании, представить на&nbsp;нем всю производимую продукцию с&nbsp;возможностью заказать каталог. При этом Клиент не&nbsp;хотел стандартный интернет-магазин.
+							+e.bodyItem
+								.h6 Что сделали: 
+								ul
+									li Провели глубокое исследование компании, целевой аудитории, конкурентов. Сделали профессиональную фотосессию.
+									li Создали одностраничный сайт, где максимально точно и&nbsp;кратко описали главные преимущества компании и&nbsp;продукции.
+									li Запустили рекламу в&nbsp;Яндекс и&nbsp;Google по&nbsp;РФ и&nbsp;СНГ.
+					+e.content
+						+workItem('uralmaf','8.56 %','232 ₽','95 сек','Продажа малых архитектурных форм','uralmaf.ru')
+
+							.h6 Задача:
+							p.text-dark Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio cumque reiciendis eligendi nesciunt! Unde similique maxime ab. In, provident repellendus fugit unde sunt laborum dolorum itaque animi minus voluptates! Laboriosam.
+							.h6 Что сделали: 
+							ul
+								li Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+								li Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+								li Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+					+e.content
+						+workItem('uralmaf','8.56 %','232 ₽','95 сек','Продажа малых архитектурных форм','uralmaf.ru')
+
+							.h6 Задача:
+							p.text-dark Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis perferendis aut ut? Cum vitae maiores ut corrupti labore repellendus maxime quos quo, quaerat consequatur. Quas voluptas dolore debitis est!
+							.h6 Что сделали: 
+							ul
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis perferendis aut ut?
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis perferendis aut ut?
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum reiciendis perferendis aut ut?
+					+e.content
+						+workItem('uralmaf','8.56 %','232 ₽','95 сек','Продажа малых архитектурных форм','uralmaf.ru')
+
+							.h6 Задача:
+							p.text-dark Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis at repudiandae dolorum mollitia ipsa quasi nesciunt, ea, iste tenetur possimus iusto labore impedit delectus, cupiditate deserunt id! Labore, sunt ducimus.
+							.h6 Что сделали: 
+							ul
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis at repudiandae dolorum mollitia ipsa quasi 
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis at repudiandae dolorum mollitia ipsa quasi 
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis at repudiandae dolorum mollitia ipsa quasi 
+					+e.content
+						+workItem('uralmaf','8.56 %','232 ₽','95 сек','Продажа малых архитектурных форм','uralmaf.ru')
+
+							.h6 Задача:
+							p.text-dark Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam quo eos dolore alias cum, explicabo esse? Atque quo et beatae reprehenderit laborum maxime autem assumenda in porro quod. Distinctio!
+							.h6 Что сделали: 
+							ul
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam quo eos dolore alias cum, explicabo esse?
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam quo eos dolore alias cum, explicabo esse?
+								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam quo eos dolore alias cum, explicabo esse?
+			+e.calculate.btn.btn.btn-primary(href="#") У&nbsp;меня похожая задача, рассчитайте стоимость
+
+	// end sOurWork

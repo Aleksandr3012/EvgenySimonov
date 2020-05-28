@@ -18,6 +18,15 @@ var headerBlockVue = new Vue({
 	created: function created() {},
 	computed: {}
 });
+var sAboutVue = new Vue({
+	el: '#sAbout',
+	data: {
+		imgSRc: 'img/'
+	},
+	methods: {},
+	created: function created() {},
+	computed: {}
+});
 var sContactVue = new Vue({
 	el: '#sContact',
 	data: {
@@ -39,6 +48,15 @@ var sFormVue = new Vue({
 	data: {
 		imgSRc: 'img/'
 	},
+	created: function created() {},
+	computed: {}
+});
+var sOurWorkVue = new Vue({
+	el: '#sOurWork',
+	data: {
+		imgSRc: 'img/'
+	},
+	methods: {},
 	created: function created() {},
 	computed: {}
 });

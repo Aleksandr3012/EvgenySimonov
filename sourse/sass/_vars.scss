@@ -10,7 +10,7 @@ $path1: '@1x/';
 // Color system 
 
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
+$gray-100: #f8f8f8 !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
@@ -40,14 +40,14 @@ $colors: () !default;
 $colors: map-merge(  ( ),  $colors);
 
 
-$primary:       $blue !default;
+$primary:       #ff3d00 !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+$light:         #b6b9bb !default;
+$dark:          #7b7d7e !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -66,7 +66,7 @@ $theme-colors: map-merge(
 );
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                #15181b !default;
 
 // Typography
 //
@@ -85,7 +85,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  // xxl: 1400px
+  xxl: 1410px
 ) !default; 
 
 // Grid containers
@@ -98,7 +98,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  // xxl: 1340px
+  xxl: 1350px
 ) !default; 
 // Grid columns
 //
@@ -126,12 +126,12 @@ $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5 !default;
 
 // title 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
+$h1-font-size:               rem(60) !default;
+$h2-font-size:                rem(45) !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default; 
+$h6-font-size:                rem(18) !default; 
 
 
 $display1-size:               6rem !default;

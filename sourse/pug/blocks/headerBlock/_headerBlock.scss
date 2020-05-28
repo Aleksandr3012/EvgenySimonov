@@ -1,51 +1,281 @@
 // start .headerBlock
 .headerBlock {
-	margin-bottom: 1px;
+	padding-top: rem(7);
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(78);
+	}
+	@include media-breakpoint-up(xl) {
+		padding-left: 1px;
+	}
+	padding-bottom: 0;
 
 	h1 {
-		margin-bottom: 1px;
+		@include media-breakpoint-up(xl) {
+			padding-left: 2px;
+		}
+		@include media-breakpoint-down(md) {
+			text-align: center;
+		}
+
+		color: #fff;
+		letter-spacing: rem(0px);
+		font-weight: bold;
+		margin-bottom: rem(15);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(21);
+		}
+		line-height: 1.25;
+
+		@include media-breakpoint-only(lg) {
+			font-size: rem(45);
+		}
 	}
 
-	h2 {
-		margin-bottom: 1px;
+	.icon-rbk {
+		font-size: rem(18);
+		@include media-breakpoint-up(md) {
+			font-size: rem(20);
+			margin-left: rem(12);
+		}
+		margin-left: rem(8);
 	}
 
-	@include media-breakpoint-up(xl) {}
+	&__name {
+		color: #fff;
+		margin-bottom: rem(27);
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			right: rem(14);
+			top: rem(236);
+		}
+		@include media-breakpoint-only(lg) {
+			right: 0;
+			top: rem(180);
+		}
 
-	@include media-breakpoint-up(lg) {}
+		.h6 {
+			margin-bottom: .25rem;
+			@include media-breakpoint-up(md) {
+				margin-bottom: 0.55rem;
+			}
+			// @include media-breakpoint-only(xs){
+			// 	letter-spacing: rem(-0.8);
+			// }
+		}
+	}
 
-	@include media-breakpoint-up(md) {}
+	.h6.text-primary {
+		letter-spacing: rem(0px);
+		margin-bottom: rem(18);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(25);
+		}
+		@include media-breakpoint-down(sm) {
+			max-width: rem(250);
+			margin-left: auto;
+			margin-right: auto;
+			line-height: 1.25;
+		}
+	}
 
-	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-down(md) {
+		.h6,
+		p {
+			text-align: center;
+		}
 
-	@include media-breakpoint-up(xs) {}
+		img {
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+	}
+
+	&__rbk {
+		display: flex;
+		align-items: center;
+
+		p {
+			margin-bottom: 0;
+		}
+		margin-bottom: rem(54);
+
+		@include media-breakpoint-down(md) {
+			margin-left: auto;
+			padding-left: rem(13);
+			margin-right: auto;
+			max-width: rem(200);
+		}
+	}
+
+	.h6.text-light {
+		max-width: rem(584);
+		line-height: 1.78;
+		@include media-breakpoint-up(lg) {
+			padding-left: 2px;
+		}
+		margin-bottom: rem(24);
+		@include media-breakpoint-up(md) {
+			margin-bottom: rem(36);
+		}
+
+		@include media-breakpoint-down(md) {
+			margin-left: auto;
+			margin-right: auto;
+			letter-spacing: rem(-0.1);
+		}
+	}
+
+	//Кол с фотографией
+	&__col {
+		position: relative;
+		@include media-breakpoint-up(md) {
+			padding-left: 0;
+		}
+		@include media-breakpoint-only(lg) {
+			margin-top: rem(10);
+			margin-left: rem(-100);
+			padding-right: rem(70);
+		}
+		@include media-breakpoint-only(xl) {
+			margin-top: rem(-50);
+		}
+		@include media-breakpoint-up(xxl) {
+			margin-top: rem(-110);
+		}
+
+		picture {
+			@include media-breakpoint-up(xl) {
+				margin-left: rem(-115);
+			}
+		}
+	}
+
+	//Кнопка скролла
+	&__scroll {
+		color: #fff;
+		position: absolute;
+		text-decoration: none !important;
+		bottom: rem(51);
+		right: rem(10);
+		@include media-breakpoint-only(lg) {
+			right: 0;
+			bottom: rem(45);
+		}
+
+		p {
+			transform: rotate(-90deg);
+			width: rem(33);
+		}
+
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+
+		.icon {
+			margin-top: rem(3);
+			margin-left: rem(9);
+			font-size: rem(30);
+		}
+	}
+
+	// Кнопка расчитать стоимость
+	&__calc {
+		max-width: rem(420);
+		letter-spacing: rem(0px);
+		padding: rem(15) rem(15) rem(12);
+		@include media-breakpoint-up(sm) {
+			padding: rem(26) rem(20);
+		}
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(xl) {
+			margin-bottom: rem(137);
+		}
+		@include media-breakpoint-up(lg) {
+			letter-spacing: rem(1.1px);
+			margin-bottom: rem(110);
+			margin-left: 1px;
+		}
+		@include media-breakpoint-down(md) {
+			margin-left: auto;
+			margin-right: auto;
+			line-height: 1.25;
+		}
+	}
+
+	//Телефон в конце блока
+	&__tel {
+		background-color: $primary;
+		color: #fff;
+		text-decoration: none !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: rem(13) rem(15) rem(14);
+
+		&:hover {
+			color: #fff;
+		}
+
+		.h6 {
+			margin-bottom: 0;
+		}
+
+		.icon {
+			font-size: rem(17);
+			margin-right: rem(12);
+		}
+	}
+	@include media-breakpoint-up(xl) {
+	}
+
+	@include media-breakpoint-up(lg) {
+	}
+
+	@include media-breakpoint-up(md) {
+	}
+
+	@include media-breakpoint-up(sm) {
+	}
+
+	@include media-breakpoint-up(xs) {
+	}
 
 	//
-	@include media-breakpoint-between(md, xl) {}
-
-
-	//
-	@include media-breakpoint-only(xs) {}
-
-	@include media-breakpoint-only(sm) {}
-
-	@include media-breakpoint-only(md) {}
-
-	@include media-breakpoint-only(lg) {}
-
-	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-between(md, xl) {
+	}
 
 	//
-	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-only(xs) {
+	}
 
-	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-only(sm) {
+	}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-only(md) {
+	}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-only(lg) {
+	}
 
-	@include media-breakpoint-down(xs) {}
+	@include media-breakpoint-only(xl) {
+	}
 
+	//
+	@include media-breakpoint-down(xl) {
+	}
+
+	@include media-breakpoint-down(lg) {
+	}
+
+	@include media-breakpoint-down(md) {
+	}
+
+	@include media-breakpoint-down(sm) {
+	}
+
+	@include media-breakpoint-down(xs) {
+	}
 }
 
 // end.headerBlock

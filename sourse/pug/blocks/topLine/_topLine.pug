@@ -2,8 +2,20 @@ mixin topLine()
 	// start topLine
 	+b.SECTION.topLine.section#topLine&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 topLine
-				
-			.row
+			.row.justify-content-between
+				.col.d-flex.pt-2
+					+e.logo(href="#")
+						+icon('logo')
+						+icon('logo-text')
+					.d-none.d-sm-block
+						p Агентство интернет&#8209;маркетинга и&nbsp;упаковки бизнеса
+				+e.col.col.d-none.d-lg-flex
+					+messengers()
+					+e.tel(href="tel:+79630970990") +7 (963) 097-09-90
+					+e.call.btn.link-modal(href="#") Перезвоните мне
+				.col.d-lg-none
+					+e.contact.btn.link-modal(href="#")
+						+icon('phone')
+
+
 	// end topLine

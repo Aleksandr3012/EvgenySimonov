@@ -89,18 +89,33 @@ mixin arrow()
 //- scial buttons
 mixin soc()
 	+b.soc
-		mixin item()
-			+e.A.item(href="№" target="_blank")
-				block
-		+item()
-			+icon('fb')
+		//- mixin item()
+		//- 	+e.A.item(href="№" target="_blank")
+		//- 		block
 		
-		+item()
-			+icon('insta')
-		
-		+item()
+		+e.A.item.vk(href="№" target="_blank")
 			+icon('vk')
+			span ВКонтакте
+
+		+e.A.item.inst(href="№" target="_blank")
+			+icon('inst')
+			span Instagram
+
 //- /scial buttons
+
+mixin messengers()
+	+b.messengers&attributes(attributes)
+		+e.item(href="№" target="_blank")
+			+e.whatsapp
+				+icon('whatsapp')
+		+e.item(href="№" target="_blank")
+			+e.viber
+				+icon('viber')
+		+e.item(href="№" target="_blank")
+			+e.telegram
+				+icon('telegram')
+
+
 //- WP menu
 mixin mnu()
 	-

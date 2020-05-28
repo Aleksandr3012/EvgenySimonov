@@ -118,7 +118,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -186,7 +186,7 @@ function eventHandler() {
 		.on('lazyLoaded', function (event, slick, image, imageSource) {
 			image.parent().css('background-image', 'url(' + image.attr('src') + ')');
 		});
-	slider
+	// slider
 	const swiper4 = new Swiper('.color-slider', {
 		// slidesPerView: 5,
 		slidesPerView: 'auto',
@@ -209,8 +209,6 @@ function eventHandler() {
 
 	});
 	// modal window
-
-
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {

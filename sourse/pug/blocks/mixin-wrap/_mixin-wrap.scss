@@ -1,32 +1,26 @@
- 
-	  
-.soc{
+.soc {
 	margin: 0 rem(-5px);
 	display: flex;
-	&__item{
+	&__item {
 		text-decoration: none !important;
 		margin: 0 rem(5px);
 		vertical-align: middle;
 		@include mt;
 		display: block;
-		&:hover{
-		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
-			opacity: .6 ;
+		&:hover {
+			// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
+			opacity: 0.6;
 		}
-		
 	}
-	.icon{
-	font-size: rem(30);
+	.icon {
+		font-size: rem(30);
 	}
-	 
-
 }
- 
 
-.counter{
+.counter {
 	counter-reset: num;
 	&__item {
-		position: relative; 
+		position: relative;
 		&::before {
 			content: counter(num);
 			counter-increment: num;
@@ -34,3 +28,73 @@
 	}
 }
 
+.messengers {
+	display: flex;
+	justify-content: space-between;
+	width: rem(93);
+	@include media-breakpoint-up(sm) {
+		width: rem(121);
+	}
+
+	&__item {
+		color: #fff !important;
+		text-decoration: none !important;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&__whatsapp,
+	&__viber,
+	&__telegram {
+		border-radius: 50%;
+		width: rem(28);
+		height: rem(28);
+		@include media-breakpoint-up(md) {
+			width: rem(35);
+			height: rem(35);
+		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__telegram {
+		justify-content: flex-start;
+		padding-left: rem(7);
+	}
+
+	.icon-telegram {
+		font-size: rem(11);
+		@include media-breakpoint-up(md) {
+			font-size: rem(16);
+		}
+	}
+
+	.icon-whatsapp {
+		font-size: rem(15);
+		@include media-breakpoint-up(md) {
+			font-size: rem(23);
+		}
+	}
+
+	.icon-viber {
+		font-size: rem(15);
+		@include media-breakpoint-up(md) {
+			font-size: rem(24);
+		}
+	}
+
+	&__whatsapp {
+		background-color: #25d366;
+	}
+
+	&__viber {
+		background-color: #665cac;
+	}
+
+	&__telegram {
+		background-color: #139bd0;
+	}
+}

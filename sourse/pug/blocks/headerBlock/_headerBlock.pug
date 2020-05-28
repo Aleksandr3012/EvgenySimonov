@@ -2,8 +2,24 @@ mixin headerBlock()
 	// start headerBlock
 	+b.SECTION.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 headerBlock
-				
 			.row
+				.col-lg-7
+					.h6.text-primary Разработка сайтов с&nbsp;нуля и&nbsp;настройка рекламы
+					h1 Сохраните бизнес в&nbsp;кризис&nbsp;&mdash; переведите его в&nbsp;интернет
+					.h6.text-light Где обороты рынка торговли в&nbsp;интернете растут двузначными темпами ежегодно, а рост покупателей за&nbsp;2&nbsp;года составил почти 10&nbsp;миллионов человек*
+					+e.calc.h6.btn.btn-primary(href="#") Рассчитать стоимость создания сайта
+					+e.rbk
+						p.text-light * – источник
+						+icon('rbk')
+				+e.col.col
+					+e.name
+						.h6 Евгений Симонов
+						p.text-light Руководитель агентства
+					+pic('EvgenySimonov.png')
+					+e.scroll(href="#sOurWork") 
+						p Вниз
+						+icon('mouse')
+		+e.tel.d-lg-none(href="tel:7(963)097-09-90")
+			+icon('phone')
+			.h6 +7 (963) 097-09-90
 	// end headerBlock
