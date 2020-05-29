@@ -1,0 +1,14 @@
+mixin sThank()
+	// start sThank
+	+b.SECTION.sThank.section#sThank&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Иван, спасибо, я&nbsp;принял вашу заявку!
+				//- h2 Спасибо, я&nbsp;принял вашу заявку!
+				.h6 Перезвоню вам в&nbsp;ближайшее время и&nbsp;отвечу на&nbsp;ваши вопросы.<br>Хорошего дня!
+				.h6.text-primary А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в Instagram. Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:
+				img(src="img/@2x/photo.jpg", alt="")
+				+e.inst @simonov__evgeny
+				+e.subscribe.btn.btn-primary(href="https://www.instagram.com/simonov__evgeny/") Перейти и подписаться
+
+	// end sThank

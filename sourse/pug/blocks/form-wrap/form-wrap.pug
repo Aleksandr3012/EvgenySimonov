@@ -68,5 +68,23 @@ mixin add-file(n)
 
 mixin polite()
 	+e.polite
-		+in-c()(checked)
-			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+		//- +in-c()(checked)
+		+e.SMALL.text.text-secondary Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих персональных данных и&nbsp;соглашаетесь с&nbsp;#[a(href="#") Политикой конфиденциальности]
+
+mixin form-tabs()
+	.tabs
+		+e.group
+			+e.group-title Когда вам позвонить:
+			
+			.tabs__caption
+				.tabs__btn.btn
+					| Сейчас
+				.tabs__btn.btn.active
+					| По времени
+
+
+		block
+		.tabs__wrap
+			.tabs__content
+			.tabs__content.active
+				+input("Например: 21 января в 14:00","datetime")(required)

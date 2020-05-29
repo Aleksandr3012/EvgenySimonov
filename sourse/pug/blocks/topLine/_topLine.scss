@@ -146,3 +146,35 @@
 	@include media-breakpoint-down(xs) {
 	}
 } // end.topLine
+
+.whitePage {
+	.topLine {
+		.icon-logo-text {
+			color: $body-color;
+		}
+
+		p {
+			color: $dark;
+		}
+
+		&__tel {
+			color: $body-color;
+
+			&:hover {
+				color: $dark;
+			}
+		}
+
+		&__call {
+			color: $body-color !important;
+
+			&:hover {
+				color: #fff !important;
+			}
+		}
+
+		.icon-phone {
+			color: $body-color;
+		}
+	}
+}

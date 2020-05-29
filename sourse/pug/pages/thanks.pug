@@ -3,11 +3,11 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug 
-include ../blocks/sOurWork/_sOurWork.pug 
+include ../blocks/sThank/_sThank.pug 
 include ../blocks/sAbout/_sAbout.pug 
 
 block variables
-	- let  mainPage= null
+	- let  mainPage= 'whitePage'
 block title
 	- let  title= 'Evgeny Simonov'
 	title= title
@@ -15,7 +15,7 @@ block pagecontent
 	//- +mob-mnu()
 	+header()
 		+topLine()
-		+headerBlock()
-	+sOurWork()
+		//- +headerBlock()
+	+sThank()
 	+footer()
 		+sAbout()

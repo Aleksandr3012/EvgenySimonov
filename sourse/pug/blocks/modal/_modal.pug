@@ -33,14 +33,32 @@ mixin modal()
 	//- 			br 
 	.d-none
 		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
-			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-			+input("Ваше Имя")(required) 
-			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
-			+polite()
+			.row.text-center
+				+e.col.col.d-none.d-lg-block
+					+pic('photo-modal')
+					+e.nameWrap
+						+e.name Евгений Симонов
+						+e.position Руководитель агентства
+				+e.form.col
+					.text-center
+						+e.titleMain Укажите ваши контакты и&nbsp;время для звонка
+						+e.subtitle Я&nbsp;перезвоню вам прямо сейчас или в&nbsp;другое рабочее время. Мы&nbsp;работаем ежедневно с&nbsp;07:00 до&nbsp;18:00 по&nbsp;МСК.
+					+input("+7 (912) 345-67-89","tel","Введите телефон:")(required)
+					+form-tabs()
+					//- +input("Ваше Имя")(required) 
+					//- +input("email","Ваше email")(required)
+					//- +text( "Комментарий")
+					+e.INPUT.btn.btn.btn-primary(type="submit" value="Перезвоните мне") 
+					+polite()
+
+		+b.modal-win--mobMNU.text-center(id="mob-menu")
+			+e.tel.h6(href="tel:+7(963)097-09-90") +7 (963) 097-09-90
+			+e.call.btn(href="#") Перезвоните мне
+			p Напишите нам, мы онлайн:
+			+messengers()
+
+
+
+
 		// #modal-call
 	// modal

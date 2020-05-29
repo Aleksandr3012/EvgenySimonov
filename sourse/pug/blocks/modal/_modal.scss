@@ -2,6 +2,8 @@
 	// display: block;
 	width: 100%;
 	position: relative;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
 
 	.modal-content {
 		// max-width: 485px;
@@ -13,7 +15,217 @@
 		font-size: 40px;
 		font-weight: 100;
 	}
+
+	//Мобильная модалка в шапке
+	&--mobMNU {
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+		max-width: 281px;
+
+		p {
+			margin-bottom: rem(16);
+		}
+
+		.messengers {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&.fancybox-content {
+			padding: rem(32);
+		}
+	}
+
+	//mobMNU телефон
+	&__tel {
+		color: $body-color;
+		text-decoration: none !important;
+		display: block;
+		margin-bottom: rem(14);
+		letter-spacing: rem(0.3);
+	}
+
+	//mobMNU Кнопка позвонить
+	&__call {
+		color: $body-color !important;
+		margin-bottom: rem(12);
+		max-width: rem(165);
+		padding-top: rem(11);
+		padding-bottom: rem(13);
+		font-size: $small;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	//Модалка заказать звонок
+	max-width: rem(930);
+
+	&.fancybox-content {
+		padding: 0;
+	}
+
+	picture {
+		@include block(465, 783);
+		&::after {
+			content: '';
+			z-index: 1;
+			position: absolute;
+			bottom: 0;
+			display: block;
+			width: 100%;
+			height: rem(200);
+			background: linear-gradient(180deg, rgba(21, 24, 27, 0) 0%, rgba(21, 24, 27, 0.75) 99.48%);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			@include a-cent;
+			object-fit: cover;
+		}
+	}
+
+	.form-wrap {
+		.col {
+			position: relative;
+		}
+
+		//Кол с фотографией
+		&__col {
+			margin-top: -1px;
+			padding-right: 0;
+			// margin-right: rem(-25);
+		}
+
+		&__titleMain {
+			font-size: rem(30);
+			line-height: 1.35;
+			font-weight: 600;
+			margin-bottom: rem(20);
+		}
+
+		&__subtitle {
+			max-width: rem(360);
+			color: $dark;
+			margin-left: auto;
+			margin-right: auto;
+			line-height: 1.7;
+			margin-bottom: rem(21);
+		}
+
+		&__input {
+			max-width: rem(345);
+			padding-top: rem(30);
+			padding-bottom: rem(30);
+			@extend .h6;
+			text-align: center;
+			background-color: $gray-100;
+			border-color: transparent;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&__title {
+			@extend .h6;
+			margin-bottom: rem(16);
+			display: block;
+		}
+
+		&__group-title {
+			@extend .h6;
+			display: block;
+			margin-bottom: rem(15);
+		}
+
+		&__nameWrap {
+			text-align: center;
+			// @include a-cent(x);
+			position: absolute;
+			z-index: 5;
+			left: 20%;
+			bottom: rem(87);
+			width: rem(300);
+		}
+
+		&__name {
+			color: #fff;
+			font-size: 30px;
+			font-weight: 600;
+			margin-bottom: rem(3);
+		}
+
+		&__position {
+			font-size: rem(18);
+			color: $light;
+		}
+
+		//Кнопка формы
+		&__btn {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: rem(345);
+			width: 100%;
+			margin-top: rem(29);
+			margin-bottom: rem(28);
+			padding-top: rem(17);
+			padding-bottom: rem(18);
+			@extend .h6;
+		}
+
+		&__polite {
+			color: $dark;
+
+			a {
+				display: inline-block;
+				color: $dark;
+				text-decoration: underline;
+			}
+		}
+
+		//Правый блок с формой
+		&__form {
+			padding: rem(50) rem(30) rem(10) rem(18);
+		}
+	}
+
+	//Табы
+	.tabs {
+		max-width: rem(345);
+		margin-left: auto;
+		margin-right: auto;
+		&__btn {
+			margin-right: -2px !important;
+			margin-bottom: -2px;
+			margin-top: -2px;
+			margin-left: -2px;
+
+			&:active {
+			}
+
+			&:not(.active) {
+				border-color: transparent !important;
+			}
+		}
+
+		&__caption {
+			border-radius: 5px;
+			border: 2px solid #e5e5e5;
+			padding-bottom: 0;
+			margin-bottom: rem(14);
+		}
+	}
 }
+
+//Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// .fancybox-content {
+// 	vertical-align: top;
+// }
+//Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 a {
 	outline: 0 !important;
@@ -38,7 +250,7 @@ a {
 	top: 0;
 	text-decoration: none;
 	text-align: center;
-	opacity: .65; // padding: 0 0 18px 10px;
+	opacity: 0.65; // padding: 0 0 18px 10px;
 	// color: #fff;
 	font-style: normal;
 	font-size: 28px;
@@ -89,39 +301,54 @@ a {
 	}
 }
 
+//
+@include media-breakpoint-up(xl) {
+}
 
-// 
-@include media-breakpoint-up(xl) {}
+@include media-breakpoint-up(lg) {
+}
 
-@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(md) {
+}
 
-@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(sm) {
+}
 
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(xs) {
+}
 
-@include media-breakpoint-up(xs) {}
+//
+@include media-breakpoint-between(md, xl) {
+}
 
-// 
-@include media-breakpoint-between(md, xl) {}
+//
+@include media-breakpoint-only(xs) {
+}
 
-// 
-@include media-breakpoint-only(xs) {}
+@include media-breakpoint-only(sm) {
+}
 
-@include media-breakpoint-only(sm) {}
+@include media-breakpoint-only(md) {
+}
 
-@include media-breakpoint-only(md) {}
+@include media-breakpoint-only(lg) {
+}
 
-@include media-breakpoint-only(lg) {}
+@include media-breakpoint-only(xl) {
+}
 
-@include media-breakpoint-only(xl) {}
+//
+@include media-breakpoint-down(xl) {
+}
 
-// 
-@include media-breakpoint-down(xl) {}
+@include media-breakpoint-down(lg) {
+}
 
-@include media-breakpoint-down(lg) {}
+@include media-breakpoint-down(md) {
+}
 
-@include media-breakpoint-down(md) {}
+@include media-breakpoint-down(sm) {
+}
 
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}
+@include media-breakpoint-down(xs) {
+}

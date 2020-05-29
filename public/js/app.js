@@ -60,6 +60,15 @@ var sOurWorkVue = new Vue({
 	created: function created() {},
 	computed: {}
 });
+var sThankVue = new Vue({
+	el: '#sThank',
+	data: {
+		imgSRc: 'img/'
+	},
+	methods: {},
+	created: function created() {},
+	computed: {}
+});
 var topLineVue = new Vue({
 	el: '#topLine',
 	data: {

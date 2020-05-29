@@ -42,3 +42,9 @@
 	@include media-breakpoint-down(xs) {
 	}
 } // end.header
+
+.whitePage {
+	.header {
+		background-color: transparent;
+	}
+}
