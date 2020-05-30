@@ -19,7 +19,6 @@
 		<meta property="og:image:height" content="504">
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
-		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
@@ -221,14 +220,14 @@
 								<div class="form-wrap__group">
 									<div class="form-wrap__group-title">Когда вам позвонить:
 									</div>
-									<div class="tabs__caption">
+									<div class="tabs__caption active">
 										<div class="tabs__btn btn">Сейчас</div>
-										<div class="tabs__btn btn active">По времени</div>
+										<div class="tabs__btn btn">По времени</div>
 									</div>
 								</div>
 								<div class="tabs__wrap">
-									<div class="tabs__content"></div>
-									<div class="tabs__content active">
+									<div class="tabs__content active"></div>
+									<div class="tabs__content">
 										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="datetime" placeholder="Например: 21 января в 14:00" name="datetime" required="required"/>
 										</div>
 										<!-- +e.input-wrap-->
@@ -241,7 +240,53 @@
 					</div>
 				</form>
 			</div>
-			<div class="modal-win modal-win--mobMNU text-center" id="mob-menu"><a class="modal-win__tel h6" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a><a class="modal-win__call btn" href="#">Перезвоните мне</a>
+			<div class="form-wrap modal-win modal-form" id="modal-call-2">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="row text-center no-gutters">
+						<div class="form-wrap__col col d-none d-lg-block">
+							<!-- picture-->
+							<picture class="lazy"> 
+								<source srcset="#" data-srcset="img/@2x/photo-modal.jpg" type="image/jpg" media="(min-width:576px)"/>
+								<source srcset="#" data-srcset="img/@1x/photo-modal.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/photo-modal.jpg" alt=""/>
+							</picture>
+							<!-- /picture-->
+							<div class="form-wrap__nameWrap">
+								<div class="form-wrap__name">Евгений Симонов
+								</div>
+								<div class="form-wrap__position">Руководитель агентства
+								</div>
+							</div>
+						</div>
+						<div class="form-wrap__form col">
+							<div class="text-center">
+								<div class="form-wrap__titleMain">Укажите ваши контакты и&nbsp;время для звонка
+								</div>
+								<div class="form-wrap__subtitle">Я&nbsp;перезвоню вам прямо сейчас или в&nbsp;другое рабочее время. Мы&nbsp;работаем ежедневно с&nbsp;07:00 до&nbsp;18:00 по&nbsp;МСК.
+								</div>
+							</div>
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Введите телефон:</span><input class="form-wrap__input form-control" type="tel" placeholder="+7 (912) 345-67-89" name="tel" required="required"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+							<div class="form-wrap__group-title">Когда вам позвонить:
+							</div>
+							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="datetime" placeholder="Например: 21 января в 14:00" name="datetime" required="required"/>
+							</div>
+							<!-- +e.input-wrap--><input class="form-wrap__btn btn btn-primary" type="submit" value="Перезвоните мне"/>
+							<div class="form-wrap__polite"><small class="form-wrap__text text-secondary">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих персональных данных и&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности</a></small>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-win modal-win--mobMNU text-center" id="mob-menu"><a class="modal-win__tel h6" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a><a class="modal-win__call btn link-modal" href="#modal-call">Перезвоните мне</a>
 				<p>Напишите нам, мы онлайн:</p>
 				<div class="messengers"><a class="messengers__item" href="№" target="_blank"><span class="messengers__whatsapp">
 					<svg class="icon icon-whatsapp ">
@@ -268,7 +313,6 @@
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
-		<script src="libs/swiper/js/swiper.min.js"></script>
 		<!-- /slider libs-->
 		<!-- for svg libs-->
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>

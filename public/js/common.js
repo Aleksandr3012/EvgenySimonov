@@ -1,7 +1,5 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -52,39 +50,31 @@ var JSCCommon = {
 			});
 		});
 	},
-	closeMenu: function closeMenu() {
-		var _this = this;
-
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.classList.remove("on");
-		});
-
-		_this.menuMobile.classList.remove("active");
-
-		_this.body.classList.remove("fixed");
-	},
-	mobileMenu: function mobileMenu() {
-		// закрыть/открыть мобильное меню
-		var _this = this;
-
-		_this.toggleMenu();
-
-		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				console.log(element);
-
-				_this.closeMenu();
-			});
-		});
-
-		document.addEventListener('mouseup', function (event) {
-			var container = event.target.closest(".menu-mobile--js.active"); // (1)
-
-			if (!container) {
-				_this.closeMenu();
-			}
-		});
-	},
+	// closeMenu() {
+	// 	let _this = this;
+	// 	_this.btnToggleMenuMobile.forEach(function (element) {
+	// 		element.classList.remove("on");
+	// 	});
+	// 	_this.menuMobile.classList.remove("active");
+	// 	_this.body.classList.remove("fixed");
+	// },
+	// mobileMenu() {
+	// 	// закрыть/открыть мобильное меню
+	// 	let _this = this;
+	// 	_this.toggleMenu();
+	// 	_this.menuMobileLink.forEach(function (element) {
+	// 		element.addEventListener('click', function (e) {
+	// 			console.log(element);
+	// 			_this.closeMenu();
+	// 		});
+	// 	})
+	// 	document.addEventListener('mouseup', function (event) {
+	// 		let container = event.target.closest(".menu-mobile--js.active"); // (1)
+	// 		if (!container) {
+	// 			_this.closeMenu();
+	// 		}
+	// 	});
+	// },
 	// /mobileMenu
 	// табы  . 
 	tabscostume: function tabscostume(tab) {
@@ -101,8 +91,6 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _Swiper;
-
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
 
@@ -110,11 +98,11 @@ function eventHandler() {
 
 	svg4everybody({});
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
+	JSCCommon.tabscostume('tabs'); // JSCCommon.mobileMenu();
+
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Quiz1.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.png);"></div>')
 	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
@@ -128,55 +116,65 @@ function eventHandler() {
 	// 	}; 
 	// }); 
 	// /закрыть/открыть мобильное меню
-
-	function heightses() {
-		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
-		// скрывает моб меню
-
-		var topH = $("header ").innerHeight();
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		}); // конец добавил
-
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
-		}
-	}
-
-	$(window).resize(function () {
-		heightses();
-	});
-	heightses(); // листалка по стр
-
-	$(" .top-nav li a, .scroll-link").click(function () {
-		var elementClick = $(this).attr("href");
-		var destination = $(elementClick).offset().top;
-		$('html, body').animate({
-			scrollTop: destination
-		}, 1100);
-		return false;
-	});
-	$('.s-gal__slider\
-	,.slider-for2 ').on('lazyLoaded', function (event, slick, image, imageSource) {
-		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-	}); // slider
-
-	var swiper4 = new Swiper('.color-slider', (_Swiper = {
-		// slidesPerView: 5,
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		spaceBetween: 0,
-		freeMode: true
-	}, _defineProperty(_Swiper, "watchOverflow", true), _defineProperty(_Swiper, "slidesPerGroup", 3), _defineProperty(_Swiper, "loop", true), _defineProperty(_Swiper, "loopFillGroupWithBlank", true), _defineProperty(_Swiper, "touchRatio", 0.2), _defineProperty(_Swiper, "slideToClickedSlide", true), _defineProperty(_Swiper, "freeModeMomentum", true), _defineProperty(_Swiper, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _Swiper)); // modal window
+	// function heightses() {
+	// 	const w = $(window).width();
+	// 	// $(".main-wrapper").css("margin-bottom", $('footer').height())
+	// 	// $(".otz__item .text-wrap ").height('auto').equalHeights();
+	// 	// 
+	// 	// скрывает моб меню
+	// 	const topH = $("header ").innerHeight();
+	// 	$(window).scroll(function () {
+	// 		if ($(window).scrollTop() > topH) {
+	// 			$('.top-nav  ').addClass('fixed');
+	// 		} else {
+	// 			$('.top-nav  ').removeClass('fixed');
+	// 		}
+	// 	});
+	// 	// конец добавил
+	// 	if (window.matchMedia("(min-width: 992px)").matches) {
+	// 		JSCCommon.closeMenu();
+	// 	}
+	// }
+	// $(window).resize(function () {
+	// 	heightses();
+	// });
+	// heightses();
+	// листалка по стр
+	// $(" .top-nav li a, .scroll-link").click(function () {
+	// 	const elementClick = $(this).attr("href");
+	// 	const destination = $(elementClick).offset().top;
+	// 	$('html, body').animate({ scrollTop: destination }, 1100);
+	// 	return false;
+	// });
+	// $('#other1').click(function(){
+	// 	$('.sQwiz__input-wrap').slideToggle();
+	// });
+	// $('.s-gal__slider\
+	// ,.slider-for2 ')
+	// 	.on('lazyLoaded', function (event, slick, image, imageSource) {
+	// 		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
+	// 	});
+	// // slider
+	// const swiper4 = new Swiper('.color-slider', {
+	// 	// slidesPerView: 5,
+	// 	slidesPerView: 'auto',
+	// 	watchOverflow: true,
+	// 	spaceBetween: 0,
+	// 	freeMode: true,
+	// 	watchOverflow: true,
+	// 	slidesPerGroup: 3,
+	// 	// centeredSlides: true,
+	// 	loop: true,
+	// 	loopFillGroupWithBlank: true,
+	// 	touchRatio: 0.2,
+	// 	slideToClickedSlide: true,
+	// 	freeModeMomentum: true,
+	// 	navigation: {
+	// 		nextEl: '.swiper-button-next',
+	// 		prevEl: '.swiper-button-prev',
+	// 	},
+	// });
+	// modal window
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

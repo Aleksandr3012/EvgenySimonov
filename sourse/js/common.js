@@ -48,37 +48,37 @@ const JSCCommon = {
 		});
 	},
 
-	closeMenu() {
-		let _this = this;
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.classList.remove("on");
+	// closeMenu() {
+	// 	let _this = this;
+	// 	_this.btnToggleMenuMobile.forEach(function (element) {
+	// 		element.classList.remove("on");
 
-		});
-		_this.menuMobile.classList.remove("active");
-		_this.body.classList.remove("fixed");
+	// 	});
+	// 	_this.menuMobile.classList.remove("active");
+	// 	_this.body.classList.remove("fixed");
 
-	},
+	// },
 
-	mobileMenu() {
-		// закрыть/открыть мобильное меню
-		let _this = this;
+	// mobileMenu() {
+	// 	// закрыть/открыть мобильное меню
+	// 	let _this = this;
 
-		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				console.log(element);
-				_this.closeMenu();
+	// 	_this.toggleMenu();
+	// 	_this.menuMobileLink.forEach(function (element) {
+	// 		element.addEventListener('click', function (e) {
+	// 			console.log(element);
+	// 			_this.closeMenu();
 
-			});
-		})
-		document.addEventListener('mouseup', function (event) {
-			let container = event.target.closest(".menu-mobile--js.active"); // (1)
-			if (!container) {
-				_this.closeMenu();
+	// 		});
+	// 	})
+	// 	document.addEventListener('mouseup', function (event) {
+	// 		let container = event.target.closest(".menu-mobile--js.active"); // (1)
+	// 		if (!container) {
+	// 			_this.closeMenu();
 
-			}
-		});
-	},
+	// 		}
+	// 	});
+	// },
 	// /mobileMenu
 
 	// табы  . 
@@ -112,13 +112,13 @@ function eventHandler() {
 
 	JSCCommon.tabscostume('tabs');
 
-	JSCCommon.mobileMenu();
+	// JSCCommon.mobileMenu();
 
 	JSCCommon.inputMask();
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Quiz1.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -140,74 +140,78 @@ function eventHandler() {
 
 	// /закрыть/открыть мобильное меню
 
-	function heightses() {
+	// function heightses() {
 
-		const w = $(window).width();
+	// 	const w = $(window).width();
 
-		// $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
-		// скрывает моб меню
+	// 	// $(".main-wrapper").css("margin-bottom", $('footer').height())
+	// 	// $(".otz__item .text-wrap ").height('auto').equalHeights();
+	// 	// 
+	// 	// скрывает моб меню
 
-		const topH = $("header ").innerHeight();
+	// 	const topH = $("header ").innerHeight();
 
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		});
-		// конец добавил
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
-		}
-	}
+	// 	$(window).scroll(function () {
+	// 		if ($(window).scrollTop() > topH) {
+	// 			$('.top-nav  ').addClass('fixed');
+	// 		} else {
+	// 			$('.top-nav  ').removeClass('fixed');
+	// 		}
+	// 	});
+	// 	// конец добавил
+	// 	if (window.matchMedia("(min-width: 992px)").matches) {
+	// 		JSCCommon.closeMenu();
+	// 	}
+	// }
 
-	$(window).resize(function () {
-		heightses();
+	// $(window).resize(function () {
+	// 	heightses();
 
-	});
+	// });
 
-	heightses();
+	// heightses();
 
 	// листалка по стр
-	$(" .top-nav li a, .scroll-link").click(function () {
-		const elementClick = $(this).attr("href");
-		const destination = $(elementClick).offset().top;
+	// $(" .top-nav li a, .scroll-link").click(function () {
+	// 	const elementClick = $(this).attr("href");
+	// 	const destination = $(elementClick).offset().top;
 
-		$('html, body').animate({ scrollTop: destination }, 1100);
+	// 	$('html, body').animate({ scrollTop: destination }, 1100);
 
-		return false;
-	});
+	// 	return false;
+	// });
 
-	$('.s-gal__slider\
-	,.slider-for2 ')
-		.on('lazyLoaded', function (event, slick, image, imageSource) {
-			image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-		});
-	// slider
-	const swiper4 = new Swiper('.color-slider', {
-		// slidesPerView: 5,
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		spaceBetween: 0,
-		freeMode: true,
-		watchOverflow: true,
-		slidesPerGroup: 3,
+	// $('#other1').click(function(){
+	// 	$('.sQwiz__input-wrap').slideToggle();
+	// });
 
-		// centeredSlides: true,
-		loop: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
+	// $('.s-gal__slider\
+	// ,.slider-for2 ')
+	// 	.on('lazyLoaded', function (event, slick, image, imageSource) {
+	// 		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
+	// 	});
+	// // slider
+	// const swiper4 = new Swiper('.color-slider', {
+	// 	// slidesPerView: 5,
+	// 	slidesPerView: 'auto',
+	// 	watchOverflow: true,
+	// 	spaceBetween: 0,
+	// 	freeMode: true,
+	// 	watchOverflow: true,
+	// 	slidesPerGroup: 3,
 
-	});
+	// 	// centeredSlides: true,
+	// 	loop: true,
+	// 	loopFillGroupWithBlank: true,
+	// 	touchRatio: 0.2,
+	// 	slideToClickedSlide: true,
+	// 	freeModeMomentum: true,
+	// 	navigation: {
+	// 		nextEl: '.swiper-button-next',
+	// 		prevEl: '.swiper-button-prev',
+	// 	},
+
+	// });
 	// modal window
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

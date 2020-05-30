@@ -76,15 +76,40 @@ mixin form-tabs()
 		+e.group
 			+e.group-title Когда вам позвонить:
 			
-			.tabs__caption
+			.tabs__caption.active
 				.tabs__btn.btn
 					| Сейчас
-				.tabs__btn.btn.active
+				.tabs__btn.btn
 					| По времени
-
 
 		block
 		.tabs__wrap
-			.tabs__content
 			.tabs__content.active
+			.tabs__content
 				+input("Например: 21 января в 14:00","datetime")(required)
+
+mixin form-tabs-qwiz()
+	+b.tabs
+		+e.caption
+			+e.btn.btn.active
+				+icon('phone-bg')
+				| Телефон
+			+e.btn.btn
+				+icon('whatsapp')
+				| WhatsApp
+			+e.btn.btn
+				+icon('viber')
+				| Viber
+			+e.btn.btn
+				+icon('telegram')
+				| Telegram
+		+e.wrap
+			+e.content.active
+				.h6 Введите телефон:
+			+e.content
+				.h6 Введите WhatsApp:
+			+e.content
+				.h6 Введите Viber:
+			+e.content
+				.h6 Введите Telegram:
+		

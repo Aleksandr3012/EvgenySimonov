@@ -1,9 +1,14 @@
+mixin radio(p,n,t)
+	input(type="radio" name=`Вопрос:${p}` id=`${n}`)
+	label.btn(for=`${n}`)= t
+
+
 mixin sQwiz()
 	// start sQwiz
 	+b.sQwiz#sQwiz&attributes(attributes)
 		.container
 			+e.FORM.wrap
-				mixin item(pr,t,...items)
+				mixin item(pr,t,inp,not)
 					+e.item
 						if pr
 							+e.top
@@ -12,41 +17,75 @@ mixin sQwiz()
 									span На главную
 								+e.descr Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
 							.row
-								.col
+								.col-lg
 									+e.main
 										+e.progress
 											+e.progress-bar(style=`width:${pr/4*100}%`)
 										+e.head= pr
 											|из 4
 										+e.title.h2= t
-										.custom-radio
-											each item in items
-												input(type="radio" name=`Вопрос:${pr}` id=`${item}`)
-												label.btn(for=`${item}`)= item
-										+e.next.btn.btn-primary Далее
-											+icon('arrowNext')
+										.custom-radio&attributes(attributes)
+											block
+										//- 	each item in items
+										//- 		input(type="radio" name=`Вопрос:${pr}` id=`${item}`)
+										//- 		label.btn(for=`${item}`)= item
+										if inp
+											+input(`${inp}`,'text')
+										+e.foot
+											if not
+												+e.btn-back.h6(type="button")
+													+icon('arrowNext')
+													| Назад
+											+e.next.btn.btn-primary.h6(type="button") Далее
+												+icon('arrowNext')
 								+e.sitebar.col
-									+e.supervisor 
-										+pic('ev')
-										div
-											.h6 Евгений Симонов
-											p Руководитель агентства
-									+e.about.text-center
-										p У&nbsp;нас есть опыт работы с&nbsp;более чем 20 сферами бизнеса. Мы&nbsp;делали сайты для&nbsp;автосервиса, клиники стоматологии, компаний по производству шлакоблоков и&nbsp;малых архитектурных форм.
-										p Анализ продукта, целевой аудитории, конкурентов&nbsp;&mdash; вот основа для работы с&nbsp;любой сферой.
-									+e.consultation.btn(href="#") Получить консультацию
-									+e.telWrap
-										+e.tel(href="tel:+7(963)097-09-90") +7 (963) 097-09-90
-									+messengers
+									+e.sitebarWrap
+										+e.supervisor 
+											+pic('ev')
+											div
+												.h6 Евгений Симонов
+												p Руководитель агентства
+										+e.about.text-center
+											p У&nbsp;нас есть опыт работы с&nbsp;более чем 20 сферами бизнеса. Мы&nbsp;делали сайты для&nbsp;автосервиса, клиники стоматологии, компаний по производству шлакоблоков и&nbsp;малых архитектурных форм.
+											p Анализ продукта, целевой аудитории, конкурентов&nbsp;&mdash; вот основа для работы с&nbsp;любой сферой.
+										+e.consultation.btn(href="#") Получить консультацию
+										+e.telWrap
+											+e.tel(href="tel:+7(963)097-09-90") +7 (963) 097-09-90
+										+messengers
 						else
-							block
+							+e.final.text-center
+								.h6.text-primary Спасибо за ответы!
+								.h2 Как с&nbsp;вами связаться, чтобы уточнить детали создания сайта и&nbsp;обсудить стоимость?
+								+form-tabs-qwiz()
+								+input('+7 (912) 345-67-89','tel')
+								+e.discuss.btn.btn-primary(href="#") Обсудить стоимость создания сайта
+								+polite()
 
 
 
-				+item('1','В какой сфере Ваш бизнес?', 'Сфера услуг (B2B)', 'Сфера услуг (B2C)', 'Розничная торговля','Оптовая торговля','Производство','Промышленность','Обучение','Другое')
-				+item('2','У вас уже есть сайт?','Да','Нет')
-				+item('3','Что вы хотите получить от сайта?','Больше клиентов и продаж','Увеличение среднего чека','Нужен сайт, как презентация компании', 'Хочу перевести бизнес в онлайн','Другое')
-				+item('4','Вы планируете запускать рекламу?','Да', 'Нет')
+				+item('1','В какой сфере Ваш бизнес?', 'Напишите, чем занимаетесь')
+					+radio('1','B2B','Сфера услуг (B2B)')
+					+radio('1','B2C','Сфера услуг (B2C)')
+					+radio('1','retail','Розничная торговля')
+					+radio('1','wholesale','Оптовая торговля')
+					+radio('1','production','Производство')
+					+radio('1','industry','Промышленность')
+					+radio('1','training','Обучение')
+					+radio('1','other1','Другое')
+					
+				+item('2','У вас уже есть сайт?','Скопируйте сюда ссылку на ваш сайт','not')(class="twoItem")
+					+radio('2','yes','Да')
+					+radio('2','no','Нет')
+				+item('3','Что вы хотите получить от сайта?','Напишите, какую вашу задачу должен решить сайт','not')(class="twoItem")
+					+radio('3','more-customers','Больше клиентов и продаж')
+					+radio('3','price','Увеличение среднего чека')
+					+radio('3','presentation','Нужен сайт, как презентация компании')
+					+radio('3','online-business','Хочу перевести бизнес в онлайн')
+					+radio('3','other3','Другое')
+				+item('4','Вы планируете запускать рекламу?','','not')
+					+radio('4','yes4','Да')
+					+radio('4','no4','Нет')
+				+item('')
 
 
 

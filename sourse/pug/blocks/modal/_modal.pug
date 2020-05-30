@@ -51,9 +51,30 @@ mixin modal()
 					+e.INPUT.btn.btn.btn-primary(type="submit" value="Перезвоните мне") 
 					+polite()
 
+		+form-wrap()(id="modal-call-2" class="  modal-win modal-form" )
+			.row.text-center.no-gutters
+				+e.col.col.d-none.d-lg-block
+					+pic('photo-modal')
+					+e.nameWrap
+						+e.name Евгений Симонов
+						+e.position Руководитель агентства
+				+e.form.col
+					.text-center
+						+e.titleMain Укажите ваши контакты и&nbsp;время для звонка
+						+e.subtitle Я&nbsp;перезвоню вам прямо сейчас или в&nbsp;другое рабочее время. Мы&nbsp;работаем ежедневно с&nbsp;07:00 до&nbsp;18:00 по&nbsp;МСК.
+					+input("+7 (912) 345-67-89","tel","Введите телефон:")(required)
+					//- +form-tabs()
+					+e.group-title Когда вам позвонить:
+					+input("Например: 21 января в 14:00","datetime")(required)
+					//- +input("Ваше Имя")(required) 
+					//- +input("email","Ваше email")(required)
+					//- +text( "Комментарий")
+					+e.INPUT.btn.btn.btn-primary(type="submit" value="Перезвоните мне") 
+					+polite()
+
 		+b.modal-win--mobMNU.text-center(id="mob-menu")
 			+e.tel.h6(href="tel:+7(963)097-09-90") +7 (963) 097-09-90
-			+e.call.btn(href="#") Перезвоните мне
+			+e.call.btn.link-modal(href="#modal-call") Перезвоните мне
 			p Напишите нам, мы онлайн:
 			+messengers()
 
