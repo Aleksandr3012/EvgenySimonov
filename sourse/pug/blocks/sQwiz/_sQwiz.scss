@@ -1,0 +1,259 @@
+// start .sQwiz
+.sQwiz {
+	padding-top: rem(51);
+	padding-bottom: rem(50);
+
+	@include media-breakpoint-up(xxl) {
+		.container {
+			max-width: rem(1350);
+		}
+	}
+	//Верхний блок
+	&__top {
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(56);
+	}
+
+	//Кнопка на главную
+	&__to-main {
+		flex-shrink: 0;
+		text-decoration: none !important;
+		.icon {
+			color: $primary;
+			font-size: rem(27);
+			margin-right: rem(13);
+		}
+		span {
+			color: $body-color;
+		}
+	}
+
+	// Ответьте на несколько вопросов
+	&__descr {
+		max-width: rem(850);
+		margin-left: rem(113);
+		font-size: rem(30);
+		line-height: 1.3;
+		text-align: center;
+	}
+
+	//Блок квиза
+	&__main {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+		background-color: #ffffff;
+		padding: rem(60);
+	}
+
+	&__progress {
+		border-radius: 5px;
+		background-color: $gray-100;
+		margin-bottom: rem(35);
+
+		&-bar {
+			border-radius: 5px;
+			background-color: $primary;
+			height: 10px;
+		}
+	}
+
+	// n из 4
+	&__head {
+		letter-spacing: rem(1);
+		@extend .h6;
+		color: $primary;
+		margin-bottom: rem(26);
+	}
+
+	&__title {
+		margin-bottom: rem(30);
+	}
+
+	//Кнопки выбора
+	.custom-radio {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: rem(-10);
+		margin-right: rem(-10);
+		input {
+			display: none;
+		}
+
+		label {
+			flex: 0 0 30.5%;
+			max-width: 30.5%;
+			color: $body-color !important;
+			margin-left: rem(10);
+			margin-right: rem(10);
+			margin-bottom: rem(20);
+			border-color: #e5e5e5;
+			padding-top: rem(16);
+			padding-bottom: rem(16);
+
+			&:hover {
+				color: #fff !important;
+				border-color: $primary;
+			}
+		}
+
+		input:checked + label {
+			border-color: $primary;
+		}
+	}
+
+	//Кнопка далее
+	&__next {
+		margin-left: auto;
+		margin-right: rem(12);
+		max-width: rem(258);
+		padding: rem(16);
+		margin-top: auto;
+
+		.icon {
+			// margin-top: rem(3);
+			margin-left: rem(18);
+			font-size: rem(12);
+			transform: rotate(180deg);
+		}
+	}
+
+	//Правый блок
+	&__sitebar {
+		max-width: rem(360);
+		padding-top: rem(30);
+		padding-left: rem(30);
+		padding-right: rem(30);
+		padding-bottom: rem(70);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+		background-color: #ffffff;
+		position: relative;
+		overflow: hidden;
+	}
+
+	//Текст в сайтбаре
+	&__about {
+		p {
+			margin-bottom: rem(25);
+			margin-left: rem(-5);
+			margin-right: rem(-5);
+			line-height: 1.65;
+		}
+	}
+
+	&__supervisor {
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(55);
+
+		&::before {
+			content: '';
+			position: absolute;
+			height: 1px;
+			background-color: #e5e5e5;
+			width: 150%;
+			left: 0;
+			top: rem(140);
+		}
+
+		picture {
+			margin-right: rem(22);
+
+			img  {
+				border-radius: 5px;
+			}
+		}
+
+		p {
+			color: $dark;
+			margin-bottom: 0;
+		}
+
+		.h6 {
+			margin-bottom: rem(5);
+		}
+	}
+
+	//Кнопка получить консультацию
+	&__consultation {
+		color: $primary !important;
+		border-color: #e5e5e5 !important;
+		margin-bottom: rem(25);
+		font-weight: 600;
+		padding-top: rem(17);
+		padding-bottom: rem(17);
+
+		&:hover {
+			color: #fff !important;
+			border-color: $primary !important;
+		}
+	}
+
+	&__telWrap {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__tel {
+		text-decoration: none !important;
+		color: #000;
+		margin-bottom: rem(27);
+		padding-right: 10px;
+		@extend .h6;
+		font-weight: 600;
+
+		&:hover {
+			color: $body-color;
+		}
+	}
+
+	.messengers {
+		max-width: rem(130);
+		padding-right: 2px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-up(xs) {
+	}
+
+	//
+	@include media-breakpoint-between(md, xl) {
+	}
+
+	//
+	@include media-breakpoint-only(xs) {
+	}
+	@include media-breakpoint-only(sm) {
+	}
+	@include media-breakpoint-only(md) {
+	}
+	@include media-breakpoint-only(lg) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+
+	//
+	@include media-breakpoint-down(xl) {
+	}
+	@include media-breakpoint-down(lg) {
+	}
+	@include media-breakpoint-down(md) {
+	}
+	@include media-breakpoint-down(sm) {
+	}
+	@include media-breakpoint-down(xs) {
+	}
+} // end.sQwiz

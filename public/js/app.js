@@ -43,6 +43,15 @@ var sContentVue = new Vue({
 	created: function created() {},
 	computed: {}
 });
+var sOurWorkVue = new Vue({
+	el: '#sOurWork',
+	data: {
+		imgSRc: 'img/'
+	},
+	methods: {},
+	created: function created() {},
+	computed: {}
+});
 var sFormVue = new Vue({
 	el: '#sForm',
 	data: {
@@ -51,8 +60,8 @@ var sFormVue = new Vue({
 	created: function created() {},
 	computed: {}
 });
-var sOurWorkVue = new Vue({
-	el: '#sOurWork',
+var sQwizVue = new Vue({
+	el: '#sQwiz',
 	data: {
 		imgSRc: 'img/'
 	},

@@ -1,0 +1,21 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sQwiz/_sQwiz.pug 
+include ../blocks/sAbout/_sAbout.pug 
+
+block variables
+	- let  mainPage= 'whitePage'
+block title
+	- let  title= 'Evgeny Simonov'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	//- +header()
+		//- +topLine()
+		//- +headerBlock()
+	+sQwiz()
+	//- +footer()
+		//- +sAbout()
