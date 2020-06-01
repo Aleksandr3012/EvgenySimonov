@@ -136,6 +136,7 @@
 		flex-shrink: 0;
 		color: $primary !important;
 		padding: rem(13) rem(23) rem(10);
+		font-weight: 600;
 		@include media-breakpoint-up(md){
 			margin-left: rem(35);
 			padding: rem(15) rem(28) rem(18);

@@ -50,31 +50,39 @@ var JSCCommon = {
 			});
 		});
 	},
-	// closeMenu() {
-	// 	let _this = this;
-	// 	_this.btnToggleMenuMobile.forEach(function (element) {
-	// 		element.classList.remove("on");
-	// 	});
-	// 	_this.menuMobile.classList.remove("active");
-	// 	_this.body.classList.remove("fixed");
-	// },
-	// mobileMenu() {
-	// 	// закрыть/открыть мобильное меню
-	// 	let _this = this;
-	// 	_this.toggleMenu();
-	// 	_this.menuMobileLink.forEach(function (element) {
-	// 		element.addEventListener('click', function (e) {
-	// 			console.log(element);
-	// 			_this.closeMenu();
-	// 		});
-	// 	})
-	// 	document.addEventListener('mouseup', function (event) {
-	// 		let container = event.target.closest(".menu-mobile--js.active"); // (1)
-	// 		if (!container) {
-	// 			_this.closeMenu();
-	// 		}
-	// 	});
-	// },
+	closeMenu: function closeMenu() {
+		var _this = this;
+
+		_this.btnToggleMenuMobile.forEach(function (element) {
+			element.classList.remove("on");
+		});
+
+		_this.menuMobile.classList.remove("active");
+
+		_this.body.classList.remove("fixed");
+	},
+	mobileMenu: function mobileMenu() {
+		// 	// закрыть/открыть мобильное меню
+		var _this = this;
+
+		_this.toggleMenu();
+
+		_this.menuMobileLink.forEach(function (element) {
+			element.addEventListener('click', function (e) {
+				console.log(element);
+
+				_this.closeMenu();
+			});
+		});
+
+		document.addEventListener('mouseup', function (event) {
+			var container = event.target.closest(".menu-mobile--js.active"); // (1)
+
+			if (!container) {
+				_this.closeMenu();
+			}
+		});
+	},
 	// /mobileMenu
 	// табы  . 
 	tabscostume: function tabscostume(tab) {
@@ -193,7 +201,9 @@ function eventHandler() {
 		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 			$(this).attr('href', $(this).data("desktop"));
 		}
-	}); //Прилипающий телефон
+	});
+	var now = new Date();
+	$('.curentYear').text(now.getFullYear()); //Прилипающий телефон
 	// const telOffset = $('.headerBlock__tel').offset().top;
 	// $(window).scroll(function(){
 	// 	const scrolled = $(this).scrollTop();

@@ -48,37 +48,37 @@ const JSCCommon = {
 		});
 	},
 
-	// closeMenu() {
-	// 	let _this = this;
-	// 	_this.btnToggleMenuMobile.forEach(function (element) {
-	// 		element.classList.remove("on");
+	closeMenu() {
+		let _this = this;
+		_this.btnToggleMenuMobile.forEach(function (element) {
+			element.classList.remove("on");
 
-	// 	});
-	// 	_this.menuMobile.classList.remove("active");
-	// 	_this.body.classList.remove("fixed");
+		});
+		_this.menuMobile.classList.remove("active");
+		_this.body.classList.remove("fixed");
 
-	// },
+	},
 
-	// mobileMenu() {
+	mobileMenu() {
 	// 	// закрыть/открыть мобильное меню
-	// 	let _this = this;
+		let _this = this;
 
-	// 	_this.toggleMenu();
-	// 	_this.menuMobileLink.forEach(function (element) {
-	// 		element.addEventListener('click', function (e) {
-	// 			console.log(element);
-	// 			_this.closeMenu();
+		_this.toggleMenu();
+		_this.menuMobileLink.forEach(function (element) {
+			element.addEventListener('click', function (e) {
+				console.log(element);
+				_this.closeMenu();
 
-	// 		});
-	// 	})
-	// 	document.addEventListener('mouseup', function (event) {
-	// 		let container = event.target.closest(".menu-mobile--js.active"); // (1)
-	// 		if (!container) {
-	// 			_this.closeMenu();
+			});
+		})
+		document.addEventListener('mouseup', function (event) {
+			let container = event.target.closest(".menu-mobile--js.active"); // (1)
+			if (!container) {
+				_this.closeMenu();
 
-	// 		}
-	// 	});
-	// },
+			}
+		});
+	},
 	// /mobileMenu
 
 	// табы  . 
@@ -231,10 +231,12 @@ function eventHandler() {
 	$(".viber-link").each(function () {
 
 		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-			$(this).attr('href', $(this).data("desktop"))
+			$(this).attr('href', $(this).data("desktop"));
 		}
-	})
+	});
 
+	let now = new Date();
+	$('.curentYear').text(now.getFullYear());
 	//Прилипающий телефон
 	// const telOffset = $('.headerBlock__tel').offset().top;
 	// $(window).scroll(function(){
