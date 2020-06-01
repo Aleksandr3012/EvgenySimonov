@@ -118,7 +118,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Quiz3.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -140,36 +140,50 @@ function eventHandler() {
 
 	// /закрыть/открыть мобильное меню
 
-	// function heightses() {
+	function heightses() {
 
-	// 	const w = $(window).width();
+		const w = $(window).width();
 
 	// 	// $(".main-wrapper").css("margin-bottom", $('footer').height())
 	// 	// $(".otz__item .text-wrap ").height('auto').equalHeights();
 	// 	// 
 	// 	// скрывает моб меню
 
-	// 	const topH = $("header ").innerHeight();
+		const topH = $("header ").innerHeight();
 
-	// 	$(window).scroll(function () {
-	// 		if ($(window).scrollTop() > topH) {
-	// 			$('.top-nav  ').addClass('fixed');
-	// 		} else {
-	// 			$('.top-nav  ').removeClass('fixed');
-	// 		}
-	// 	});
-	// 	// конец добавил
-	// 	if (window.matchMedia("(min-width: 992px)").matches) {
-	// 		JSCCommon.closeMenu();
-	// 	}
-	// }
+		// $(window).scroll(function () {
+		// 	if ($(window).scrollTop() > topH) {
+		// 		$('.top-nav  ').addClass('fixed');
+		// 	} else {
+		// 		$('.top-nav  ').removeClass('fixed');
+		// 	}
 
-	// $(window).resize(function () {
-	// 	heightses();
+		
+		// });
 
-	// });
+		const telOffset = $('.header').height();
+		$(window).scroll(function(){
+			const scrolled = $(this).scrollTop();
+			if (scrolled > telOffset){
+				//телефон прилип
+				$('.headerBlock__tel').addClass('tel-fixed');
+			} else if (scrolled < telOffset) {
+				// телефон отлип
+				$('.headerBlock__tel').removeClass('tel-fixed');
+			}
+		});
+		// конец добавил
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			JSCCommon.closeMenu();
+		}
+	}
 
-	// heightses();
+	$(window).resize(function () {
+		heightses();
+
+	});
+
+	heightses();
 
 	// листалка по стр
 	// $(" .top-nav li a, .scroll-link").click(function () {
@@ -222,17 +236,17 @@ function eventHandler() {
 	})
 
 	//Прилипающий телефон
-	const telOffset = $('.headerBlock__tel').offset().top;
-	$(window).scroll(function(){
-		const scrolled = $(this).scrollTop();
-		if (scrolled > telOffset){
-			//телефон прилип
-			$('.headerBlock').addClass('tel-fixed');
-		} else if (scrolled < telOffset) {
-			// телефон отлип
-			$('.headerBlock').removeClass('tel-fixed');
-		}
-	});
+	// const telOffset = $('.headerBlock__tel').offset().top;
+	// $(window).scroll(function(){
+	// 	const scrolled = $(this).scrollTop();
+	// 	if (scrolled > telOffset){
+	// 		//телефон прилип
+	// 		$('.headerBlock').addClass('tel-fixed');
+	// 	} else if (scrolled < telOffset) {
+	// 		// телефон отлип
+	// 		$('.headerBlock').removeClass('tel-fixed');
+	// 	}
+	// });
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {

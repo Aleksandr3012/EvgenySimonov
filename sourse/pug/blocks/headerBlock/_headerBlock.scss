@@ -23,6 +23,8 @@
 		margin-bottom: rem(15);
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(21);
+			line-height: 1.27;
+
 		}
 		line-height: 1.25;
 
@@ -35,7 +37,7 @@
 		font-size: rem(18);
 		@include media-breakpoint-up(md) {
 			font-size: rem(20);
-			margin-left: rem(12);
+			margin-left: rem(16);
 		}
 		margin-left: rem(8);
 	}
@@ -204,11 +206,18 @@
 		}
 	}
 
+	position: relative;
 	//Телефон в конце блока
 	&__tel {
+		@include mt;
 		background-color: $primary;
 		color: #fff;
 		text-decoration: none !important;
+		position: fixed;
+		transform: translateY(120%);
+		bottom: 0;
+		z-index: 50;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -285,12 +294,8 @@
 	}
 }
 
-.tel-fixed .headerBlock__tel {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 50;
+.tel-fixed{
+	transform: translateY(0%);
 }
 
 // end.headerBlock

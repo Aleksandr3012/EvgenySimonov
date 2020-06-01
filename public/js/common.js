@@ -102,7 +102,7 @@ function eventHandler() {
 
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.png);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Quiz3.png);"></div>')
 	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
@@ -116,30 +116,43 @@ function eventHandler() {
 	// 	}; 
 	// }); 
 	// /закрыть/открыть мобильное меню
-	// function heightses() {
-	// 	const w = $(window).width();
-	// 	// $(".main-wrapper").css("margin-bottom", $('footer').height())
-	// 	// $(".otz__item .text-wrap ").height('auto').equalHeights();
-	// 	// 
-	// 	// скрывает моб меню
-	// 	const topH = $("header ").innerHeight();
-	// 	$(window).scroll(function () {
-	// 		if ($(window).scrollTop() > topH) {
-	// 			$('.top-nav  ').addClass('fixed');
-	// 		} else {
-	// 			$('.top-nav  ').removeClass('fixed');
-	// 		}
-	// 	});
-	// 	// конец добавил
-	// 	if (window.matchMedia("(min-width: 992px)").matches) {
-	// 		JSCCommon.closeMenu();
-	// 	}
-	// }
-	// $(window).resize(function () {
-	// 	heightses();
-	// });
-	// heightses();
-	// листалка по стр
+
+	function heightses() {
+		var w = $(window).width(); // 	// $(".main-wrapper").css("margin-bottom", $('footer').height())
+		// 	// $(".otz__item .text-wrap ").height('auto').equalHeights();
+		// 	// 
+		// 	// скрывает моб меню
+
+		var topH = $("header ").innerHeight(); // $(window).scroll(function () {
+		// 	if ($(window).scrollTop() > topH) {
+		// 		$('.top-nav  ').addClass('fixed');
+		// 	} else {
+		// 		$('.top-nav  ').removeClass('fixed');
+		// 	}
+		// });
+
+		var telOffset = $('.header').height();
+		$(window).scroll(function () {
+			var scrolled = $(this).scrollTop();
+
+			if (scrolled > telOffset) {
+				//телефон прилип
+				$('.headerBlock__tel').addClass('tel-fixed');
+			} else if (scrolled < telOffset) {
+				// телефон отлип
+				$('.headerBlock__tel').removeClass('tel-fixed');
+			}
+		}); // конец добавил
+
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			JSCCommon.closeMenu();
+		}
+	}
+
+	$(window).resize(function () {
+		heightses();
+	});
+	heightses(); // листалка по стр
 	// $(" .top-nav li a, .scroll-link").click(function () {
 	// 	const elementClick = $(this).attr("href");
 	// 	const destination = $(elementClick).offset().top;
@@ -181,19 +194,18 @@ function eventHandler() {
 			$(this).attr('href', $(this).data("desktop"));
 		}
 	}); //Прилипающий телефон
+	// const telOffset = $('.headerBlock__tel').offset().top;
+	// $(window).scroll(function(){
+	// 	const scrolled = $(this).scrollTop();
+	// 	if (scrolled > telOffset){
+	// 		//телефон прилип
+	// 		$('.headerBlock').addClass('tel-fixed');
+	// 	} else if (scrolled < telOffset) {
+	// 		// телефон отлип
+	// 		$('.headerBlock').removeClass('tel-fixed');
+	// 	}
+	// });
 
-	var telOffset = $('.headerBlock__tel').offset().top;
-	$(window).scroll(function () {
-		var scrolled = $(this).scrollTop();
-
-		if (scrolled > telOffset) {
-			//телефон прилип
-			$('.headerBlock').addClass('tel-fixed');
-		} else if (scrolled < telOffset) {
-			// телефон отлип
-			$('.headerBlock').removeClass('tel-fixed');
-		}
-	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {
