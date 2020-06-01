@@ -34,8 +34,8 @@ mixin modal()
 	.d-none
 		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
 			.row.text-center.no-gutters
-				+e.col.col.d-none.d-lg-block
-					+pic('photo-modal')
+				+e.col.col.d-none.d-md-block
+					+pic('photo-modal','bg','')(class="picture-bg")
 					+e.nameWrap
 						+e.name Евгений Симонов
 						+e.position Руководитель агентства
@@ -53,8 +53,8 @@ mixin modal()
 
 		+form-wrap()(id="modal-call-2" class="  modal-win modal-form" )
 			.row.text-center.no-gutters
-				+e.col.col.d-none.d-lg-block
-					+pic('photo-modal')
+				+e.col.col.d-none.d-md-block
+					+pic('photo-modal','bg','')(class="picture-bg")
 					+e.nameWrap
 						+e.name Евгений Симонов
 						+e.position Руководитель агентства
@@ -77,6 +77,9 @@ mixin modal()
 			+e.call.btn.link-modal(href="#modal-call") Перезвоните мне
 			p Напишите нам, мы онлайн:
 			+messengers()
+
+		+b.modal-win(id="modal-article")
+	iframe(src="https://retail-loyalty.org/journal_retail_loyalty/read_online/art2911637", frameborder="0")
 
 
 

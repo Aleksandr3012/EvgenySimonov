@@ -59,9 +59,11 @@
 		.icon {
 			font-size: rem(36);
 			margin-bottom: rem(12);
+			@include media-breakpoint-up(md) {
+				margin-right: rem(17);
+			}
 			@include media-breakpoint-up(lg) {
 				font-size: rem(45);
-				margin-right: rem(17);
 				margin-bottom: 0;
 			}
 			color: $primary;

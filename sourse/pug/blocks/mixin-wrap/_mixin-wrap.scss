@@ -1,20 +1,16 @@
 .soc {
-	margin: 0 rem(-5px);
+	// margin: 0 rem(-5px);
 	display: flex;
 	&__item {
 		text-decoration: none !important;
-		margin: 0 rem(5px);
-		vertical-align: middle;
+		margin-left: rem(8px);
 		@include mt;
-		display: block;
 		&:hover {
 			// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
 			opacity: 0.6;
 		}
 	}
-	.icon {
-		font-size: rem(30);
-	}
+
 }
 
 .counter {

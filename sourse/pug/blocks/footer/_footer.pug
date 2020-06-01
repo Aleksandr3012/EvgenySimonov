@@ -7,7 +7,8 @@ mixin footer()
 					+e.write
 						span Напишите нам, мы онлайн:
 						+messengers()
-					+e.soc Подписывайтесь в соц. сетях:
+					+e.soc 
+						p Подписывайтесь в соц. сетях:
 						+soc()
 				+e.col.col-lg
 					p Юридический адрес и реквизиты:
@@ -19,10 +20,11 @@ mixin footer()
 						+e.write
 							span Напишите нам, мы онлайн:
 							+messengers()
-						+e.soc Подписывайтесь в соц. сетях:
+						+e.soc 
+							p Подписывайтесь в соц. сетях:
 							+soc()
 					+e.dev Разработка сайта —
-						+e.logo(href="#")
+						+e.logo(href="/")
 							+icon('logo')
 							+icon('logo-text')
 

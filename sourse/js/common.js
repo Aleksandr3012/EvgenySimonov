@@ -214,6 +214,26 @@ function eventHandler() {
 	// });
 	// modal window
 
+	$(".viber-link").each(function () {
+
+		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			$(this).attr('href', $(this).data("desktop"))
+		}
+	})
+
+	//Прилипающий телефон
+	const telOffset = $('.headerBlock__tel').offset().top;
+	$(window).scroll(function(){
+		const scrolled = $(this).scrollTop();
+		if (scrolled > telOffset){
+			//телефон прилип
+			$('.headerBlock').addClass('tel-fixed');
+		} else if (scrolled < telOffset) {
+			// телефон отлип
+			$('.headerBlock').removeClass('tel-fixed');
+		}
+	});
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)

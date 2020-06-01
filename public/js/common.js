@@ -176,6 +176,24 @@ function eventHandler() {
 	// });
 	// modal window
 
+	$(".viber-link").each(function () {
+		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			$(this).attr('href', $(this).data("desktop"));
+		}
+	}); //Прилипающий телефон
+
+	var telOffset = $('.headerBlock__tel').offset().top;
+	$(window).scroll(function () {
+		var scrolled = $(this).scrollTop();
+
+		if (scrolled > telOffset) {
+			//телефон прилип
+			$('.headerBlock').addClass('tel-fixed');
+		} else if (scrolled < telOffset) {
+			// телефон отлип
+			$('.headerBlock').removeClass('tel-fixed');
+		}
+	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

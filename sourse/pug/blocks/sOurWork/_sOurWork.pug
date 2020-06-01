@@ -9,7 +9,7 @@ mixin workItem(img,p,pr,t,title,link)
 
 			+e.preview
 				a(href=`img/@2x/${img}-xl.jpg` data-fancybox=`${img}`)
-					img.res-i(src=`img/@2x/${img}.jpg` alt="")
+					img.res-i.lazy(src="#" data-src=`img/@2x/${img}.jpg` alt="")
 			+e.indicators.d-none.d-lg-flex
 				+e.indicatorsItem
 					.h2= p
@@ -38,6 +38,8 @@ mixin workItem(img,p,pr,t,title,link)
 				+e.indicatorsItem
 					.h2= t
 					p Среднее время пребывания на&nbsp;сайте
+	+e.calculate.btn.btn.btn-primary(href="#") У&nbsp;меня похожая задача, рассчитайте стоимость
+
 
 
 mixin sOurWork()
@@ -105,6 +107,5 @@ mixin sOurWork()
 								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam quo eos dolore alias cum, explicabo esse?
 								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam quo eos dolore alias cum, explicabo esse?
 								li Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quisquam quo eos dolore alias cum, explicabo esse?
-			+e.calculate.btn.btn.btn-primary(href="#") У&nbsp;меня похожая задача, рассчитайте стоимость
 
 	// end sOurWork

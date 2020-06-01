@@ -93,11 +93,11 @@ mixin soc()
 		//- 	+e.A.item(href="№" target="_blank")
 		//- 		block
 		
-		+e.A.item.vk(href="№" target="_blank")
+		+e.A.item.vk(href="#" target="_blank")
 			+icon('vk')
 			span ВКонтакте
 
-		+e.A.item.inst(href="№" target="_blank")
+		+e.A.item.inst(href="https://www.instagram.com/simonov__evgeny/" target="_blank")
 			+icon('inst')
 			span Instagram
 
@@ -105,13 +105,13 @@ mixin soc()
 
 mixin messengers()
 	+b.messengers&attributes(attributes)
-		+e.item(href="№" target="_blank")
+		+e.item(href="https://wa.me/79630970990" target="_blank")
 			+e.whatsapp
 				+icon('whatsapp')
-		+e.item(href="№" target="_blank")
+		+e.item.viber-link(href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank")
 			+e.viber
 				+icon('viber')
-		+e.item(href="№" target="_blank")
+		+e.item(href="https://t.me/evgeny_simonov" target="_blank")
 			+e.telegram
 				+icon('telegram')
 
