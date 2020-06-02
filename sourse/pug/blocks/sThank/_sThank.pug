@@ -6,10 +6,10 @@ mixin sThank(inst)
 				h2 Иван, спасибо, я&nbsp;принял вашу заявку!
 				//- h2 Спасибо, я&nbsp;принял вашу заявку!
 				.h6 Перезвоню вам в&nbsp;ближайшее время и&nbsp;отвечу на&nbsp;ваши вопросы.<br>Хорошего дня!
-				.h6.text-primary А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в #[a(href=`${inst}`) Instagram.] Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:
+				.h6.text-primary А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в #[a(href= inst) Instagram.] Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:
 				+e.imgWrap(href=`${ist}`)
 					img.res-i(src="img/@2x/photo.jpg", alt="")
-				+e.inst(href=`${ist}`) @simonov__evgeny
-				+e.subscribe.btn.btn-primary(href=`${ist}`) Перейти и подписаться
+				+e.inst(href= ist) @simonov__evgeny
+				+e.subscribe.btn.btn-primary(href= ist) Перейти и подписаться
 
 	// end sThank
