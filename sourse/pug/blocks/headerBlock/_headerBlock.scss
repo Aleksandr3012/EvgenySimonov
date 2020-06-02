@@ -1,10 +1,10 @@
 // start .headerBlock
 .headerBlock {
-	padding-top: rem(7);
+	padding-top: rem(47);
 	// position: relative;
 	// overflow: hidden;
 	@include media-breakpoint-up(lg) {
-		padding-top: rem(78);
+		padding-top: rem(118);
 	}
 	@include media-breakpoint-up(xl) {
 		padding-left: 1px;
@@ -46,9 +46,15 @@
 	picture{
 		// margin-bottom: -1px;
 		position: relative;
+		bottom: -0.5px;
 			@include media-breakpoint-up(xl){
 
-				bottom: -1px;
+			}
+
+			@include media-breakpoint-down(md) {
+				margin-left: auto;
+				margin-right: auto;
+				width: rem(320);
 			}
 	}
 	&__name {
@@ -249,6 +255,9 @@
 	}
 
  @media (min-width: 1200px) and (max-width: 1440px) {
+	 .h6.text-primary{
+		 padding-top: rem(20);
+	 }
 	 padding-top: 0;
 		h1{
 			font-size: 2.7rem;

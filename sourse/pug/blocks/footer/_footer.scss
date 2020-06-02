@@ -4,8 +4,9 @@
 	padding-top: rem(40);
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(80);
+		padding-bottom: rem(40);
 	}
-	padding-bottom: rem(40);
+	padding-bottom: rem(90);
 
 	&__polite {
 		text-decoration: underline;
@@ -80,7 +81,7 @@
 		}
 
 		p {
-			padding-bottom: rem(15);
+			margin-bottom: rem(8);
 			@include media-breakpoint-up(lg) {
 				margin-right: rem(42);
 				padding-bottom: 0;

@@ -265,6 +265,10 @@
 			font-size: rem(12);
 			margin-right: rem(9);
 		}
+
+		&:hover {
+			opacity: .7;
+		}
 	}
 
 	//Кнопка далее
@@ -555,6 +559,9 @@
 				border-radius: 5px;
 				position: relative;
 			}
+			&:hover {
+				position: relative;
+			}
 		}
 
 		&__btn:not(:last-child) {
@@ -589,6 +596,7 @@
 	//Обсудить стоимость создания сайта
 	&__discuss {
 		max-width: rem(407);
+		width: 100%;
 		padding-top: rem(14);
 		padding-bottom: rem(15);
 		margin-left: auto;

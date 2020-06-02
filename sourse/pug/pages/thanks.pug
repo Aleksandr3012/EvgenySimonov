@@ -3,6 +3,7 @@ block php
 	!= '<?php ' 
 	| session_start();
 	| $flash = $_SESSION['success'];
+	| $time = $_SESSION['successTime'];
 	| ?>
 
 include ../blocks/sContent/_sContent.pug

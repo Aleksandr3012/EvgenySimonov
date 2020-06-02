@@ -1,5 +1,6 @@
 <?php session_start();
 $flash = $_SESSION['success'];
+$time = $_SESSION['successTime'];
 ?><!DOCTYPE html>
 <html lang="ru">
 	<head>
@@ -30,7 +31,7 @@ $flash = $_SESSION['success'];
 			<!-- start header-->
 			<header class="header section" id="header">
 				<!-- start topLine-->
-				<section class="topLine section" id="topLine">
+				<div class="topLine" id="topLine">
 					<div class="container">
 						<div class="row justify-content-between">
 							<div class="col d-flex pt-2"><a class="topLine__logo" href="/">
@@ -64,7 +65,7 @@ $flash = $_SESSION['success'];
 							</div>
 						</div>
 					</div>
-				</section>
+				</div>
 				<!-- end topLine-->
 			</header>
 			<!-- end header-->
