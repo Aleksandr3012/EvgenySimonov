@@ -8,7 +8,7 @@ mixin sQwiz()
 	+b.sQwiz#sQwiz&attributes(attributes)
 		.container
 			+e.FORM.wrap
-				mixin item(pr,t,inp,not)
+				mixin item(pr,t,inp,wd,not)
 					+e.item
 						if pr
 							+e.top
@@ -20,9 +20,9 @@ mixin sQwiz()
 								.col-lg
 									+e.main
 										+e.progress
-											+e.progress-bar(style=`width:${pr/4*100}%`)
+											+e.progress-bar(style=`width:${wd}%`)
 										+e.head= pr
-											|из 4
+											|&nbsp;из 4
 										+e.title.h2= t
 										.custom-radio&attributes(attributes)
 											block
@@ -70,12 +70,12 @@ mixin sQwiz()
 								.h2 Как с&nbsp;вами связаться, чтобы уточнить детали создания сайта и&nbsp;обсудить стоимость?
 								+form-tabs-qwiz()
 								+input('+7 (912) 345-67-89','tel')(value="+7")
-								+e.discuss.btn.btn-primary(href="#") Обсудить стоимость создания сайта
+								+e.discuss.btn.btn-primary(type="button") Обсудить стоимость создания сайта
 								+polite()
 
 
 
-				+item('1','В какой сфере Ваш бизнес?', 'Напишите, чем занимаетесь')
+				+item('1','В какой сфере Ваш бизнес?', 'Напишите, чем занимаетесь','50')
 					+radio('1','B2B','Сфера услуг (B2B)')
 					+radio('1','B2C','Сфера услуг (B2C)')
 					+radio('1','retail','Розничная торговля')
@@ -85,16 +85,16 @@ mixin sQwiz()
 					+radio('1','training','Обучение')
 					+radio('1','other1','Другое')
 					
-				+item('2','У вас уже есть сайт?','Скопируйте сюда ссылку на ваш сайт','not')(class="twoItem")
+				+item('2','У вас уже есть сайт?','Скопируйте сюда ссылку на ваш сайт','60','not')(class="twoItem")
 					+radio('2','yes','Да')
 					+radio('2','no','Нет')
-				+item('3','Что вы хотите получить от сайта?','Напишите, какую вашу задачу должен решить сайт','not')(class="twoItem")
+				+item('3','Что вы хотите получить от сайта?','Напишите, какую вашу задачу должен решить сайт','75.1','not')(class="twoItem")
 					+radio('3','more-customers','Больше клиентов и продаж')
 					+radio('3','price','Увеличение среднего чека')
 					+radio('3','presentation','Нужен сайт, как презентация компании')
 					+radio('3','online-business','Хочу перевести бизнес в онлайн')
 					+radio('3','other3','Другое')
-				+item('4','Вы планируете запускать рекламу?','','not')(class="twoItem")
+				+item('4','Вы планируете запускать рекламу?','','87.6','not')(class="twoItem")
 					+radio('4','yes4','Да')
 					+radio('4','no4','Нет')
 				+item('')
