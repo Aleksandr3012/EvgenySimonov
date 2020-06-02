@@ -1,6 +1,8 @@
 // start .headerBlock
 .headerBlock {
 	padding-top: rem(7);
+	// position: relative;
+	// overflow: hidden;
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(78);
 	}
@@ -41,7 +43,14 @@
 		}
 		margin-left: rem(8);
 	}
+	picture{
+		// margin-bottom: -1px;
+		position: relative;
+			@include media-breakpoint-up(xl){
 
+				bottom: -1px;
+			}
+	}
 	&__name {
 		color: #fff;
 		margin-bottom: rem(27);
@@ -214,10 +223,12 @@
 		color: #fff;
 		text-decoration: none !important;
 		position: fixed;
+		// position: absolute;
+
 		transform: translateY(120%);
 		bottom: 0;
-		z-index: 50;
 		width: 100%;
+		z-index: 50; 
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -234,6 +245,13 @@
 		.icon {
 			font-size: rem(17);
 			margin-right: rem(12);
+		}
+	}
+
+ @media (min-width: 1200px) and (max-width: 1440px) {
+	 padding-top: 0;
+		h1{
+			font-size: 2.7rem;
 		}
 	}
 	@include media-breakpoint-up(xl) {
@@ -288,12 +306,7 @@
 	}
 }
 
-.headerBlock {
-	&.tel-fixed {
-		margin-bottom: 39px;
-	}
-}
-
+ 
 .tel-fixed{
 	transform: translateY(0%);
 }

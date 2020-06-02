@@ -31,56 +31,7 @@ const JSCCommon = {
 			$.fancybox.close();
 		})
 	},
-	// /magnificPopupCall
-	toggleMenu() {
-		let _this = this;
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.addEventListener('click', function () {
-
-				_this.btnToggleMenuMobile.forEach(function (element) {
-					element.classList.toggle("on");
-				});
-				_this.menuMobile.classList.toggle("active");
-				_this.body.classList.toggle("fixed");
-
-				return false;
-			});
-		});
-	},
-
-	closeMenu() {
-		let _this = this;
-		_this.btnToggleMenuMobile.forEach(function (element) {
-			element.classList.remove("on");
-
-		});
-		_this.menuMobile.classList.remove("active");
-		_this.body.classList.remove("fixed");
-
-	},
-
-	mobileMenu() {
-	// 	// закрыть/открыть мобильное меню
-		let _this = this;
-
-		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				console.log(element);
-				_this.closeMenu();
-
-			});
-		})
-		document.addEventListener('mouseup', function (event) {
-			let container = event.target.closest(".menu-mobile--js.active"); // (1)
-			if (!container) {
-				_this.closeMenu();
-
-			}
-		});
-	},
-	// /mobileMenu
-
+ 
 	// табы  . 
 	tabscostume(tab) {
 		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
@@ -161,7 +112,7 @@ function eventHandler() {
 		
 		// });
 
-		const telOffset = $('.header').height();
+		const telOffset = $(window).height() * .6;
 		$(window).scroll(function(){
 			const scrolled = $(this).scrollTop();
 			if (scrolled > telOffset){
@@ -172,10 +123,7 @@ function eventHandler() {
 				$('.headerBlock__tel').removeClass('tel-fixed');
 			}
 		});
-		// конец добавил
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
-		}
+ 
 	}
 
 	$(window).resize(function () {
