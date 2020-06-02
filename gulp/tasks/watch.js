@@ -10,7 +10,8 @@ module.exports = function () {
 		$.gulp.watch([$.sourse + '/pug/**/*.js'], $.gulp.series('scripts:app'));
 		// $.gulp.watch($.sourse + '/js/scripts.min.js', $.gulp.series('scripts:lib')); 
 		$.gulp.watch($.sourse + '/img', $.gulp.series('img-responsive'));
-		$.gulp.watch('./node_modules/**/*', $.gulp.series('copylibs'));
+		// $.gulp.watch('./node_modules/**/*', $.gulp.series('copylibs'));
+		$.gulp.watch('public/thanks.html', $.gulp.series('thanks'));
 	});
 
 }

@@ -33,13 +33,37 @@ $html = '
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Name:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['name'] . '</b></td></tr>';
     }
     
-    if (!empty($_POST['tel'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Телефон:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['tel'] . '</b></td></tr>';
-    }
-    
-    if (!empty($_POST['email'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Телефон:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['email'] . '</b></td></tr>';
-    }
+    	if (!empty($_POST['tel'])) {
+                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Телефон:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['tel'] . '</b></td></tr>';
+        }
+        
+        if (!empty($_POST['email'])) {
+                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Email:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['email'] . '</b></td></tr>';
+        }
+        
+        if (!empty($_POST['mail'])) {
+                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Email:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['mail'] . '</b></td></tr>';
+        }
+        
+        if (!empty($_POST['whatsapp'])) {
+                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Whatsapp:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['whatsapp'] . '</b></td></tr>';
+        }
+        
+        if (!empty($_POST['viber'])) {
+                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Viber:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['viber'] . '</b></td></tr>';
+        }
+        
+        if (!empty($_POST['telegram'])) {
+                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> telegram:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['telegram'] . '</b></td></tr>';
+        }
+
+        if (!empty($_POST['time'])) {
+                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Время для звонка:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['time'] . '</b></td></tr>';
+        }
+
+        if (!empty($_POST['datetime'])) {
+                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Время для звонка:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['datetime'] . '</b></td></tr>';
+        }
 
     if (!empty($_POST['text'])) {
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Вопрос:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['text'] . '</b></td>';
@@ -49,9 +73,39 @@ $html = '
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Отзыв:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['comment'] . '</b></td>';
     }
 
-    // if (!empty($_POST['tech'])) {
-    //     $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Техника:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . implode(", ",$_POST['tech']) . '</b></td></tr>';
-    // }
+    // В какой сфере Ваш бизнес?
+    if (!empty($_POST['step-1-text'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> В какой сфере Ваш бизнес?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-1-text'] . '</b></td>';
+    }
+
+    else {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> В какой сфере Ваш бизнес?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-1'] . '</b></td></tr>';
+    }
+    
+    // У вас уже есть сайт?
+    if (!empty($_POST['step-2-text'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> У вас уже есть сайт? (cсылка на сайт):</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-2-text'] . '</b></td>';
+    }
+
+    else {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> У вас уже есть сайт?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-2'] . '</b></td></tr>';
+    }
+    
+    
+    // Что вы хотите получить от сайта?
+    if (!empty($_POST['step-3-text'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Что вы хотите получить от сайта?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-3-text'] . '</b></td>';
+    }
+
+    else {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Что вы хотите получить от сайта?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-3'] . '</b></td></tr>';
+    }
+    
+    // Вы планируете запускать рекламу?
+     if (!empty($_POST['step-4'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Вы планируете запускать рекламу?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-4'] . '</b></td></tr>';
+    }
+    
 
     if (!empty($_POST['utm_source'])) {
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> utm_source:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['utm_source'] . '</b></td>';
@@ -89,7 +143,10 @@ if (empty($_POST['example-input-field'])) {
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        echo "Message sent!";
+       
+        session_start();
+        $_SESSION['success'] = isset($_POST['name']) ? $_POST['name'] : null;
+        header( 'Location: /thanks.php', true, 301 );
     }
     if (isset($uploadfile))unlink($uploadfile);
     if (isset($uploadfile2))unlink($uploadfile2);

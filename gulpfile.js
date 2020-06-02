@@ -45,5 +45,5 @@ $.gulp.task('default', $.gulp.series(
 		// 'scripts:common',
 		'scripts:app',
 	),
-	$.gulp.parallel('sass', 'watch', 'serv')
+	$.gulp.parallel('sass', 'watch', 'serv', 'thanks')
 ));

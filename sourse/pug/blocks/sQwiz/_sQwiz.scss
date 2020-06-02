@@ -1,10 +1,13 @@
 // start .sQwiz
 .sQwiz {
 	padding-top: rem(15);
+	&__toggle-block{
+		display: none;
+	}
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(51);
 	}
-	padding-bottom: rem(50);
+	padding-bottom: rem(30);
 
 	@include media-breakpoint-up(xxl) {
 		.container {
@@ -65,7 +68,21 @@
 	}
 
 	//Блок квиза
+	&__body{
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+	}
+	.swiper-container{
+		margin: -15px;
+	}
+	.swiper-slide{
+		padding: 15px;
+	}
 	&__main {
+		.row{
+			@include roww(10);
+		}
 		margin-bottom: rem(20);
 		height: calc(100% - 20px);
 		@include media-breakpoint-up(lg) {
@@ -131,39 +148,40 @@
 
 	//Кнопки выбора
 	.custom-radio {
-		display: flex;
-		flex-wrap: wrap;
-		margin-left: rem(-10);
-		margin-right: rem(-10);
+		// display: flex;
+		// flex-wrap: wrap;
+		// margin-left: rem(-10);
+		// margin-right: rem(-10);
 		input {
-			display: none;
+			// display: none;
+			@extend .invisible;
 		}
 
 		label {
 			flex: 0 0 100%;
-			max-width: 92%;
+			max-width: 100%;
 			margin-left: auto;
 			margin-right: auto;
-			@include media-breakpoint-up(md) {
-				margin-left: rem(10);
-				margin-right: rem(10);
-			}
-			@include media-breakpoint-only(md) {
-				flex: 0 0 46.5%;
-				max-width: 46.5%;
-			}
-			@include media-breakpoint-only(lg) {
-				flex: 0 0 45.7%;
-				max-width: 45.7%;
-			}
-			@include media-breakpoint-only(xl) {
-				flex: 0 0 30%;
-				max-width: 30%;
-			}
-			@include media-breakpoint-only(xxl) {
-				flex: 0 0 30.9%;
-				max-width: 30.9%;
-			}
+			// @include media-breakpoint-up(md) {
+			// 	margin-left: rem(10);
+			// 	margin-right: rem(10);
+			// }
+			// @include media-breakpoint-only(md) {
+			// 	flex: 0 0 46.5%;
+			// 	max-width: 46.5%;
+			// }
+			// @include media-breakpoint-only(lg) {
+			// 	flex: 0 0 45.7%;
+			// 	max-width: 45.7%;
+			// }
+			// @include media-breakpoint-only(xl) {
+			// 	flex: 0 0 30%;
+			// 	max-width: 30%;
+			// }
+			// @include media-breakpoint-only(xxl) {
+			// 	flex: 0 0 30.9%;
+			// 	max-width: 30.9%;
+			// }
 			color: $body-color !important;
 
 			border-color: #e5e5e5;
@@ -190,14 +208,14 @@
 
 	//Два айтема на строке
 	.twoItem label {
-		@include media-breakpoint-up(xl) {
-			flex: 0 0 46.7%;
-			max-width: 46.7%;
-		}
-		@include media-breakpoint-up(xxl) {
-			flex: 0 0 47.58%;
-			max-width: 47.58%;
-		}
+		// @include media-breakpoint-up(xl) {
+		// 	flex: 0 0 46.7%;
+		// 	max-width: 46.7%;
+		// }
+		// @include media-breakpoint-up(xxl) {
+		// 	flex: 0 0 47.58%;
+		// 	max-width: 47.58%;
+		// }
 	}
 
 	//Блок с кнопками вперед и назад
@@ -238,11 +256,11 @@
 		background-color: transparent;
 		border: none;
 		color: $dark;
-		margin-top: rem(-14);
+		// margin-top: rem(-14);
 		@include media-breakpoint-up(lg) {
 			margin-left: rem(-8);
 		}
-
+		margin-bottom: rem(15);
 		.icon {
 			font-size: rem(12);
 			margin-right: rem(9);
@@ -253,7 +271,8 @@
 	&__next {
 		@include media-breakpoint-up(md) {
 			margin-left: auto;
-			width: rem(258);
+			// width: rem(256);
+			width: 100%;
 			padding: rem(14) rem(5) rem(15);
 			margin-right: rem(-2);
 			font-size: rem(18);
@@ -636,3 +655,8 @@
 	@include media-breakpoint-down(xs) {
 	}
 } // end.sQwiz
+
+
+.disabled{
+	pointer-events: none;
+}

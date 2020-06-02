@@ -1,5 +1,5 @@
 mixin radio(p,n,t)
-	input(type="radio" name=`Вопрос:${p}` id=`${n}`)
+	input.qwiz-radio-btn(type="radio" name=`step-${p}` id=`${n}`   value= t)&attributes(attributes)
 	label.btn(for=`${n}`)= t
 
 
@@ -8,96 +8,131 @@ mixin sQwiz()
 	+b.sQwiz#sQwiz&attributes(attributes)
 		.container
 			+e.FORM.wrap
-				mixin item(pr,t,inp,st,not)
-					+e.item
-						if pr
-							+e.top
-								+e.to-main(href="/")
-									+icon('arrowL')
-									span На главную
-								+e.descr Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
+				input(type='hidden',  name='example-input-field')
+				input(type='hidden', class="order", name='order', value=`Ответы на квиз`) 
+				input(type="hidden" class='utm_source' name='utm_source')
+				input(type="hidden" class='utm_term' name='utm_term')
+				input(type="hidden" class='utm_medium' name='utm_medium')
+				input(type="hidden" class='utm_campaign' name='utm_campaign')
+				+e.top
+					+e.to-main(href="/")
+						+icon('arrowL')
+						span На главную
+					+e.descr Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
+				.swiper-container.jsTestSlider
+					.swiper-wrapper
+						mixin item(pr,progress,t,inp, not, name)
+							.swiper-slide
+								+e.item
+									if pr
+										.row
+											.col-lg
+												+e.main
+													+e.progress
+														+e.progress-bar(style=`width:${progress/4*100}%`)
+													+e.head= pr
+														|из 4
+													+e.body
+														+e.title.h2= t
+														.custom-radio&attributes(attributes)
+															block
+														//- 	each item in items
+														//- 		input(type="radio" name=`Вопрос:${pr}` id=`${item}`)
+														//- 		label.btn(for=`${item}`)= item
+														if inp
+															+e.toggle-block
+																+input(`${inp}`,'text','', `step-${pr}-text`)
+													+e.foot.row
+														
+														.col-xl-4.col-sm-6
+															+e.next.jsNextQuest.btn.btn-primary.disabled.h6(type="button") Далее
+																+icon('arrowNext')
+														.col.order-sm-first
+															if not
+																+e.btn-back.jsSlideBack.h6(type="button")
+																	+icon('arrowNext')
+																	| Назад
+											+e.sitebar.col
+												+e.sitebarWrap
+													+e.supervisor 
+														+pic('ev')
+														div
+															.h6 Евгений Симонов
+															p Руководитель агентства
+													+e.about.text-center
+														if pr == 1
+															p У&nbsp;нас есть опыт работы с&nbsp;более чем 20 сферами бизнеса. Мы&nbsp;делали сайты для&nbsp;автосервиса, клиники стоматологии, компаний по производству шлакоблоков и&nbsp;малых архитектурных форм.
+															p Анализ продукта, целевой аудитории, конкурентов&nbsp;&mdash; вот основа для работы с&nbsp;любой сферой.
+														if pr == 2
+															p Бывает, что сайт есть, но&nbsp;он&nbsp;приносит мало заявок и&nbsp;продаж, или не&nbsp;приносит их&nbsp;совсем. Причины бывают разные&nbsp;&mdash; от&nbsp;непродуманности смыслов для аудитории до&nbsp;ненужности продукта/услуги. 
+															p На&nbsp;консультации я&nbsp;могу сразу провести мини-аудит сайта и&nbsp;показать ошибки.
+														if pr == 3
+															span От&nbsp;того, что вы&nbsp;хотите получить от&nbsp;сайта, зависит его тип, например:
+															ul
+																li Одностраничники, где клиенту предлагается какой-то один вид товара или услуги;
+																li Интернет-магазин;
+																li Сайт-визитка, чтобы клиенты могли больше узнать о&nbsp;компании.
+														if pr == 4
+															p Создать сайт, который будет красивым, функциональным, с&nbsp;понятным и&nbsp;удобным интерфейсом это половина дела. Нужно еще привлечь на&nbsp;него как можно больше именно тех пользователей, которые являются целевой аудиторией для сайта. Эта задача решается с&nbsp;помощью рекламы.
+													+e.consultation.btn.link-modal(href="#modal-call") Получить консультацию
+													+e.telWrap
+														+e.tel(href="tel:+7(963)097-09-90") +7 (963) 097-09-90
+													+messengers
+									else
+										+e.final.text-center
+											.h6.text-primary Спасибо за ответы!
+											.h2 Как с&nbsp;вами связаться, чтобы уточнить детали создания сайта и&nbsp;обсудить стоимость?
+											+form-tabs-qwiz()
+											//- +input('+7 (912) 345-67-89','tel')(value="+7")
+											+e.discuss.btn.btn-primary(type="submit") Обсудить стоимость создания сайта
+											+polite()
+
+
+
+						+item('1','1','В какой сфере Ваш бизнес?', 'Напишите, чем занимаетесь')
 							.row
-								.col-lg
-									+e.main
-										+e.progress
-											+e.progress-bar(style=`width:${pr/4*100}%`)
-										+e.head= pr
-											|из 4
-										+e.title.h2= t
-										.custom-radio&attributes(attributes)
-											block
-										//- 	each item in items
-										//- 		input(type="radio" name=`Вопрос:${pr}` id=`${item}`)
-										//- 		label.btn(for=`${item}`)= item
-										if inp
-											+input(`${inp}`,'text')
-										+e.foot
-											if not
-												+e.btn-back.h6(type="button")
-													+icon('arrowNext')
-													| Назад
-											+e.next.btn.btn-primary.h6(type="button") Далее
-												+icon('arrowNext')
-								+e.sitebar.col
-									+e.sitebarWrap
-										+e.supervisor 
-											+pic('ev')
-											div
-												.h6 Евгений Симонов
-												p Руководитель агентства
-										+e.about.text-center
-											if pr == 1
-												p У&nbsp;нас есть опыт работы с&nbsp;более чем 20 сферами бизнеса. Мы&nbsp;делали сайты для&nbsp;автосервиса, клиники стоматологии, компаний по производству шлакоблоков и&nbsp;малых архитектурных форм.
-												p Анализ продукта, целевой аудитории, конкурентов&nbsp;&mdash; вот основа для работы с&nbsp;любой сферой.
-											if pr == 2
-												p Бывает, что сайт есть, но&nbsp;он&nbsp;приносит мало заявок и&nbsp;продаж, или не&nbsp;приносит их&nbsp;совсем. Причины бывают разные&nbsp;&mdash; от&nbsp;непродуманности смыслов для аудитории до&nbsp;ненужности продукта/услуги. 
-												p На&nbsp;консультации я&nbsp;могу сразу провести мини-аудит сайта и&nbsp;показать ошибки.
-											if pr == 3
-												span От&nbsp;того, что вы&nbsp;хотите получить от&nbsp;сайта, зависит его тип, например:
-												ul
-													li Одностраничники, где клиенту предлагается какой-то один вид товара или услуги;
-													li Интернет-магазин;
-													li Сайт-визитка, чтобы клиенты могли больше узнать о&nbsp;компании.
-											if pr == 4
-												p Создать сайт, который будет красивым, функциональным, с&nbsp;понятным и&nbsp;удобным интерфейсом это половина дела. Нужно еще привлечь на&nbsp;него как можно больше именно тех пользователей, которые являются целевой аудиторией для сайта. Эта задача решается с&nbsp;помощью рекламы.
-										+e.consultation.btn.link-modal(href="#modal-call") Получить консультацию
-										+e.telWrap
-											+e.tel(href="tel:+7(963)097-09-90") +7 (963) 097-09-90
-										+messengers
-						else
-							+e.final.text-center
-								.h6.text-primary Спасибо за ответы!
-								.h2 Как с&nbsp;вами связаться, чтобы уточнить детали создания сайта и&nbsp;обсудить стоимость?
-								+form-tabs-qwiz()
-								+input('+7 (912) 345-67-89','tel')(value="+7")
-								+e.discuss.btn.btn-primary(href="#") Обсудить стоимость создания сайта
-								+polite()
-
-
-
-				+item('1','В какой сфере Ваш бизнес?', 'Напишите, чем занимаетесь')
-					+radio('1','B2B','Сфера услуг (B2B)')
-					+radio('1','B2C','Сфера услуг (B2C)')
-					+radio('1','retail','Розничная торговля')
-					+radio('1','wholesale','Оптовая торговля')
-					+radio('1','production','Производство')
-					+radio('1','industry','Промышленность')
-					+radio('1','training','Обучение')
-					+radio('1','other1','Другое')
-					
-				+item('2','У вас уже есть сайт?','Скопируйте сюда ссылку на ваш сайт','not')(class="twoItem")
-					+radio('2','yes','Да')
-					+radio('2','no','Нет')
-				+item('3','Что вы хотите получить от сайта?','Напишите, какую вашу задачу должен решить сайт','not')(class="twoItem")
-					+radio('3','more-customers','Больше клиентов и продаж')
-					+radio('3','price','Увеличение среднего чека')
-					+radio('3','presentation','Нужен сайт, как презентация компании')
-					+radio('3','online-business','Хочу перевести бизнес в онлайн')
-					+radio('3','other3','Другое')
-				+item('4','Вы планируете запускать рекламу?','','not')
-					+radio('4','yes4','Да')
-					+radio('4','no4','Нет')
-				+item('')
+								.col-xl-4.col-sm-6
+									+radio('1','B2B','Сфера услуг (B2B)')
+								.col-xl-4.col-sm-6
+									+radio('1','B2C','Сфера услуг (B2C)')
+								.col-xl-4.col-sm-6
+									+radio('1','retail','Розничная торговля')
+								.col-xl-4.col-sm-6
+									+radio('1','wholesale','Оптовая торговля')
+								.col-xl-4.col-sm-6
+									+radio('1','production','Производство')
+								.col-xl-4.col-sm-6
+									+radio('1','industry','Промышленность')
+								.col-xl-4.col-sm-6
+									+radio('1','training','Обучение') 
+								.col-xl-4.col-sm-6
+									+radio('1','other1','Другое')(class='toggle-input-js')
+							
+						+item('2','2','У вас уже есть сайт?','Скопируйте сюда ссылку на ваш сайт','not')(class="twoItem")
+							.row
+								.col-md-6
+									+radio('2','yes','Да')(class='toggle-input-js')
+								.col-md-6
+									+radio('2','no','Нет')
+						+item('3','2.8','Что вы хотите получить от сайта?','Напишите, какую вашу задачу должен решить сайт','not')(class="twoItem")
+							.row
+								.col-md-6
+									+radio('3','more-customers','Больше клиентов и продаж')
+								.col-md-6
+									+radio('3','price','Увеличение среднего чека')
+								.col-md-6
+									+radio('3','presentation','Нужен сайт, как презентация компании')
+								.col-md-6
+									+radio('3','online-business','Хочу перевести бизнес в онлайн')
+								.col-md-6
+									+radio('3','other3','Другое')(class='toggle-input-js')
+						+item('4','3.5','Вы планируете запускать рекламу?','','not')
+							.row
+								.col-md-6
+									+radio('4','yes4','Да')
+								.col-md-6
+									+radio('4','no4','Нет')
+						+item('')
 
 
 

@@ -19,6 +19,7 @@
 		<meta property="og:image:height" content="504">
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
+		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
@@ -28,366 +29,463 @@
 			<div class="sQwiz" id="sQwiz">
 				<div class="container">
 					<form class="sQwiz__wrap">
-						<div class="sQwiz__item">
-							<div class="sQwiz__top"><a class="sQwiz__to-main" href="/">
-								<svg class="icon icon-arrowL ">
-									<use xlink:href="img/svg/sprite.svg#arrowL"></use>
-								</svg><span>На главную</span></a>
-								<div class="sQwiz__descr">Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg">
-									<div class="sQwiz__main">
-										<div class="sQwiz__progress">
-											<div class="sQwiz__progress-bar" style="width:25%">
-											</div>
-										</div>
-										<div class="sQwiz__head">1из 4
-										</div>
-										<div class="sQwiz__title h2">В какой сфере Ваш бизнес?
-										</div>
-										<div class="custom-radio">
-											<input type="radio" name="Вопрос:1" id="B2B"/>
-											<label class="btn" for="B2B">Сфера услуг (B2B)</label>
-											<input type="radio" name="Вопрос:1" id="B2C"/>
-											<label class="btn" for="B2C">Сфера услуг (B2C)</label>
-											<input type="radio" name="Вопрос:1" id="retail"/>
-											<label class="btn" for="retail">Розничная торговля</label>
-											<input type="radio" name="Вопрос:1" id="wholesale"/>
-											<label class="btn" for="wholesale">Оптовая торговля</label>
-											<input type="radio" name="Вопрос:1" id="production"/>
-											<label class="btn" for="production">Производство</label>
-											<input type="radio" name="Вопрос:1" id="industry"/>
-											<label class="btn" for="industry">Промышленность</label>
-											<input type="radio" name="Вопрос:1" id="training"/>
-											<label class="btn" for="training">Обучение</label>
-											<input type="radio" name="Вопрос:1" id="other1"/>
-											<label class="btn" for="other1">Другое</label>
-										</div>
-										<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Напишите, чем занимаетесь" name="text"/>
-										</div>
-										<!-- +e.input-wrap-->
-										<div class="sQwiz__foot">
-											<button class="sQwiz__next btn btn-primary h6" type="button">Далее
-												<svg class="icon icon-arrowNext ">
-													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
-												</svg>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="sQwiz__sitebar col">
-									<div class="sQwiz__sitebarWrap">
-										<div class="sQwiz__supervisor"> 
-											<!-- picture-->
-											<picture class="lazy"> 
-												<source srcset="#" data-srcset="img/@2x/webp/ev.webp" type="image/webp" media="(min-width:576px)"/>
-												<source srcset="#" data-srcset="img/@1x/webp/ev.webp" type="image/webp"/>
-												<source srcset="#" data-srcset="img/@2x/ev.jpg" type="image/jpg" media="(min-width:576px)"/>
-												<source srcset="#" data-srcset="img/@1x/ev.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/ev.jpg" alt=""/>
-											</picture>
-											<!-- /picture-->
-											<div>
-												<div class="h6">Евгений Симонов</div>
-												<p>Руководитель агентства</p>
-											</div>
-										</div>
-										<div class="sQwiz__about text-center">
-											<p>У&nbsp;нас есть опыт работы с&nbsp;более чем 20 сферами бизнеса. Мы&nbsp;делали сайты для&nbsp;автосервиса, клиники стоматологии, компаний по производству шлакоблоков и&nbsp;малых архитектурных форм.</p>
-											<p>Анализ продукта, целевой аудитории, конкурентов&nbsp;&mdash; вот основа для работы с&nbsp;любой сферой.</p>
-										</div><a class="sQwiz__consultation btn link-modal" href="#modal-call">Получить консультацию</a>
-										<div class="sQwiz__telWrap"><a class="sQwiz__tel" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a>
-										</div>
-										<div class="messengers"><a class="messengers__item" href="https://wa.me/79630970990" target="_blank"><span class="messengers__whatsapp">
-											<svg class="icon icon-whatsapp ">
-												<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
-											</svg></span></a><a class="messengers__item viber-link" href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank"><span class="messengers__viber">
-											<svg class="icon icon-viber ">
-												<use xlink:href="img/svg/sprite.svg#viber"></use>
-											</svg></span></a><a class="messengers__item" href="https://t.me/evgeny_simonov" target="_blank"><span class="messengers__telegram">
-											<svg class="icon icon-telegram ">
-												<use xlink:href="img/svg/sprite.svg#telegram"></use>
-											</svg></span></a>
-										</div>
-									</div>
-								</div>
+						<input type="hidden" name="example-input-field"/>
+						<input class="order" type="hidden" name="order" value="Ответы на квиз"/>
+						<input class="utm_source" type="hidden" name="utm_source"/>
+						<input class="utm_term" type="hidden" name="utm_term"/>
+						<input class="utm_medium" type="hidden" name="utm_medium"/>
+						<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+						<div class="sQwiz__top"><a class="sQwiz__to-main" href="/">
+							<svg class="icon icon-arrowL ">
+								<use xlink:href="img/svg/sprite.svg#arrowL"></use>
+							</svg><span>На главную</span></a>
+							<div class="sQwiz__descr">Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
 							</div>
 						</div>
-						<div class="sQwiz__item">
-							<div class="sQwiz__top"><a class="sQwiz__to-main" href="/">
-								<svg class="icon icon-arrowL ">
-									<use xlink:href="img/svg/sprite.svg#arrowL"></use>
-								</svg><span>На главную</span></a>
-								<div class="sQwiz__descr">Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg">
-									<div class="sQwiz__main">
-										<div class="sQwiz__progress">
-											<div class="sQwiz__progress-bar" style="width:50%">
+						<div class="swiper-container jsTestSlider">
+							<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="sQwiz__item">
+												<div class="row">
+													<div class="col-lg">
+														<div class="sQwiz__main">
+															<div class="sQwiz__progress">
+																<div class="sQwiz__progress-bar" style="width:25%">
+																</div>
+															</div>
+															<div class="sQwiz__head">1из 4
+															</div>
+															<div class="sQwiz__body">
+																<div class="sQwiz__title h2">В какой сфере Ваш бизнес?
+																</div>
+																<div class="custom-radio">
+																	<div class="row">
+																		<div class="col-xl-4 col-sm-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-1" id="B2B" value="Сфера услуг (B2B)"/>
+																			<label class="btn" for="B2B">Сфера услуг (B2B)</label>
+																		</div>
+																		<div class="col-xl-4 col-sm-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-1" id="B2C" value="Сфера услуг (B2C)"/>
+																			<label class="btn" for="B2C">Сфера услуг (B2C)</label>
+																		</div>
+																		<div class="col-xl-4 col-sm-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-1" id="retail" value="Розничная торговля"/>
+																			<label class="btn" for="retail">Розничная торговля</label>
+																		</div>
+																		<div class="col-xl-4 col-sm-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-1" id="wholesale" value="Оптовая торговля"/>
+																			<label class="btn" for="wholesale">Оптовая торговля</label>
+																		</div>
+																		<div class="col-xl-4 col-sm-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-1" id="production" value="Производство"/>
+																			<label class="btn" for="production">Производство</label>
+																		</div>
+																		<div class="col-xl-4 col-sm-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-1" id="industry" value="Промышленность"/>
+																			<label class="btn" for="industry">Промышленность</label>
+																		</div>
+																		<div class="col-xl-4 col-sm-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-1" id="training" value="Обучение"/>
+																			<label class="btn" for="training">Обучение</label>
+																		</div>
+																		<div class="col-xl-4 col-sm-6">
+																			<input class="qwiz-radio-btn toggle-input-js" type="radio" name="step-1" id="other1" value="Другое"/>
+																			<label class="btn" for="other1">Другое</label>
+																		</div>
+																	</div>
+																</div>
+																<div class="sQwiz__toggle-block">
+																	<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Напишите, чем занимаетесь" name="step-1-text"/>
+																	</div>
+																	<!-- +e.input-wrap-->
+																</div>
+															</div>
+															<div class="sQwiz__foot row">
+																<div class="col-xl-4 col-sm-6">
+																	<button class="sQwiz__next jsNextQuest btn btn-primary disabled h6" type="button">Далее
+																		<svg class="icon icon-arrowNext ">
+																			<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+																		</svg>
+																	</button>
+																</div>
+																<div class="col order-sm-first">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="sQwiz__sitebar col">
+														<div class="sQwiz__sitebarWrap">
+															<div class="sQwiz__supervisor"> 
+																<!-- picture-->
+																<picture class="lazy"> 
+																	<source srcset="#" data-srcset="img/@2x/webp/ev.webp" type="image/webp" media="(min-width:576px)"/>
+																	<source srcset="#" data-srcset="img/@1x/webp/ev.webp" type="image/webp"/>
+																	<source srcset="#" data-srcset="img/@2x/ev.jpg" type="image/jpg" media="(min-width:576px)"/>
+																	<source srcset="#" data-srcset="img/@1x/ev.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/ev.jpg" alt=""/>
+																</picture>
+																<!-- /picture-->
+																<div>
+																	<div class="h6">Евгений Симонов</div>
+																	<p>Руководитель агентства</p>
+																</div>
+															</div>
+															<div class="sQwiz__about text-center">
+																<p>У&nbsp;нас есть опыт работы с&nbsp;более чем 20 сферами бизнеса. Мы&nbsp;делали сайты для&nbsp;автосервиса, клиники стоматологии, компаний по производству шлакоблоков и&nbsp;малых архитектурных форм.</p>
+																<p>Анализ продукта, целевой аудитории, конкурентов&nbsp;&mdash; вот основа для работы с&nbsp;любой сферой.</p>
+															</div><a class="sQwiz__consultation btn link-modal" href="#modal-call">Получить консультацию</a>
+															<div class="sQwiz__telWrap"><a class="sQwiz__tel" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a>
+															</div>
+															<div class="messengers"><a class="messengers__item" href="https://wa.me/79630970990" target="_blank"><span class="messengers__whatsapp">
+																<svg class="icon icon-whatsapp ">
+																	<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
+																</svg></span></a><a class="messengers__item viber-link" href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank"><span class="messengers__viber">
+																<svg class="icon icon-viber ">
+																	<use xlink:href="img/svg/sprite.svg#viber"></use>
+																</svg></span></a><a class="messengers__item" href="https://t.me/evgeny_simonov" target="_blank"><span class="messengers__telegram">
+																<svg class="icon icon-telegram ">
+																	<use xlink:href="img/svg/sprite.svg#telegram"></use>
+																</svg></span></a>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="sQwiz__head">2из 4
-										</div>
-										<div class="sQwiz__title h2">У вас уже есть сайт?
-										</div>
-										<div class="custom-radio twoItem">
-											<input type="radio" name="Вопрос:2" id="yes"/>
-											<label class="btn" for="yes">Да</label>
-											<input type="radio" name="Вопрос:2" id="no"/>
-											<label class="btn" for="no">Нет</label>
-										</div>
-										<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Скопируйте сюда ссылку на ваш сайт" name="text"/>
-										</div>
-										<!-- +e.input-wrap-->
-										<div class="sQwiz__foot">
-											<button class="sQwiz__next btn btn-primary h6" type="button">Далее
-												<svg class="icon icon-arrowNext ">
-													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
-												</svg>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="sQwiz__sitebar col">
-									<div class="sQwiz__sitebarWrap">
-										<div class="sQwiz__supervisor"> 
-											<!-- picture-->
-											<picture class="lazy"> 
-												<source srcset="#" data-srcset="img/@2x/webp/ev.webp" type="image/webp" media="(min-width:576px)"/>
-												<source srcset="#" data-srcset="img/@1x/webp/ev.webp" type="image/webp"/>
-												<source srcset="#" data-srcset="img/@2x/ev.jpg" type="image/jpg" media="(min-width:576px)"/>
-												<source srcset="#" data-srcset="img/@1x/ev.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/ev.jpg" alt=""/>
-											</picture>
-											<!-- /picture-->
-											<div>
-												<div class="h6">Евгений Симонов</div>
-												<p>Руководитель агентства</p>
+										<div class="swiper-slide">
+											<div class="sQwiz__item">
+												<div class="row">
+													<div class="col-lg">
+														<div class="sQwiz__main">
+															<div class="sQwiz__progress">
+																<div class="sQwiz__progress-bar" style="width:50%">
+																</div>
+															</div>
+															<div class="sQwiz__head">2из 4
+															</div>
+															<div class="sQwiz__body">
+																<div class="sQwiz__title h2">У вас уже есть сайт?
+																</div>
+																<div class="custom-radio twoItem">
+																	<div class="row">
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn toggle-input-js" type="radio" name="step-2" id="yes" value="Да"/>
+																			<label class="btn" for="yes">Да</label>
+																		</div>
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-2" id="no" value="Нет"/>
+																			<label class="btn" for="no">Нет</label>
+																		</div>
+																	</div>
+																</div>
+																<div class="sQwiz__toggle-block">
+																	<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Скопируйте сюда ссылку на ваш сайт" name="step-2-text"/>
+																	</div>
+																	<!-- +e.input-wrap-->
+																</div>
+															</div>
+															<div class="sQwiz__foot row">
+																<div class="col-xl-4 col-sm-6">
+																	<button class="sQwiz__next jsNextQuest btn btn-primary disabled h6" type="button">Далее
+																		<svg class="icon icon-arrowNext ">
+																			<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+																		</svg>
+																	</button>
+																</div>
+																<div class="col order-sm-first">
+																	<button class="sQwiz__btn-back jsSlideBack h6" type="button">
+																		<svg class="icon icon-arrowNext ">
+																			<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+																		</svg>Назад
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="sQwiz__sitebar col">
+														<div class="sQwiz__sitebarWrap">
+															<div class="sQwiz__supervisor"> 
+																<!-- picture-->
+																<picture class="lazy"> 
+																	<source srcset="#" data-srcset="img/@2x/webp/ev.webp" type="image/webp" media="(min-width:576px)"/>
+																	<source srcset="#" data-srcset="img/@1x/webp/ev.webp" type="image/webp"/>
+																	<source srcset="#" data-srcset="img/@2x/ev.jpg" type="image/jpg" media="(min-width:576px)"/>
+																	<source srcset="#" data-srcset="img/@1x/ev.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/ev.jpg" alt=""/>
+																</picture>
+																<!-- /picture-->
+																<div>
+																	<div class="h6">Евгений Симонов</div>
+																	<p>Руководитель агентства</p>
+																</div>
+															</div>
+															<div class="sQwiz__about text-center">
+																<p>Бывает, что сайт есть, но&nbsp;он&nbsp;приносит мало заявок и&nbsp;продаж, или не&nbsp;приносит их&nbsp;совсем. Причины бывают разные&nbsp;&mdash; от&nbsp;непродуманности смыслов для аудитории до&nbsp;ненужности продукта/услуги. </p>
+																<p>На&nbsp;консультации я&nbsp;могу сразу провести мини-аудит сайта и&nbsp;показать ошибки.</p>
+															</div><a class="sQwiz__consultation btn link-modal" href="#modal-call">Получить консультацию</a>
+															<div class="sQwiz__telWrap"><a class="sQwiz__tel" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a>
+															</div>
+															<div class="messengers"><a class="messengers__item" href="https://wa.me/79630970990" target="_blank"><span class="messengers__whatsapp">
+																<svg class="icon icon-whatsapp ">
+																	<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
+																</svg></span></a><a class="messengers__item viber-link" href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank"><span class="messengers__viber">
+																<svg class="icon icon-viber ">
+																	<use xlink:href="img/svg/sprite.svg#viber"></use>
+																</svg></span></a><a class="messengers__item" href="https://t.me/evgeny_simonov" target="_blank"><span class="messengers__telegram">
+																<svg class="icon icon-telegram ">
+																	<use xlink:href="img/svg/sprite.svg#telegram"></use>
+																</svg></span></a>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="sQwiz__about text-center">
-											<p>Бывает, что сайт есть, но&nbsp;он&nbsp;приносит мало заявок и&nbsp;продаж, или не&nbsp;приносит их&nbsp;совсем. Причины бывают разные&nbsp;&mdash; от&nbsp;непродуманности смыслов для аудитории до&nbsp;ненужности продукта/услуги. </p>
-											<p>На&nbsp;консультации я&nbsp;могу сразу провести мини-аудит сайта и&nbsp;показать ошибки.</p>
-										</div><a class="sQwiz__consultation btn link-modal" href="#modal-call">Получить консультацию</a>
-										<div class="sQwiz__telWrap"><a class="sQwiz__tel" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a>
-										</div>
-										<div class="messengers"><a class="messengers__item" href="https://wa.me/79630970990" target="_blank"><span class="messengers__whatsapp">
-											<svg class="icon icon-whatsapp ">
-												<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
-											</svg></span></a><a class="messengers__item viber-link" href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank"><span class="messengers__viber">
-											<svg class="icon icon-viber ">
-												<use xlink:href="img/svg/sprite.svg#viber"></use>
-											</svg></span></a><a class="messengers__item" href="https://t.me/evgeny_simonov" target="_blank"><span class="messengers__telegram">
-											<svg class="icon icon-telegram ">
-												<use xlink:href="img/svg/sprite.svg#telegram"></use>
-											</svg></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="sQwiz__item">
-							<div class="sQwiz__top"><a class="sQwiz__to-main" href="/">
-								<svg class="icon icon-arrowL ">
-									<use xlink:href="img/svg/sprite.svg#arrowL"></use>
-								</svg><span>На главную</span></a>
-								<div class="sQwiz__descr">Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg">
-									<div class="sQwiz__main">
-										<div class="sQwiz__progress">
-											<div class="sQwiz__progress-bar" style="width:75%">
+										<div class="swiper-slide">
+											<div class="sQwiz__item">
+												<div class="row">
+													<div class="col-lg">
+														<div class="sQwiz__main">
+															<div class="sQwiz__progress">
+																<div class="sQwiz__progress-bar" style="width:70%">
+																</div>
+															</div>
+															<div class="sQwiz__head">3из 4
+															</div>
+															<div class="sQwiz__body">
+																<div class="sQwiz__title h2">Что вы хотите получить от сайта?
+																</div>
+																<div class="custom-radio twoItem">
+																	<div class="row">
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-3" id="more-customers" value="Больше клиентов и продаж"/>
+																			<label class="btn" for="more-customers">Больше клиентов и продаж</label>
+																		</div>
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-3" id="price" value="Увеличение среднего чека"/>
+																			<label class="btn" for="price">Увеличение среднего чека</label>
+																		</div>
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-3" id="presentation" value="Нужен сайт, как презентация компании"/>
+																			<label class="btn" for="presentation">Нужен сайт, как презентация компании</label>
+																		</div>
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-3" id="online-business" value="Хочу перевести бизнес в онлайн"/>
+																			<label class="btn" for="online-business">Хочу перевести бизнес в онлайн</label>
+																		</div>
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn toggle-input-js" type="radio" name="step-3" id="other3" value="Другое"/>
+																			<label class="btn" for="other3">Другое</label>
+																		</div>
+																	</div>
+																</div>
+																<div class="sQwiz__toggle-block">
+																	<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Напишите, какую вашу задачу должен решить сайт" name="step-3-text"/>
+																	</div>
+																	<!-- +e.input-wrap-->
+																</div>
+															</div>
+															<div class="sQwiz__foot row">
+																<div class="col-xl-4 col-sm-6">
+																	<button class="sQwiz__next jsNextQuest btn btn-primary disabled h6" type="button">Далее
+																		<svg class="icon icon-arrowNext ">
+																			<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+																		</svg>
+																	</button>
+																</div>
+																<div class="col order-sm-first">
+																	<button class="sQwiz__btn-back jsSlideBack h6" type="button">
+																		<svg class="icon icon-arrowNext ">
+																			<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+																		</svg>Назад
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="sQwiz__sitebar col">
+														<div class="sQwiz__sitebarWrap">
+															<div class="sQwiz__supervisor"> 
+																<!-- picture-->
+																<picture class="lazy"> 
+																	<source srcset="#" data-srcset="img/@2x/webp/ev.webp" type="image/webp" media="(min-width:576px)"/>
+																	<source srcset="#" data-srcset="img/@1x/webp/ev.webp" type="image/webp"/>
+																	<source srcset="#" data-srcset="img/@2x/ev.jpg" type="image/jpg" media="(min-width:576px)"/>
+																	<source srcset="#" data-srcset="img/@1x/ev.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/ev.jpg" alt=""/>
+																</picture>
+																<!-- /picture-->
+																<div>
+																	<div class="h6">Евгений Симонов</div>
+																	<p>Руководитель агентства</p>
+																</div>
+															</div>
+															<div class="sQwiz__about text-center"><span>От&nbsp;того, что вы&nbsp;хотите получить от&nbsp;сайта, зависит его тип, например:</span>
+																<ul>
+																	<li>Одностраничники, где клиенту предлагается какой-то один вид товара или услуги;</li>
+																	<li>Интернет-магазин;</li>
+																	<li>Сайт-визитка, чтобы клиенты могли больше узнать о&nbsp;компании.</li>
+																</ul>
+															</div><a class="sQwiz__consultation btn link-modal" href="#modal-call">Получить консультацию</a>
+															<div class="sQwiz__telWrap"><a class="sQwiz__tel" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a>
+															</div>
+															<div class="messengers"><a class="messengers__item" href="https://wa.me/79630970990" target="_blank"><span class="messengers__whatsapp">
+																<svg class="icon icon-whatsapp ">
+																	<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
+																</svg></span></a><a class="messengers__item viber-link" href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank"><span class="messengers__viber">
+																<svg class="icon icon-viber ">
+																	<use xlink:href="img/svg/sprite.svg#viber"></use>
+																</svg></span></a><a class="messengers__item" href="https://t.me/evgeny_simonov" target="_blank"><span class="messengers__telegram">
+																<svg class="icon icon-telegram ">
+																	<use xlink:href="img/svg/sprite.svg#telegram"></use>
+																</svg></span></a>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="sQwiz__head">3из 4
-										</div>
-										<div class="sQwiz__title h2">Что вы хотите получить от сайта?
-										</div>
-										<div class="custom-radio twoItem">
-											<input type="radio" name="Вопрос:3" id="more-customers"/>
-											<label class="btn" for="more-customers">Больше клиентов и продаж</label>
-											<input type="radio" name="Вопрос:3" id="price"/>
-											<label class="btn" for="price">Увеличение среднего чека</label>
-											<input type="radio" name="Вопрос:3" id="presentation"/>
-											<label class="btn" for="presentation">Нужен сайт, как презентация компании</label>
-											<input type="radio" name="Вопрос:3" id="online-business"/>
-											<label class="btn" for="online-business">Хочу перевести бизнес в онлайн</label>
-											<input type="radio" name="Вопрос:3" id="other3"/>
-											<label class="btn" for="other3">Другое</label>
-										</div>
-										<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Напишите, какую вашу задачу должен решить сайт" name="text"/>
-										</div>
-										<!-- +e.input-wrap-->
-										<div class="sQwiz__foot">
-											<button class="sQwiz__next btn btn-primary h6" type="button">Далее
-												<svg class="icon icon-arrowNext ">
-													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
-												</svg>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="sQwiz__sitebar col">
-									<div class="sQwiz__sitebarWrap">
-										<div class="sQwiz__supervisor"> 
-											<!-- picture-->
-											<picture class="lazy"> 
-												<source srcset="#" data-srcset="img/@2x/webp/ev.webp" type="image/webp" media="(min-width:576px)"/>
-												<source srcset="#" data-srcset="img/@1x/webp/ev.webp" type="image/webp"/>
-												<source srcset="#" data-srcset="img/@2x/ev.jpg" type="image/jpg" media="(min-width:576px)"/>
-												<source srcset="#" data-srcset="img/@1x/ev.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/ev.jpg" alt=""/>
-											</picture>
-											<!-- /picture-->
-											<div>
-												<div class="h6">Евгений Симонов</div>
-												<p>Руководитель агентства</p>
+										<div class="swiper-slide">
+											<div class="sQwiz__item">
+												<div class="row">
+													<div class="col-lg">
+														<div class="sQwiz__main">
+															<div class="sQwiz__progress">
+																<div class="sQwiz__progress-bar" style="width:87.5%">
+																</div>
+															</div>
+															<div class="sQwiz__head">4из 4
+															</div>
+															<div class="sQwiz__body">
+																<div class="sQwiz__title h2">Вы планируете запускать рекламу?
+																</div>
+																<div class="custom-radio">
+																	<div class="row">
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-4" id="yes4" value="Да"/>
+																			<label class="btn" for="yes4">Да</label>
+																		</div>
+																		<div class="col-md-6">
+																			<input class="qwiz-radio-btn" type="radio" name="step-4" id="no4" value="Нет"/>
+																			<label class="btn" for="no4">Нет</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="sQwiz__foot row">
+																<div class="col-xl-4 col-sm-6">
+																	<button class="sQwiz__next jsNextQuest btn btn-primary disabled h6" type="button">Далее
+																		<svg class="icon icon-arrowNext ">
+																			<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+																		</svg>
+																	</button>
+																</div>
+																<div class="col order-sm-first">
+																	<button class="sQwiz__btn-back jsSlideBack h6" type="button">
+																		<svg class="icon icon-arrowNext ">
+																			<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+																		</svg>Назад
+																	</button>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="sQwiz__sitebar col">
+														<div class="sQwiz__sitebarWrap">
+															<div class="sQwiz__supervisor"> 
+																<!-- picture-->
+																<picture class="lazy"> 
+																	<source srcset="#" data-srcset="img/@2x/webp/ev.webp" type="image/webp" media="(min-width:576px)"/>
+																	<source srcset="#" data-srcset="img/@1x/webp/ev.webp" type="image/webp"/>
+																	<source srcset="#" data-srcset="img/@2x/ev.jpg" type="image/jpg" media="(min-width:576px)"/>
+																	<source srcset="#" data-srcset="img/@1x/ev.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/ev.jpg" alt=""/>
+																</picture>
+																<!-- /picture-->
+																<div>
+																	<div class="h6">Евгений Симонов</div>
+																	<p>Руководитель агентства</p>
+																</div>
+															</div>
+															<div class="sQwiz__about text-center">
+																<p>Создать сайт, который будет красивым, функциональным, с&nbsp;понятным и&nbsp;удобным интерфейсом это половина дела. Нужно еще привлечь на&nbsp;него как можно больше именно тех пользователей, которые являются целевой аудиторией для сайта. Эта задача решается с&nbsp;помощью рекламы.</p>
+															</div><a class="sQwiz__consultation btn link-modal" href="#modal-call">Получить консультацию</a>
+															<div class="sQwiz__telWrap"><a class="sQwiz__tel" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a>
+															</div>
+															<div class="messengers"><a class="messengers__item" href="https://wa.me/79630970990" target="_blank"><span class="messengers__whatsapp">
+																<svg class="icon icon-whatsapp ">
+																	<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
+																</svg></span></a><a class="messengers__item viber-link" href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank"><span class="messengers__viber">
+																<svg class="icon icon-viber ">
+																	<use xlink:href="img/svg/sprite.svg#viber"></use>
+																</svg></span></a><a class="messengers__item" href="https://t.me/evgeny_simonov" target="_blank"><span class="messengers__telegram">
+																<svg class="icon icon-telegram ">
+																	<use xlink:href="img/svg/sprite.svg#telegram"></use>
+																</svg></span></a>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="sQwiz__about text-center"><span>От&nbsp;того, что вы&nbsp;хотите получить от&nbsp;сайта, зависит его тип, например:</span>
-											<ul>
-												<li>Одностраничники, где клиенту предлагается какой-то один вид товара или услуги;</li>
-												<li>Интернет-магазин;</li>
-												<li>Сайт-визитка, чтобы клиенты могли больше узнать о&nbsp;компании.</li>
-											</ul>
-										</div><a class="sQwiz__consultation btn link-modal" href="#modal-call">Получить консультацию</a>
-										<div class="sQwiz__telWrap"><a class="sQwiz__tel" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a>
-										</div>
-										<div class="messengers"><a class="messengers__item" href="https://wa.me/79630970990" target="_blank"><span class="messengers__whatsapp">
-											<svg class="icon icon-whatsapp ">
-												<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
-											</svg></span></a><a class="messengers__item viber-link" href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank"><span class="messengers__viber">
-											<svg class="icon icon-viber ">
-												<use xlink:href="img/svg/sprite.svg#viber"></use>
-											</svg></span></a><a class="messengers__item" href="https://t.me/evgeny_simonov" target="_blank"><span class="messengers__telegram">
-											<svg class="icon icon-telegram ">
-												<use xlink:href="img/svg/sprite.svg#telegram"></use>
-											</svg></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="sQwiz__item">
-							<div class="sQwiz__top"><a class="sQwiz__to-main" href="/">
-								<svg class="icon icon-arrowL ">
-									<use xlink:href="img/svg/sprite.svg#arrowL"></use>
-								</svg><span>На главную</span></a>
-								<div class="sQwiz__descr">Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-lg">
-									<div class="sQwiz__main">
-										<div class="sQwiz__progress">
-											<div class="sQwiz__progress-bar" style="width:100%">
+										<div class="swiper-slide">
+											<div class="sQwiz__item">
+												<div class="sQwiz__final text-center">
+													<div class="h6 text-primary">Спасибо за ответы!</div>
+													<div class="h2">Как с&nbsp;вами связаться, чтобы уточнить детали создания сайта и&nbsp;обсудить стоимость?</div>
+													<div class="tabs">
+														<div class="tabs__caption">
+															<div class="tabs__btn btn active">
+																<svg class="icon icon-phone-bg ">
+																	<use xlink:href="img/svg/sprite.svg#phone-bg"></use>
+																</svg>Телефон
+															</div>
+															<div class="tabs__btn btn">
+																<svg class="icon icon-whatsapp ">
+																	<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
+																</svg>WhatsApp
+															</div>
+															<div class="tabs__btn btn">
+																<svg class="icon icon-viber ">
+																	<use xlink:href="img/svg/sprite.svg#viber"></use>
+																</svg>Viber
+															</div>
+															<div class="tabs__btn btn">
+																<svg class="icon icon-telegram ">
+																	<use xlink:href="img/svg/sprite.svg#telegram"></use>
+																</svg>Telegram
+															</div>
+														</div>
+														<div class="tabs__wrap">
+															<div class="tabs__content active">
+																<div class="h6">Введите телефон:</div>
+																<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="tel" placeholder="+7 (999) 444-44-44" name="tel" value="+7" required="required"/>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+															<div class="tabs__content">
+																<div class="h6">Введите WhatsApp:</div>
+																<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="tel" placeholder="+7 (999) 444-44-44" name="whatsapp"/>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+															<div class="tabs__content">
+																<div class="h6">Введите Viber:</div>
+																<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="tel" placeholder="+7 (999) 444-44-44" name="viber"/>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+															<div class="tabs__content">
+																<div class="h6">Введите Telegram:</div>
+																<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Введите данные" name="telegram"/>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+														</div>
+													</div>
+													<button class="sQwiz__discuss btn btn-primary" type="submit">Обсудить стоимость создания сайта
+													</button>
+													<div class="sQwiz__polite"><small class="sQwiz__text text-secondary">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих персональных данных и&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности</a></small>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="sQwiz__head">4из 4
-										</div>
-										<div class="sQwiz__title h2">Вы планируете запускать рекламу?
-										</div>
-										<div class="custom-radio">
-											<input type="radio" name="Вопрос:4" id="yes4"/>
-											<label class="btn" for="yes4">Да</label>
-											<input type="radio" name="Вопрос:4" id="no4"/>
-											<label class="btn" for="no4">Нет</label>
-										</div>
-										<div class="sQwiz__foot">
-											<button class="sQwiz__next btn btn-primary h6" type="button">Далее
-												<svg class="icon icon-arrowNext ">
-													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
-												</svg>
-											</button>
-										</div>
-									</div>
-								</div>
-								<div class="sQwiz__sitebar col">
-									<div class="sQwiz__sitebarWrap">
-										<div class="sQwiz__supervisor"> 
-											<!-- picture-->
-											<picture class="lazy"> 
-												<source srcset="#" data-srcset="img/@2x/webp/ev.webp" type="image/webp" media="(min-width:576px)"/>
-												<source srcset="#" data-srcset="img/@1x/webp/ev.webp" type="image/webp"/>
-												<source srcset="#" data-srcset="img/@2x/ev.jpg" type="image/jpg" media="(min-width:576px)"/>
-												<source srcset="#" data-srcset="img/@1x/ev.jpg" type="image/jpg"/><img src="#" data-src="img/@2x/ev.jpg" alt=""/>
-											</picture>
-											<!-- /picture-->
-											<div>
-												<div class="h6">Евгений Симонов</div>
-												<p>Руководитель агентства</p>
-											</div>
-										</div>
-										<div class="sQwiz__about text-center">
-											<p>Создать сайт, который будет красивым, функциональным, с&nbsp;понятным и&nbsp;удобным интерфейсом это половина дела. Нужно еще привлечь на&nbsp;него как можно больше именно тех пользователей, которые являются целевой аудиторией для сайта. Эта задача решается с&nbsp;помощью рекламы.</p>
-										</div><a class="sQwiz__consultation btn link-modal" href="#modal-call">Получить консультацию</a>
-										<div class="sQwiz__telWrap"><a class="sQwiz__tel" href="tel:+7(963)097-09-90">+7 (963) 097-09-90</a>
-										</div>
-										<div class="messengers"><a class="messengers__item" href="https://wa.me/79630970990" target="_blank"><span class="messengers__whatsapp">
-											<svg class="icon icon-whatsapp ">
-												<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
-											</svg></span></a><a class="messengers__item viber-link" href="viber://add?number=79630970990" data-desktop="viber://chat?number=79630970990" target="_blank"><span class="messengers__viber">
-											<svg class="icon icon-viber ">
-												<use xlink:href="img/svg/sprite.svg#viber"></use>
-											</svg></span></a><a class="messengers__item" href="https://t.me/evgeny_simonov" target="_blank"><span class="messengers__telegram">
-											<svg class="icon icon-telegram ">
-												<use xlink:href="img/svg/sprite.svg#telegram"></use>
-											</svg></span></a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="sQwiz__item">
-							<div class="sQwiz__final text-center">
-								<div class="h6 text-primary">Спасибо за ответы!</div>
-								<div class="h2">Как с&nbsp;вами связаться, чтобы уточнить детали создания сайта и&nbsp;обсудить стоимость?</div>
-								<div class="tabs">
-									<div class="tabs__caption">
-										<div class="tabs__btn btn active">
-											<svg class="icon icon-phone-bg ">
-												<use xlink:href="img/svg/sprite.svg#phone-bg"></use>
-											</svg>Телефон
-										</div>
-										<div class="tabs__btn btn">
-											<svg class="icon icon-whatsapp ">
-												<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
-											</svg>WhatsApp
-										</div>
-										<div class="tabs__btn btn">
-											<svg class="icon icon-viber ">
-												<use xlink:href="img/svg/sprite.svg#viber"></use>
-											</svg>Viber
-										</div>
-										<div class="tabs__btn btn">
-											<svg class="icon icon-telegram ">
-												<use xlink:href="img/svg/sprite.svg#telegram"></use>
-											</svg>Telegram
-										</div>
-									</div>
-									<div class="tabs__wrap">
-										<div class="tabs__content active">
-											<div class="h6">Введите телефон:</div>
-										</div>
-										<div class="tabs__content">
-											<div class="h6">Введите WhatsApp:</div>
-										</div>
-										<div class="tabs__content">
-											<div class="h6">Введите Viber:</div>
-										</div>
-										<div class="tabs__content">
-											<div class="h6">Введите Telegram:</div>
-										</div>
-									</div>
-								</div>
-								<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="tel" placeholder="+7 (912) 345-67-89" name="tel" value="+7"/>
-								</div>
-								<!-- +e.input-wrap--><a class="sQwiz__discuss btn btn-primary" href="#">Обсудить стоимость создания сайта</a>
-								<div class="sQwiz__polite"><small class="sQwiz__text text-secondary">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих персональных данных и&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности</a></small>
-								</div>
 							</div>
 						</div>
 					</form>
@@ -532,6 +630,7 @@
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
+		<script src="libs/swiper/js/swiper.min.js"></script>
 		<!-- /slider libs-->
 		<!-- for svg libs-->
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>

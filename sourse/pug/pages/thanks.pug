@@ -1,5 +1,9 @@
 extends layout/main.pug
-
+block php
+	!= '<?php ' 
+	| session_start();
+	| $flash = $_SESSION['success'];
+	| ?>
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug 

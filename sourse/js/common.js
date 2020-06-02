@@ -35,10 +35,12 @@ const JSCCommon = {
 	// табы  . 
 	tabscostume(tab) {
 		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
+			$(this).closest('.' + tab).find('.' + tab + '__content').find(".form-control").val('').removeAttr("required");
+			$(this).closest('.' + tab).find('.' + tab + '__content').eq($(this).index()).find(".form-control").attr("required", "required");
 			$(this)
 				.addClass('active').siblings().removeClass('active')
 				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-				.eq($(this).index()).show().addClass('active');
+				.eq($(this).index()).fadeIn().addClass('active');
 
 		});
 	},
@@ -88,7 +90,14 @@ function eventHandler() {
 	// 		} 
 	// 	}; 
 	// }); 
+	$(" .top-nav li a, .scroll-link, .headerBlock__scroll").click(function () {
+		const elementClick = $(this).attr("href");
+		const destination = $(elementClick).offset().top;
 
+		$('html, body').animate({ scrollTop: destination }, 1100);
+
+		return false;
+	});
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
@@ -132,50 +141,7 @@ function eventHandler() {
 	});
 
 	heightses();
-
-	// листалка по стр
-	// $(" .top-nav li a, .scroll-link").click(function () {
-	// 	const elementClick = $(this).attr("href");
-	// 	const destination = $(elementClick).offset().top;
-
-	// 	$('html, body').animate({ scrollTop: destination }, 1100);
-
-	// 	return false;
-	// });
-
-	// $('#other1').click(function(){
-	// 	$('.sQwiz__input-wrap').slideToggle();
-	// });
-
-	// $('.s-gal__slider\
-	// ,.slider-for2 ')
-	// 	.on('lazyLoaded', function (event, slick, image, imageSource) {
-	// 		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-	// 	});
-	// // slider
-	// const swiper4 = new Swiper('.color-slider', {
-	// 	// slidesPerView: 5,
-	// 	slidesPerView: 'auto',
-	// 	watchOverflow: true,
-	// 	spaceBetween: 0,
-	// 	freeMode: true,
-	// 	watchOverflow: true,
-	// 	slidesPerGroup: 3,
-
-	// 	// centeredSlides: true,
-	// 	loop: true,
-	// 	loopFillGroupWithBlank: true,
-	// 	touchRatio: 0.2,
-	// 	slideToClickedSlide: true,
-	// 	freeModeMomentum: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
-
-	// });
-	// modal window
-
+ 
 	$(".viber-link").each(function () {
 
 		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -185,24 +151,137 @@ function eventHandler() {
 
 	let now = new Date();
 	$('.curentYear').text(now.getFullYear());
-	//Прилипающий телефон
-	// const telOffset = $('.headerBlock__tel').offset().top;
-	// $(window).scroll(function(){
-	// 	const scrolled = $(this).scrollTop();
-	// 	if (scrolled > telOffset){
-	// 		//телефон прилип
-	// 		$('.headerBlock').addClass('tel-fixed');
-	// 	} else if (scrolled < telOffset) {
-	// 		// телефон отлип
-	// 		$('.headerBlock').removeClass('tel-fixed');
-	// 	}
-	// });
-
+ 
+	
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
 		$("body").prepend(`<p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p>`)
 
 	}
+
+
+
+
+	var gets = (function () {
+		var a = window.location.search;
+		var b = new Object();
+		a = a.substring(1).split("&");
+		for (var i = 0; i < a.length; i++) {
+			let c = a[i].split("=");
+			b[c[0]] = c[1];
+		}
+		return b;
+	})();
+	// form
+	$("form").each(function () { //Change
+		var th = $(this);
+		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+		$(this).attr({
+			"action": 'action.php',
+			"method": "post",
+		})
+	});
+
+
+	// qwiz
+	$(" .qwiz-radio-btn").each(function () { 
+		let parent = $(this).parents(".sQwiz__item");
+		parent.find(".sQwiz__toggle-block").on('input change copy paste','input', function () {
+			if ($(this).val() != '') {
+				parent.find(".sQwiz__next").removeClass("disabled")
+			}
+			else {
+				parent.find(".sQwiz__next").addClass("disabled")
+			}
+		})
+		$(this).change(function () {  
+			if (!$(this).hasClass("toggle-input-js")) {
+				parent.find(".sQwiz__next").removeClass("disabled")
+			}
+
+			else if (parent.find(".sQwiz__toggle-block").find('input').val() != '') {
+				console.log('1')
+				parent.find(".sQwiz__next").removeClass("disabled")
+			}
+			else {
+				console.log('2')
+				parent.find(".sQwiz__next").addClass("disabled")
+
+			} 
+			if ($(this).is(':checked') && $(this).hasClass("toggle-input-js")) {
+				
+				parent.find(".sQwiz__toggle-block").slideDown();
+			}
+			else {
+				parent.find(".sQwiz__toggle-block").slideUp();
+				
+				}
+			})
+	})
+
+	//Слайдер теста расчёта финансов
+	var testSwiper = new Swiper('.jsTestSlider', {
+		effect: 'slide',
+		speed: 800,
+		simulateTouch: false,
+		longSwipes: false,
+		followFinger: false,
+		allowTouchMove: false,
+		allowNext: false,
+		autoHeight: true,
+		pagination: {
+			el: '.scr2__ind',
+			type: 'custom',
+			renderCustom: function (swiper, current, total) {
+				var progress = '<div class="jsTestInd" style="width:' + current * 100 / 6 + '%"></div>';
+				if (current == 1) {
+
+					var progresText = '<div class="jsTestCounter">Осталось 6 вопросов</div>'
+				} else {
+					var progresText = '<div class="jsTestCounter">Вопрос ' + (current - 1) + '/' + (total - 1) + '</div>';
+				}
+				return progress + progresText;
+			},
+		},
+	});
+	//Переключение слайда по кнопке
+	var jsNextQuest = document.querySelectorAll('.jsNextQuest', '.jsTestSlider');
+	for (var i = 0; i < jsNextQuest.length; ++i) {
+		jsNextQuest[i].addEventListener("click", function (e) {
+			e.preventDefault();
+			testSwiper.slideNext();
+		});
+	}
+
+
+	var jsSlideBack = document.querySelectorAll('.jsSlideBack');
+	for (var i = 0; i < jsSlideBack.length; ++i) {
+		jsSlideBack[i].addEventListener("click", function (e) {
+			e.preventDefault();
+			testSwiper.slidePrev();
+		});
+	}
+	// Простановка значений при переключении
+	testSwiper.on('slideChangeTransitionEnd', function () {
+		var testCounter = document.querySelector('.jsTestCounter');
+		if (testSwiper.activeIndex == 0) {
+			// $('.jsSlideBack').hide();
+			// testCounter.textContent = "Осталось 6 вопросов";
+		} else {
+			// testCounter.textContent = "Вопрос " + (testSwiper.activeIndex ) + "/6";
+			// $('.jsSlideBack').show();
+		}
+		//Управление кнопкой "Назад"
+		if (testSwiper.activeIndex == 0) {
+			$('.jsSlideBack').hide();
+		} else {
+			$('.jsSlideBack').show();
+		}
+	});
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
