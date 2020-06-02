@@ -139,8 +139,8 @@
 			padding-bottom: rem(12);
 			height: auto;
 			@include media-breakpoint-up(md) {
-				padding-top: rem(30);
-				padding-bottom: rem(30);
+				padding-top: rem(20);
+				padding-bottom: rem(20);
 			}
 			@extend .h6;
 			text-align: center;
@@ -232,7 +232,7 @@
 		&__form {
 			padding: rem(90) rem(19) rem(60) rem(22);
 			@include media-breakpoint-up(md) {
-				padding: rem(50) rem(30) rem(50) rem(18);
+				padding: rem(50) rem(20) rem(50) rem(18);
 			}
 			@include media-breakpoint-down(md) {
 				max-width: rem(380);
@@ -281,9 +281,9 @@
 //Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// .fancybox-content {
-	// vertical-align: top;
-// }
+.fancybox-content {
+	vertical-align: top;
+}
 //Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //Убрать после подгонки !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
