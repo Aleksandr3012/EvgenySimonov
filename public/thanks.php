@@ -82,7 +82,11 @@ $qwiz = $_SESSION['qwiz'];
 							Перезвоню вам в&nbsp;ближайшее время, задам дополнительные  вопросы по&nbsp;задаче и&nbsp;озвучу стоимость работ.<br>Хорошего дня!</div><?php } else{	  ?>
 						<div class="h6">
 							Перезвоню вам в&nbsp;ближайшее время и&nbsp;отвечу на&nbsp;ваши вопросы.<br>Хорошего дня!</div><?php	} ?>
-						<div class="h6 text-primary">А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в <a href="https://www.instagram.com/simonov__evgeny/">Instagram.</a> Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:</div><a class="section-title__imgWrap" href="undefined"><img class="res-i" src="img/@2x/photo.jpg" alt=""/></a><a class="section-title__inst" href="undefined">@simonov__evgeny</a><a class="section-title__subscribe btn btn-primary" href="undefined">Перейти и подписаться</a>
+						<div class="h6 text-primary">А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в <a href="https://www.instagram.com/simonov__evgeny/" target="_blank">Instagram.</a> Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:</div><a class="section-title__imgWrap" href="undefined" target="_blank"><img class="res-i" src="img/@2x/photo.jpg" alt=""/></a>
+						<div class="section-title__inst" target="_blank">@simonov__evgeny
+						</div>
+						<div class="section-title__subscribe btn btn-primary" target="_blank">Перейти и подписаться
+						</div>
 					</div>
 				</div>
 			</section>
@@ -92,7 +96,7 @@ $qwiz = $_SESSION['qwiz'];
 				<div class="sAbout" id="sAbout">
 					<div class="container">
 						<div class="row">
-							<div class="sAbout__leftCol col-lg-auto">
+							<div class="sAbout__leftCol col-xl">
 								<div class="sAbout__item">
 									<svg class="icon icon-flag ">
 										<use xlink:href="img/svg/sprite.svg#flag"></use>
@@ -112,7 +116,7 @@ $qwiz = $_SESSION['qwiz'];
 									<p>с&nbsp;7:00 до&nbsp;18:00 по&nbsp;мск, без&nbsp;выходных и&nbsp;перерыва</p>
 								</div>
 							</div>
-							<div class="sAbout__col col-lg"><a class="sAbout__tel" href="tel:+79630970990">+7 (963) 097-09-90</a><a class="sAbout__call btn link-modal" href="#modal-call">Перезвоните мне</a>
+							<div class="sAbout__col col-xl"><a class="sAbout__tel" href="tel:+79630970990">+7 (963) 097-09-90</a><a class="sAbout__call btn link-modal" href="#modal-call">Перезвоните мне</a>
 							</div>
 						</div>
 					</div>
@@ -225,7 +229,7 @@ $qwiz = $_SESSION['qwiz'];
 								</div>
 							</div>
 							<div class="form-wrap__input-wrap form-group">
-								<label><span class="form-wrap__title">Введите телефон:</span><input class="form-wrap__input form-control" type="tel" placeholder="+7 (912) 345-67-89" name="tel" required="required"/>
+								<label><span class="form-wrap__title">Введите телефон:</span><input class="form-wrap__input form-control" type="tel" placeholder="+7 (912) 345-67-89" name="tel" value="+7" required="required"/>
 								</label>
 							</div>
 							<!-- +e.input-wrap-->
@@ -286,7 +290,7 @@ $qwiz = $_SESSION['qwiz'];
 								</div>
 							</div>
 							<div class="form-wrap__input-wrap form-group">
-								<label><span class="form-wrap__title">Введите телефон:</span><input class="form-wrap__input form-control" type="tel" placeholder="+7 (912) 345-67-89" name="tel" required="required"/>
+								<label><span class="form-wrap__title">Введите телефон:</span><input class="form-wrap__input form-control" type="tel" placeholder="+7 (912) 345-67-89" name="tel" value="+7" required="required"/>
 								</label>
 							</div>
 							<!-- +e.input-wrap-->

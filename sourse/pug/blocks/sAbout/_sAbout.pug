@@ -3,7 +3,7 @@ mixin sAbout()
 	+b.sAbout#sAbout&attributes(attributes)
 		.container
 			.row
-				+e.leftCol.col-lg-auto
+				+e.leftCol.col-xl
 					+e.item
 						+icon('flag')
 						p Работаем с&nbsp;2015 года в&nbsp;интернет-маркетинге
@@ -13,7 +13,7 @@ mixin sAbout()
 					+e.item
 						+icon('clock')
 						p с&nbsp;7:00 до&nbsp;18:00 по&nbsp;мск, без&nbsp;выходных и&nbsp;перерыва
-				+e.col.col-lg
+				+e.col.col-xl
 					+e.tel(href="tel:+79630970990") +7 (963) 097-09-90
 					+e.call.btn.link-modal(href="#modal-call") Перезвоните мне
 	// end sAbout

@@ -4,7 +4,7 @@
 	// position: relative;
 	// overflow: hidden;
 	@include media-breakpoint-up(lg) {
-		padding-top: rem(118);
+		padding-top: rem(118) !important;
 	}
 	@include media-breakpoint-up(xl) {
 		padding-left: 1px;
