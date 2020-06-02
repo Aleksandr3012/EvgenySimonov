@@ -1,5 +1,5 @@
 mixin radio(p,n,t)
-	input(type="radio" name=`Вопрос:${p}` id=`${n}`)
+	input(type="radio" name=`Вопрос:${p}` id=`${n}` value=`${t}`)
 	label.btn(for=`${n}`)= t
 
 
@@ -8,7 +8,7 @@ mixin sQwiz()
 	+b.sQwiz#sQwiz&attributes(attributes)
 		.container
 			+e.FORM.wrap
-				mixin item(pr,t,inp,st,not)
+				mixin item(pr,t,inp,not)
 					+e.item
 						if pr
 							+e.top
@@ -94,7 +94,7 @@ mixin sQwiz()
 					+radio('3','presentation','Нужен сайт, как презентация компании')
 					+radio('3','online-business','Хочу перевести бизнес в онлайн')
 					+radio('3','other3','Другое')
-				+item('4','Вы планируете запускать рекламу?','','not')
+				+item('4','Вы планируете запускать рекламу?','','not')(class="twoItem")
 					+radio('4','yes4','Да')
 					+radio('4','no4','Нет')
 				+item('')

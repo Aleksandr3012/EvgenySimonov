@@ -48,21 +48,21 @@
 										<div class="sQwiz__title h2">В какой сфере Ваш бизнес?
 										</div>
 										<div class="custom-radio">
-											<input type="radio" name="Вопрос:1" id="B2B"/>
+											<input type="radio" name="Вопрос:1" id="B2B" value="Сфера услуг (B2B)"/>
 											<label class="btn" for="B2B">Сфера услуг (B2B)</label>
-											<input type="radio" name="Вопрос:1" id="B2C"/>
+											<input type="radio" name="Вопрос:1" id="B2C" value="Сфера услуг (B2C)"/>
 											<label class="btn" for="B2C">Сфера услуг (B2C)</label>
-											<input type="radio" name="Вопрос:1" id="retail"/>
+											<input type="radio" name="Вопрос:1" id="retail" value="Розничная торговля"/>
 											<label class="btn" for="retail">Розничная торговля</label>
-											<input type="radio" name="Вопрос:1" id="wholesale"/>
+											<input type="radio" name="Вопрос:1" id="wholesale" value="Оптовая торговля"/>
 											<label class="btn" for="wholesale">Оптовая торговля</label>
-											<input type="radio" name="Вопрос:1" id="production"/>
+											<input type="radio" name="Вопрос:1" id="production" value="Производство"/>
 											<label class="btn" for="production">Производство</label>
-											<input type="radio" name="Вопрос:1" id="industry"/>
+											<input type="radio" name="Вопрос:1" id="industry" value="Промышленность"/>
 											<label class="btn" for="industry">Промышленность</label>
-											<input type="radio" name="Вопрос:1" id="training"/>
+											<input type="radio" name="Вопрос:1" id="training" value="Обучение"/>
 											<label class="btn" for="training">Обучение</label>
-											<input type="radio" name="Вопрос:1" id="other1"/>
+											<input type="radio" name="Вопрос:1" id="other1" value="Другое"/>
 											<label class="btn" for="other1">Другое</label>
 										</div>
 										<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Напишите, чем занимаетесь" name="text"/>
@@ -134,15 +134,20 @@
 										<div class="sQwiz__title h2">У вас уже есть сайт?
 										</div>
 										<div class="custom-radio twoItem">
-											<input type="radio" name="Вопрос:2" id="yes"/>
+											<input type="radio" name="Вопрос:2" id="yes" value="Да"/>
 											<label class="btn" for="yes">Да</label>
-											<input type="radio" name="Вопрос:2" id="no"/>
+											<input type="radio" name="Вопрос:2" id="no" value="Нет"/>
 											<label class="btn" for="no">Нет</label>
 										</div>
 										<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Скопируйте сюда ссылку на ваш сайт" name="text"/>
 										</div>
 										<!-- +e.input-wrap-->
 										<div class="sQwiz__foot">
+											<button class="sQwiz__btn-back h6" type="button">
+												<svg class="icon icon-arrowNext ">
+													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+												</svg>Назад
+											</button>
 											<button class="sQwiz__next btn btn-primary h6" type="button">Далее
 												<svg class="icon icon-arrowNext ">
 													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
@@ -208,21 +213,26 @@
 										<div class="sQwiz__title h2">Что вы хотите получить от сайта?
 										</div>
 										<div class="custom-radio twoItem">
-											<input type="radio" name="Вопрос:3" id="more-customers"/>
+											<input type="radio" name="Вопрос:3" id="more-customers" value="Больше клиентов и продаж"/>
 											<label class="btn" for="more-customers">Больше клиентов и продаж</label>
-											<input type="radio" name="Вопрос:3" id="price"/>
+											<input type="radio" name="Вопрос:3" id="price" value="Увеличение среднего чека"/>
 											<label class="btn" for="price">Увеличение среднего чека</label>
-											<input type="radio" name="Вопрос:3" id="presentation"/>
+											<input type="radio" name="Вопрос:3" id="presentation" value="Нужен сайт, как презентация компании"/>
 											<label class="btn" for="presentation">Нужен сайт, как презентация компании</label>
-											<input type="radio" name="Вопрос:3" id="online-business"/>
+											<input type="radio" name="Вопрос:3" id="online-business" value="Хочу перевести бизнес в онлайн"/>
 											<label class="btn" for="online-business">Хочу перевести бизнес в онлайн</label>
-											<input type="radio" name="Вопрос:3" id="other3"/>
+											<input type="radio" name="Вопрос:3" id="other3" value="Другое"/>
 											<label class="btn" for="other3">Другое</label>
 										</div>
 										<div class="sQwiz__input-wrap form-group"><input class="sQwiz__input form-control" type="text" placeholder="Напишите, какую вашу задачу должен решить сайт" name="text"/>
 										</div>
 										<!-- +e.input-wrap-->
 										<div class="sQwiz__foot">
+											<button class="sQwiz__btn-back h6" type="button">
+												<svg class="icon icon-arrowNext ">
+													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+												</svg>Назад
+											</button>
 											<button class="sQwiz__next btn btn-primary h6" type="button">Далее
 												<svg class="icon icon-arrowNext ">
 													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
@@ -290,13 +300,18 @@
 										</div>
 										<div class="sQwiz__title h2">Вы планируете запускать рекламу?
 										</div>
-										<div class="custom-radio">
-											<input type="radio" name="Вопрос:4" id="yes4"/>
+										<div class="custom-radio twoItem">
+											<input type="radio" name="Вопрос:4" id="yes4" value="Да"/>
 											<label class="btn" for="yes4">Да</label>
-											<input type="radio" name="Вопрос:4" id="no4"/>
+											<input type="radio" name="Вопрос:4" id="no4" value="Нет"/>
 											<label class="btn" for="no4">Нет</label>
 										</div>
 										<div class="sQwiz__foot">
+											<button class="sQwiz__btn-back h6" type="button">
+												<svg class="icon icon-arrowNext ">
+													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
+												</svg>Назад
+											</button>
 											<button class="sQwiz__next btn btn-primary h6" type="button">Далее
 												<svg class="icon icon-arrowNext ">
 													<use xlink:href="img/svg/sprite.svg#arrowNext"></use>
