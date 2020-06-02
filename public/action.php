@@ -57,10 +57,7 @@ $html = '
                 $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> telegram:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['telegram'] . '</b></td></tr>';
         }
 
-        if (!empty($_POST['time'])) {
-                $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Время для звонка:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['time'] . '</b></td></tr>';
-        }
-
+ 
         if (!empty($_POST['datetime'])) {
                 $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Время для звонка:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['datetime'] . '</b></td></tr>';
         }
@@ -78,7 +75,7 @@ $html = '
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> В какой сфере Ваш бизнес?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-1-text'] . '</b></td>';
     }
 
-    else {
+    else if (!empty($_POST['step-1'])) {
         $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> В какой сфере Ваш бизнес?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-1'] . '</b></td></tr>';
     }
     
@@ -87,7 +84,7 @@ $html = '
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> У вас уже есть сайт? (cсылка на сайт):</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-2-text'] . '</b></td>';
     }
 
-    else {
+    else if (!empty($_POST['step-2'])) {
         $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> У вас уже есть сайт?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-2'] . '</b></td></tr>';
     }
     
@@ -97,7 +94,7 @@ $html = '
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Что вы хотите получить от сайта?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-3-text'] . '</b></td>';
     }
 
-    else {
+   else if (!empty($_POST['step-3'])) {
         $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Что вы хотите получить от сайта?:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['step-3'] . '</b></td></tr>';
     }
     
@@ -146,6 +143,8 @@ if (empty($_POST['example-input-field'])) {
        
         session_start();
         $_SESSION['success'] = isset($_POST['name']) ? $_POST['name'] : null;
+        $_SESSION['successTime'] = isset($_POST['datetime']) ? $_POST['datetime'] : null;
+        $_SESSION['qwiz'] = isset($_POST['qwiz']) ? $_POST['qwiz'] : null;
         header( 'Location: /thanks.php', true, 301 );
     }
     if (isset($uploadfile))unlink($uploadfile);

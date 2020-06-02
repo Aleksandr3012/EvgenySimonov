@@ -1,6 +1,7 @@
 <?php session_start();
 $flash = $_SESSION['success'];
 $time = $_SESSION['successTime'];
+$qwiz = $_SESSION['qwiz'];
 ?><!DOCTYPE html>
 <html lang="ru">
 	<head>
@@ -72,12 +73,16 @@ $time = $_SESSION['successTime'];
 			<!-- start sThank-->
 			<section class="sThank section" id="sThank">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>Иван, спасибо, я&nbsp;принял вашу заявку!</h2>
-						<div class="h6">Перезвоню вам в&nbsp;ближайшее время и&nbsp;отвечу на&nbsp;ваши вопросы.<br>Хорошего дня!</div>
-						<div class="h6 text-primary">А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в Instagram. Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:</div><img src="img/@2x/photo.jpg" alt=""/>
-						<div class="section-title__inst">@simonov__evgeny
-						</div><a class="section-title__subscribe btn btn-primary" href="https://www.instagram.com/simonov__evgeny/">Перейти и подписаться</a>
+					<div class="section-title text-center"><?php if(isset($flash)) { ?>
+						<h2 class="strong"><?php echo $flash; ?>, спасибо, я&nbsp;принял вашу заявку!</h2><?php } else{	  ?>
+						<h2 class="strong">Спасибо, я&nbsp;принял вашу заявку!</h2><?php	} ?><?php if(isset($time)) { ?>
+						<div class="h6">
+							Перезвоню вам в&nbsp;указанное время и&nbsp;отвечу на&nbsp;ваши вопросы.<br>Хорошего дня!</div><?php 	}  else if(isset($qwiz)) { ?>
+						<div class="h6">
+							Перезвоню вам в&nbsp;ближайшее время, задам дополнительные  вопросы по&nbsp;задаче и&nbsp;озвучу стоимость работ.<br>Хорошего дня!</div><?php } else{	  ?>
+						<div class="h6">
+							Перезвоню вам в&nbsp;ближайшее время и&nbsp;отвечу на&nbsp;ваши вопросы.<br>Хорошего дня!</div><?php	} ?>
+						<div class="h6 text-primary">А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в <a href="https://www.instagram.com/simonov__evgeny/">Instagram.</a> Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:</div><a class="section-title__imgWrap" href="undefined"><img class="res-i" src="img/@2x/photo.jpg" alt=""/></a><a class="section-title__inst" href="undefined">@simonov__evgeny</a><a class="section-title__subscribe btn btn-primary" href="undefined">Перейти и подписаться</a>
 					</div>
 				</div>
 			</section>
@@ -236,7 +241,7 @@ $time = $_SESSION['successTime'];
 								<div class="tabs__wrap">
 									<div class="tabs__content active"></div>
 									<div class="tabs__content">
-										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="datetime" placeholder="Например: 21 января в 14:00" name="datetime" required="required"/>
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Например: 21 января в 14:00" name="datetime"/>
 										</div>
 										<!-- +e.input-wrap-->
 									</div>
@@ -287,7 +292,7 @@ $time = $_SESSION['successTime'];
 							<!-- +e.input-wrap-->
 							<div class="form-wrap__group-title">Когда вам позвонить:
 							</div>
-							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="datetime" placeholder="Например: 21 января в 14:00" name="datetime" required="required"/>
+							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Например: 21 января в 14:00" name="datetime"/>
 							</div>
 							<!-- +e.input-wrap--><input class="form-wrap__btn btn btn-primary" type="submit" value="Перезвоните мне"/>
 							<div class="form-wrap__polite"><small class="form-wrap__text text-secondary">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих персональных данных и&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности</a></small>
