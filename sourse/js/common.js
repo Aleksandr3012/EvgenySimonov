@@ -72,7 +72,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Mobile_Form.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/Mobile_Form.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -232,7 +232,7 @@ function eventHandler() {
 		followFinger: false,
 		allowTouchMove: false,
 		allowNext: false,
-		autoHeight: true,
+		// autoHeight: true,
 		pagination: {
 			el: '.scr2__ind',
 			type: 'custom',
@@ -282,6 +282,10 @@ function eventHandler() {
 			$('.jsSlideBack').show();
 		}
 	});
+
+	$(".headerBlock__rbk").click(function () {
+		$(".headerBlock__rbk-block").fadeToggle();
+	})
 
 };
 if (document.readyState !== 'loading') {

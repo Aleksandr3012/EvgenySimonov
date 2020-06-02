@@ -192,7 +192,7 @@ function eventHandler() {
 		followFinger: false,
 		allowTouchMove: false,
 		allowNext: false,
-		autoHeight: true,
+		// autoHeight: true,
 		pagination: {
 			el: '.scr2__ind',
 			type: 'custom',
@@ -244,6 +244,9 @@ function eventHandler() {
 		} else {
 			$('.jsSlideBack').show();
 		}
+	});
+	$(".headerBlock__rbk").click(function () {
+		$(".headerBlock__rbk-block").fadeToggle();
 	});
 }
 
