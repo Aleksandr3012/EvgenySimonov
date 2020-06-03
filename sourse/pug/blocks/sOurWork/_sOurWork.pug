@@ -1,15 +1,15 @@
 mixin workItem(img,p,pr,t,title,link)
 	.row
-		.col-lg
+		.col-xl-auto.col-lg
 			+e.body.d-lg-none
 				.h2= title
 				+e.link(href=`${link}`) 
 					+icon('link')
 					span= link
 
-			+e.preview
-				a(href=`img/@2x/${img}-xl.jpg` data-fancybox=`${img}`)
-					img.lazy(src="#" data-src=`img/@2x/${img}_02.jpg` alt='')
+			+e.preview(href=`img/@2x/${img}-xl.jpg` data-fancybox=`${img}`)
+					//- img.lazy.res-i(src="#" data-src=`img/${img}-md.png` alt='')
+					img.lazy.res-i(src="#" data-src=`img/@2x/${img}-md.png` alt='')
 			+e.indicators.d-none.d-lg-flex
 				+e.indicatorsItem
 					.h2= p
