@@ -107,7 +107,7 @@
   background-image: url($img);
 }
 
-@mixin mt($s: .36) {
+@mixin mt($s: .20) {
   transition: all #{$s}s;
 }
 

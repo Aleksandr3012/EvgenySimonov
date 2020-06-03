@@ -22,6 +22,7 @@
 	&__top {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		@include media-breakpoint-down(lg) {
 			flex-direction: column;
 		}
@@ -30,14 +31,25 @@
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(56);
 		}
+		@media (min-width: 1200px) and (max-width: 1440px) {
+			margin-bottom: rem(17) !important;
+		}
 	}
 
 	//Кнопка на главную
 	&__to-main {
 		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+
 		text-decoration: none !important;
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			left: rem(41);
+		}
 		@include media-breakpoint-down(lg) {
 			margin-bottom: rem(36);
+
 		}
 		.icon {
 			color: $primary;
@@ -49,16 +61,29 @@
 		}
 		span {
 			color: $body-color;
+			@include mt;
+		}
+
+		&:hover span{
+			@include media-breakpoint-up(lg) {
+				color: $primary;
+			}
 		}
 	}
 
 	// Ответьте на несколько вопросов
 	&__descr {
 		max-width: rem(850);
-		@include media-breakpoint-up(xl) {
-			margin-left: rem(113);
-		}
+		// @include media-breakpoint-up(xl) {
+		// 	margin-left: rem(113);
+		// }
 		font-size: rem(19);
+		@include media-breakpoint-only(lg) {
+			max-width: rem(650);
+		}
+		@media (min-width: 1200px) and (max-width: 1440px) {
+			font-size: rem(25);
+		}
 		@include media-breakpoint-up(md) {
 			font-size: rem(30);
 			line-height: 1.3;
@@ -137,7 +162,7 @@
 			margin-bottom: rem(30);
 		}
 		font-weight: 700;
-		@include media-breakpoint-down(md) {
+		@include media-breakpoint-down(sm) {
 			text-align: center;
 			max-width: rem(200);
 			margin-left: auto;
@@ -196,8 +221,10 @@
 			}
 
 			&:hover {
-				color: #fff !important;
-				border-color: $primary;
+				@include media-breakpoint-up(lg) {
+					border-color: #C7C7C7;
+					background-color: #fff;
+				}
 			}
 		}
 
@@ -224,6 +251,7 @@
 		justify-content: flex-end;
 		align-items: center;
 		@include media-breakpoint-down(sm) {
+			padding-top: rem(12);
 			flex-direction: column-reverse;
 		}
 		margin-top: auto;
@@ -256,8 +284,12 @@
 		background-color: transparent;
 		border: none;
 		color: $dark;
+		@include mt;
 		// margin-top: rem(-14);
-		@include media-breakpoint-up(lg) {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		@include media-breakpoint-up(md) {
 			margin-left: rem(-8);
 		}
 		margin-bottom: rem(15);
@@ -268,7 +300,9 @@
 		}
 
 		&:hover {
-			opacity: .7;
+			@include media-breakpoint-up(lg) {
+				opacity: .5;
+			}
 		}
 	}
 
@@ -287,9 +321,7 @@
 		width: 100%;
 		font-weight: 600;
 
-		&:hover {
-			border-color: $primary;
-		}
+
 
 		.icon {
 			// margin-top: rem(3);
@@ -298,9 +330,6 @@
 			transform: rotate(180deg);
 		}
 
-		&:hover {
-			color: $body-color !important;
-		}
 	}
 
 	//Правый блок
@@ -309,7 +338,10 @@
 			margin-left: 30px;
 			padding-left: 0;
 		}
-		max-width: rem(360);
+		max-width: rem(550);
+		@include media-breakpoint-up(lg) {
+			max-width: rem(360);
+		}
 		@include media-breakpoint-down(md) {
 			margin-left: auto;
 			margin-right: auto;
@@ -350,6 +382,10 @@
 			padding-right: rem(30);
 			padding-bottom: rem(70);
 		}
+		@media (min-width: 1200px) and (max-width: 1440px) {
+			padding-top: rem(20);
+			padding-bottom: rem(30);
+		}
 		padding-bottom: rem(35);
 		padding-left: rem(25);
 		padding-right: rem(25);
@@ -375,6 +411,10 @@
 				margin-left: rem(-5);
 				margin-right: rem(-5);
 				line-height: 1.65;
+			}
+			@media (min-width: 1200px) and (max-width: 1440px) {
+				line-height: 1.6;
+				margin-bottom: rem(17);
 			}
 			line-height: 1.8;
 		}
@@ -408,6 +448,9 @@
 		@include media-breakpoint-down(sm) {
 			padding-left: rem(15);
 		}
+		@media (min-width: 1200px) and (max-width: 1440px) {
+			margin-bottom: rem(35);
+		}
 
 		&::before {
 			content: '';
@@ -419,6 +462,9 @@
 			top: rem(116);
 			@include media-breakpoint-up(md) {
 				top: rem(140);
+			}
+			@media (min-width: 1200px) and (max-width: 1440px) {
+				top: rem(120);
 			}
 		}
 
@@ -464,10 +510,13 @@
 			padding-top: rem(17);
 			padding-bottom: rem(17);
 		}
+		@include mt;
 
 		&:hover {
-			color: #fff !important;
-			border-color: $primary !important;
+			@include media-breakpoint-up(lg) {
+				background-color: #fff;
+				border-color: $primary !important;
+			}
 		}
 	}
 
@@ -547,6 +596,11 @@
 			@include media-breakpoint-up(lg) {
 				border: 2px solid #e5e5e5;
 			}
+
+			@include media-breakpoint-down(md) {
+				margin-left: -0.6rem;
+				margin-right: -0.6rem;
+			}
 			border-radius: 5px;
 
 			justify-content: center;
@@ -559,12 +613,19 @@
 		}
 
 		&__btn {
+			@include mt;
 			@include media-breakpoint-up(lg) {
-				margin: -2px;
+				margin: -2px -1px;
 				border-radius: 0;
 			}
-			@include media-breakpoint-up(sm) {
-				margin: 4px;
+			@include media-breakpoint-down(sm) {
+				flex: 0 0 45%;
+				max-width: 45%;
+			}
+			&:nth-child(2n + 1) {
+				@include media-breakpoint-down(md) {
+					margin-right: .5rem;
+				}
 			}
 			padding-bottom: rem(12);
 
@@ -577,9 +638,9 @@
 			}
 		}
 
-		&__btn:not(:last-child) {
-			margin-right: 0;
-		}
+		// &__btn:not(:last-child) {
+		// 	margin-right: 0;
+		// }
 
 		.icon-phone-bg {
 			font-size: rem(27);
@@ -619,10 +680,10 @@
 			font-size: rem(18);
 		}
 
-		&:hover {
-			color: $body-color !important;
-			border-color: $primary;
-		}
+		// &:hover {
+		// 	color: $body-color !important;
+		// 	border-color: $primary;
+		// }
 	}
 
 	&__polite {
@@ -680,4 +741,9 @@
 
 .disabled{
 	pointer-events: none;
+}
+
+.topBlockHidden {
+	opacity: 0;
+	
 }

@@ -24,6 +24,7 @@
 	.icon-logo {
 		font-size: rem(43);
 		margin-right: 3px;
+		color: $primary !important;
 		@include media-breakpoint-up(sm){
 			font-size: rem(55);
 			margin-right: rem(4);
@@ -45,7 +46,7 @@
 	}
 
 	p {
-		color: #fff;
+		color: $light;
 		max-width: rem(168);
 		line-height: 1.4;
 		@include media-breakpoint-up(xl) {
@@ -61,7 +62,7 @@
 	}
 
 	&__tel {
-		color: #fff;
+		color: #fff !important;
 		text-decoration: none !important;
 		margin-left: rem(10);
 		@include media-breakpoint-up(xl) {
@@ -73,9 +74,6 @@
 		flex-shrink: 0;
 		@include media-breakpoint-only(lg) {
 			font-size: rem(16);
-		}
-		&:hover {
-			color: $primary;
 		}
 	}
 
@@ -165,7 +163,7 @@
 		}
 
 		&__tel {
-			color: $body-color;
+			color: $body-color !important;
 
 			&:hover {
 				color: $dark;

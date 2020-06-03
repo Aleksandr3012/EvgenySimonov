@@ -8,18 +8,29 @@
 	}
 	padding-bottom: rem(90);
 
+	@media (min-width: 992px) and (max-width: 1440px) {
+		padding-top: rem(20);
+	}
+
 	&__polite {
 		text-decoration: underline;
 		@include media-breakpoint-up(md) {
 			text-decoration: none !important;
 		}
-		color: $dark;
-		display: block;
+		color: $dark !important;
+		display: inline-block;
 		margin-top: rem(5);
 		margin-bottom: rem(17);
 		@include media-breakpoint-up(md) {
 			margin-top: rem(15);
 			margin-bottom: rem(29);
+		}
+		border-bottom: solid 1px $dark;
+
+		&:hover {
+			@include media-breakpoint-up(lg) {
+				border-color: transparent;
+			}
 		}
 	}
 
@@ -148,10 +159,23 @@
 
 		.vk {
 			background-color: #4a76a8;
+			&:hover {
+				opacity: 1;
+				@include media-breakpoint-up(lg) {
+					background-color: #467EBE;
+				}
+			}
+
 		}
 
 		.inst {
 			background-color: #ee4959;
+			&:hover {
+				opacity: 1;
+				@include media-breakpoint-up(lg) {
+					background-color: #FF3F51;
+				}
+			}
 		}
 	}
 
@@ -162,6 +186,12 @@
 		@include media-breakpoint-up(md) {
 			margin-top: 0;
 			margin-left: rem(10);
+		}
+
+		&:hover .icon-logo{
+			@include media-breakpoint-up(lg) {
+				transform: scale(0.8);
+			}
 		}
 	}
 
@@ -180,9 +210,11 @@
 	.icon-logo {
 		font-size: rem(43);
 		margin-right: 3px;
+		color: $primary !important;
 		@include media-breakpoint-up(md) {
 			font-size: rem(48);
 		}
+		@include mt;
 	}
 
 	.icon-logo-text {

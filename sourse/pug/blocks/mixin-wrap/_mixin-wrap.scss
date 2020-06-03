@@ -16,7 +16,9 @@
 		@include mt;
 		&:hover {
 			// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
-			opacity: 0.6;
+			@include media-breakpoint-up(lg) {
+				opacity: 0.6;
+			}
 		}
 	}
 
@@ -46,7 +48,9 @@
 		text-decoration: none !important;
 
 		&:hover {
-			opacity: 0.8;
+			@include media-breakpoint-up(lg) {
+				opacity: 0.8;
+			}
 		}
 	}
 

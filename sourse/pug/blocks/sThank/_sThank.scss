@@ -6,6 +6,9 @@
 		padding-top: rem(24);
 		// margin-bottom: rem(-9);
 	}
+	@media (min-width: 992px) and (max-width: 1440px) {
+		padding-top: rem(10);
+	}
 	.container {
 		@include media-breakpoint-up(lg) {
 			background-color: #ffffff;
@@ -18,6 +21,10 @@
 	.section-title {
 		background-color: #fff;
 		max-width: rem(610);
+		@media (min-width: 992px) and (max-width: 1440px) {
+			padding-top: rem(15);
+			padding-bottom: rem(20);
+		}
 		padding-top: rem(40);
 		padding-left: rem(20);
 		padding-right: rem(20);

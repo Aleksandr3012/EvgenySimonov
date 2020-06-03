@@ -24,7 +24,7 @@ mixin workItem(img,p,pr,t,title,link)
 			+e.body
 				.d-none.d-lg-block
 					.h2= title
-					+e.link(href=`https://${link}`) 
+					+e.link(href=`https://${link}`  target="_blank") 
 						+icon('link')
 						span= link
 				block
@@ -47,7 +47,7 @@ mixin sOurWork()
 	+b.sOurWork#sOurWork&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				.h1 Посмотрите наши свежие проекты
+				h2 Посмотрите наши свежие проекты
 			+b.tabs
 				+e.caption
 					+e.btn.btn.btn-light.active Урал Маф

@@ -7,6 +7,10 @@
 		padding-bottom: rem(43);
 	}
 
+	@media (min-width: 1200px) and (max-width: 1440px) {
+		padding-bottom: rem(20);
+	}
+
 	&__item {
 		display: flex;
 		align-items: center;
@@ -134,7 +138,7 @@
 		@include media-breakpoint-only(xl) {
 			font-size: rem(16);
 		}
-		color: $body-color;
+		color: $body-color !important;
 		text-decoration: none !important;
 		@include media-breakpoint-down(sm) {
 			margin-bottom: rem(11);
@@ -147,9 +151,11 @@
 		color: $primary !important;
 		padding: rem(13) rem(23) rem(10);
 		font-weight: 600;
+		@include media-breakpoint-up(sm) {
+			padding: rem(15) rem(28) rem(18);
+		}
 		@include media-breakpoint-up(md) {
 			margin-left: rem(35);
-			padding: rem(15) rem(28) rem(18);
 		}
 		@include media-breakpoint-only(xl) {
 			margin-left: rem(15);
@@ -161,7 +167,9 @@
 		}
 
 		&:hover {
-			color: #fff !important;
+			@include media-breakpoint-up(lg) {
+				color: #fff !important;
+			}
 		}
 	}
 

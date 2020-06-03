@@ -162,7 +162,6 @@ function eventHandler() {
 
 
 
-
 	var gets = (function () {
 		var a = window.location.search;
 		var b = new Object();
@@ -221,6 +220,10 @@ function eventHandler() {
 				
 				}
 			})
+	})
+
+	$('.btn-last-js').click(function(){
+		$('.sQwiz__top').addClass('topBlockHidden');
 	})
 
 	//Слайдер теста расчёта финансов
@@ -283,7 +286,7 @@ function eventHandler() {
 		}
 	});
 
-	$(".headerBlock__rbk").click(function () {
+	$(".headerBlock .icon-rbk").click(function () {
 		$(".headerBlock__rbk-block").fadeToggle();
 	})
 

@@ -22,7 +22,7 @@ mixin sQwiz()
 					+e.descr Ответьте на&nbsp;несколько вопросов, чтобы мы&nbsp;могли точнее понять задачу и&nbsp;рассчитать стоимость работы:
 				.swiper-container.jsTestSlider
 					.swiper-wrapper
-						mixin item(pr,progress,t,inp, not, name)
+						mixin item(pr,progress,t,inp, not, name,per)
 							.swiper-slide
 								+e.item
 									if pr
@@ -44,15 +44,15 @@ mixin sQwiz()
 															+e.toggle-block
 																+input(`${inp}`,'text','', `step-${pr}-text`)
 													+e.foot.row
-														
-														.col-xl-4.col-sm-6
-															+e.next.jsNextQuest.btn.btn-primary.disabled.h6(type="button") Далее
-																+icon('arrowNext')
-														.col.order-sm-first
+														.col
 															if not
 																+e.btn-back.jsSlideBack.h6(type="button")
 																	+icon('arrowNext')
 																	| Назад
+														.col-xl-4.col-sm-6
+															+e.next.jsNextQuest.btn.btn-primary.h6(type="button" class= per) Далее
+																	+icon('arrowNext')
+
 											+e.sitebar.col
 												+e.sitebarWrap
 													+e.supervisor 
@@ -93,7 +93,7 @@ mixin sQwiz()
 						+item('1','1','В какой сфере Ваш бизнес?', 'Напишите, чем занимаетесь')
 							.row
 								.col-xl-4.col-sm-6
-									+radio('1','B2B','Сфера услуг (B2B)')
+									+radio('1','B2B','Сфера услуг (B2B)')(checked)
 								.col-xl-4.col-sm-6
 									+radio('1','B2C','Сфера услуг (B2C)')
 								.col-xl-4.col-sm-6
@@ -114,11 +114,11 @@ mixin sQwiz()
 								.col-md-6
 									+radio('2','yes','Да')(class='toggle-input-js')
 								.col-md-6
-									+radio('2','no','Нет')
+									+radio('2','no','Нет')(checked)
 						+item('3','2.8','Что вы хотите получить от сайта?','Напишите, какую вашу задачу должен решить сайт','not')(class="twoItem")
 							.row
 								.col-md-6
-									+radio('3','more-customers','Больше клиентов и продаж')
+									+radio('3','more-customers','Больше клиентов и продаж')(checked)
 								.col-md-6
 									+radio('3','price','Увеличение среднего чека')
 								.col-md-6
@@ -127,10 +127,10 @@ mixin sQwiz()
 									+radio('3','online-business','Хочу перевести бизнес в онлайн')
 								.col-md-6
 									+radio('3','other3','Другое')(class='toggle-input-js')
-						+item('4','3.5','Вы планируете запускать рекламу?','','not')
+						+item('4','3.5','Вы планируете запускать рекламу?','','not','','btn-last-js')
 							.row
 								.col-md-6
-									+radio('4','yes4','Да')
+									+radio('4','yes4','Да')(checked)
 								.col-md-6
 									+radio('4','no4','Нет')
 						+item('')

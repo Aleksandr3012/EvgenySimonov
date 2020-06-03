@@ -119,6 +119,11 @@
 				font-size: rem(30);
 				margin-bottom: rem(20);
 			}
+			@media (min-width: 992px) and (max-width: 1440px) {
+				line-height: 1.25;
+				font-size: rem(25);
+				margin-bottom: rem(10);
+			}
 			line-height: 1.35;
 			font-weight: 600;
 		}
@@ -147,6 +152,7 @@
 			@extend .h6;
 			text-align: center;
 			background-color: $gray-100;
+			color: $body-color;
 			border-color: transparent;
 			margin-left: auto;
 			margin-right: auto;
@@ -247,7 +253,13 @@
 		&__form {
 			padding: rem(53) rem(16) rem(60) rem(16);
 			@include media-breakpoint-up(md) {
+				height: rem(780px);
 				padding: rem(50) rem(20) rem(50) rem(18);
+			}
+			@media (min-width: 992px) and (max-width: 1440px) {
+				padding-top: rem(30);
+				padding-bottom: rem(30);
+				height: rem(700);
 			}
 			@include media-breakpoint-down(md) {
 				max-width: rem(380);

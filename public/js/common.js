@@ -182,6 +182,9 @@ function eventHandler() {
 				parent.find(".sQwiz__toggle-block").slideUp();
 			}
 		});
+	});
+	$('.btn-last-js').click(function () {
+		$('.sQwiz__top').addClass('topBlockHidden');
 	}); //Слайдер теста расчёта финансов
 
 	var testSwiper = new Swiper('.jsTestSlider', {
@@ -245,7 +248,7 @@ function eventHandler() {
 			$('.jsSlideBack').show();
 		}
 	});
-	$(".headerBlock__rbk").click(function () {
+	$(".headerBlock .icon-rbk").click(function () {
 		$(".headerBlock__rbk-block").fadeToggle();
 	});
 }

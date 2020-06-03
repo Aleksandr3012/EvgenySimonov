@@ -1,23 +1,28 @@
 
 	// start .sOurWork
 	.sOurWork {
+		@media (min-width: 992px) and (max-width: 1440px) {
+			padding-top: rem(20);
+			padding-bottom: rem(25);
+		}
 		padding-top: rem(42);
 		padding-bottom: rem(47);
 		position: relative;
 		background-color: #fff;
-		@include media-breakpoint-up(lg){
+		@include media-breakpoint-up(xl){
 		padding-top: rem(64);
 		padding-bottom: rem(80);
 		}
 
-		.h1 {
-			font-weight: 700;
-		}
 
 		.section-title {
 			margin-bottom: rem(6px);
 			@include media-breakpoint-up(lg) {
 				margin-bottom: rem(29);
+			}
+			@media (min-width: 992px) and (max-width: 1440px) {
+				margin-bottom: 0;
+				padding-bottom: rem(10);
 			}
 		}
 

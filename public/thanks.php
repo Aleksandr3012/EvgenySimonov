@@ -10,7 +10,8 @@ $qwiz = $_SESSION['qwiz'];
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
-		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name="format-detection" content="telephone=no">
+		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name=”viewport” content=”width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="format-detection" content="telephone=no">
 		<link rel="image_src" href="http://genrif.ru/assets/i/soc-logo.png">
 		<meta property="og:type" content="website">
 		<meta property="og:site_name" content="content">
@@ -152,7 +153,7 @@ $qwiz = $_SESSION['qwiz'];
 						</div>
 						<div class="footer__col col-lg">
 							<p class="adress">Юридический адрес и реквизиты:</p>
-							<p class="text-light">455038, Челябинская область, г. Магнитогорск <br> ИП Симонов Евгений Анатольевич / ИНН 026701658200 / ОГРНИП 316745600179104</p><a class="footer__polite" href="#">Политика конфиденциальности</a>
+							<p class="text-dark">455038, Челябинская область, г. Магнитогорск <br> ИП Симонов Евгений Анатольевич / ИНН 026701658200 / ОГРНИП 316745600179104</p><a class="footer__polite" href="#">Политика конфиденциальности</a>
 							<p>© <span class="curentYear"></span> Все права защищены.</p>
 						</div>
 						<div class="col">
