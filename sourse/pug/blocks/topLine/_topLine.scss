@@ -11,9 +11,10 @@
 
 	&__logo {
 		text-decoration: none !important;
-		width: rem(227);
+		display: flex;
+		// width: rem(227);
 		@include media-breakpoint-up(sm){
-			margin-right: rem(5);
+			margin-right: rem(15);
 		}
 		@include media-breakpoint-up(xl) {
 			margin-right: rem(28);
@@ -22,7 +23,7 @@
 	}
 	.icon-logo {
 		font-size: rem(43);
-		margin-right: 2.5px;
+		margin-right: 3px;
 		@include media-breakpoint-up(sm){
 			font-size: rem(55);
 			margin-right: rem(4);

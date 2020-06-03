@@ -26,6 +26,7 @@
 
 		p {
 			margin-bottom: rem(16);
+			font-weight: 600;
 		}
 
 		.messengers {
@@ -43,6 +44,7 @@
 		color: $body-color;
 		text-decoration: none !important;
 		display: block;
+		font-weight: 600;
 		margin-bottom: rem(14);
 		letter-spacing: rem(0.3);
 	}
@@ -152,6 +154,7 @@
 
 		&__title {
 			@extend .h6;
+			font-weight: normal;
 			@include media-breakpoint-up(md) {
 				margin-bottom: rem(16);
 			}
@@ -161,6 +164,7 @@
 
 		&__group-title {
 			@extend .h6;
+			font-weight: normal;
 			display: block;
 			margin-bottom: rem(8);
 			@include media-breakpoint-up(md) {
@@ -173,11 +177,12 @@
 			// @include a-cent(x);
 			position: absolute;
 			z-index: 5;
-			left: 5%;
-			@include media-breakpoint-up(lg) {
-				left: 20%;
-			}
-			bottom: rem(87);
+			@include a-cent(x);
+			// left: 5%;
+			// @include media-breakpoint-up(lg) {
+			// 	left: 20%;
+			// }
+			bottom: rem(50);
 			width: rem(300);
 		}
 

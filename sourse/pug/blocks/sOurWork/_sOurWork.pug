@@ -9,7 +9,7 @@ mixin workItem(img,p,pr,t,title,link)
 
 			+e.preview
 				a(href=`img/@2x/${img}-xl.jpg` data-fancybox=`${img}`)
-					img.res-i.lazy(src="#" data-src=`img/@2x/${img}.jpg` alt="")
+					img.lazy(src="#" data-src=`img/@2x/${img}_02.jpg` alt='')
 			+e.indicators.d-none.d-lg-flex
 				+e.indicatorsItem
 					.h2= p

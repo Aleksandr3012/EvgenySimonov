@@ -3,10 +3,12 @@
 	.sOurWork {
 		padding-top: rem(42);
 		padding-bottom: rem(47);
+		position: relative;
+		background-color: #fff;
 		@include media-breakpoint-up(lg){
-		padding-top: rem(65);
+		padding-top: rem(64);
 		padding-bottom: rem(80);
-	}
+		}
 
 		.h1 {
 			font-weight: 700;

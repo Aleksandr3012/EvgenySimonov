@@ -151,7 +151,7 @@ $qwiz = $_SESSION['qwiz'];
 							</div>
 						</div>
 						<div class="footer__col col-lg">
-							<p>Юридический адрес и реквизиты:</p>
+							<p class="adress">Юридический адрес и реквизиты:</p>
 							<p class="text-light">455038, Челябинская область, г. Магнитогорск <br> ИП Симонов Евгений Анатольевич / ИНН 026701658200 / ОГРНИП 316745600179104</p><a class="footer__polite" href="#">Политика конфиденциальности</a>
 							<p>© <span class="curentYear"></span> Все права защищены.</p>
 						</div>
@@ -182,7 +182,8 @@ $qwiz = $_SESSION['qwiz'];
 									</div>
 								</div>
 							</div>
-							<div class="footer__dev">Разработка сайта —<a class="footer__logo" href="/">
+							<div class="footer__dev">Разработка сайта 
+								<div class="d-none d-md-inline">—</div><a class="footer__logo" href="/">
 								<svg class="icon icon-logo ">
 									<use xlink:href="img/svg/sprite.svg#logo"></use>
 								</svg>
