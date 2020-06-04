@@ -8,6 +8,11 @@
 		padding-top: rem(51);
 	}
 	padding-bottom: rem(30);
+	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
+	display: flex;
+	flex-direction: column;
+	
 
 	@include media-breakpoint-up(xxl) {
 		.container {
@@ -236,7 +241,7 @@
 	}
 
 	//Два айтема на строке
-	.twoItem label {
+	// .twoItem label {
 		// @include media-breakpoint-up(xl) {
 		// 	flex: 0 0 46.7%;
 		// 	max-width: 46.7%;
@@ -245,7 +250,7 @@
 		// 	flex: 0 0 47.58%;
 		// 	max-width: 47.58%;
 		// }
-	}
+	// }
 
 	//Блок с кнопками вперед и назад
 	&__foot {
@@ -678,6 +683,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-bottom: rem(18);
+		font-weight: 600;
 		@include media-breakpoint-up(md) {
 			font-size: rem(18);
 		}
@@ -699,6 +705,7 @@
 			display: inline-block;
 		}
 	}
+
 
 	@include media-breakpoint-up(xl) {
 	}
@@ -746,6 +753,8 @@
 }
 
 .topBlockHidden {
-	opacity: 0;
-	
+	// opacity: 0;
+	// transform: scale(0);
+	// height: 0px;
+	// display: none;
 }

@@ -248,7 +248,9 @@ $qwiz = $_SESSION['qwiz'];
 										<!-- +e.input-wrap-->
 									</div>
 								</div>
-							</div><input class="form-wrap__btn btn btn-primary" type="submit" value="Перезвоните мне"/>
+							</div>
+							<button class="form-wrap__btn btn btn-primary" type="submit">Перезвоните мне
+							</button>
 							<div class="form-wrap__polite"><small class="form-wrap__text text-secondary">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих персональных данных и&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности</a></small>
 							</div>
 						</div>
@@ -296,7 +298,9 @@ $qwiz = $_SESSION['qwiz'];
 							</div>
 							<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Например: 21 января в 14:00" name="datetime"/>
 							</div>
-							<!-- +e.input-wrap--><input class="form-wrap__btn btn btn-primary" type="submit" value="Перезвоните мне"/>
+							<!-- +e.input-wrap-->
+							<button class="form-wrap__btn btn btn-primary" type="submit">Перезвоните мне
+							</button>
 							<div class="form-wrap__polite"><small class="form-wrap__text text-secondary">Нажимая на&nbsp;кнопку, вы&nbsp;даете согласие на&nbsp;обработку своих персональных данных и&nbsp;соглашаетесь с&nbsp;<a href="#">Политикой конфиденциальности</a></small>
 							</div>
 						</div>

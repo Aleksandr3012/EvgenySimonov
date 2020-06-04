@@ -222,10 +222,10 @@
 				padding-bottom: rem(18);
 			}
 
-			&:hover {
-				border-color: $primary;
-				color: $body-color !important;
-			}
+			// &:hover {
+			// 	border-color: $primary;
+			// 	color: $body-color !important;
+			// }
 
 			@extend .h6;
 		}

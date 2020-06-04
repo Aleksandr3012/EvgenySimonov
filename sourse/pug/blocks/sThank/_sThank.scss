@@ -40,7 +40,7 @@
 			font-size: rem(22);
 			margin-bottom: rem(35);
 			display: block;
-			color: $body-color;
+			color: $body-color !important;
 			text-decoration: none !important;
 			@include media-breakpoint-up(sm) {
 				font-size: rem(30);
@@ -49,9 +49,9 @@
 			@include mt;
 			cursor: pointer;
 
-			&:hover {
-				color: $primary;
-			}
+			// &:hover {
+			// 	color: $primary;
+			// }
 		}
 
 		&__subscribe {
@@ -66,6 +66,7 @@
 			@include media-breakpoint-up(sm) {
 				font-size: rem(18);
 			}
+			font-weight: 600;
 			margin-left: auto;
 			margin-right: auto;
 
