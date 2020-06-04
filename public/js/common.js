@@ -248,7 +248,7 @@ function eventHandler() {
 			$('.jsSlideBack').show();
 		}
 	});
-	$(".headerBlock__rbk ").click(function () {
+	$(".headerBlock .icon-rbk").click(function () {
 		$(".headerBlock__rbk-block").fadeToggle();
 	});
 	$(".tabs__preview").click(function () {
