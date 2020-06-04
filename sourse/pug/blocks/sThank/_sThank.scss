@@ -46,6 +46,8 @@
 				font-size: rem(30);
 				margin-bottom: rem(33);
 			}
+			@include mt;
+			cursor: pointer;
 
 			&:hover {
 				color: $primary;
@@ -67,10 +69,6 @@
 			margin-left: auto;
 			margin-right: auto;
 
-			&:hover {
-				color: $body-color !important;
-				border-color: $primary !important;
-			}
 		}
 
 		&__imgWrap {
@@ -120,6 +118,9 @@
 
 		a {
 			text-decoration: none !important;
+			&:hover {
+				color: $primary;
+			}
 		}
 	}
 

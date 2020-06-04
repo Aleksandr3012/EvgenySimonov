@@ -228,8 +228,8 @@ function eventHandler() {
 
 	//Слайдер теста расчёта финансов
 	var testSwiper = new Swiper('.jsTestSlider', {
-		effect: 'slide',
-		speed: 800,
+		effect: 'fade',
+		speed: 400,
 		simulateTouch: false,
 		longSwipes: false,
 		followFinger: false,
@@ -286,7 +286,7 @@ function eventHandler() {
 		}
 	});
 
-	$(".headerBlock .icon-rbk").click(function () {
+	$(".headerBlock__rbk ").click(function () {
 		$(".headerBlock__rbk-block").fadeToggle();
 	})
 

@@ -83,11 +83,7 @@ $qwiz = $_SESSION['qwiz'];
 							Перезвоню вам в&nbsp;ближайшее время, задам дополнительные  вопросы по&nbsp;задаче и&nbsp;озвучу стоимость работ.<br>Хорошего дня!</div><?php } else{	  ?>
 						<div class="h6">
 							Перезвоню вам в&nbsp;ближайшее время и&nbsp;отвечу на&nbsp;ваши вопросы.<br>Хорошего дня!</div><?php	} ?>
-						<div class="h6 text-primary">А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в <a href="https://www.instagram.com/simonov__evgeny/" target="_blank">Instagram.</a> Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:</div><a class="section-title__imgWrap" href="undefined" target="_blank"><img class="res-i" src="img/@2x/photo.jpg" alt=""/></a>
-						<div class="section-title__inst" target="_blank">@simonov__evgeny
-						</div>
-						<div class="section-title__subscribe btn btn-primary" target="_blank">Перейти и подписаться
-						</div>
+						<div class="h6 text-primary">А&nbsp;пока вы&nbsp;ждете звонка, подписывайтесь на&nbsp;мой профиль&nbsp;в <a href="https://www.instagram.com/simonov__evgeny/" target="_blank">Instagram.</a> Вы&nbsp;узнаете больше обо мне и&nbsp;о&nbsp;нашей компании:</div><a class="section-title__imgWrap" href="https://www.instagram.com/simonov__evgeny/" target="_blank"><img class="res-i" src="img/@2x/photo.jpg" alt=""/></a><a class="section-title__inst" href="https://www.instagram.com/simonov__evgeny/" target="_blank">@simonov__evgeny</a><a class="section-title__subscribe btn btn-primary" href="https://www.instagram.com/simonov__evgeny/" target="_blank">Перейти и подписаться</a>
 					</div>
 				</div>
 			</section>
