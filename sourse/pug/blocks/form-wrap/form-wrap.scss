@@ -7,6 +7,10 @@
 			// @extend .form-control;
 		//  outline: 0 !important;
 		 resize: none;
+		 &::-webkit-input-placeholder {color:#7B7D7E;}
+		 &::-moz-placeholder          {color:#7B7D7E;}/* Firefox 19+ */
+		 &:-moz-placeholder           {color:#7B7D7E;}/* Firefox 18- */
+		 &:-ms-input-placeholder      {color:#7B7D7E;}
  	}
  	&__btn{
  		cursor: pointer;

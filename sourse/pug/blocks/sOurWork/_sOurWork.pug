@@ -7,7 +7,7 @@ mixin workItem(img,p,pr,t,title,link)
 					+icon('link')
 					span= link
 
-			+e.preview(href=`img/@2x/${img}-xl.jpg` data-fancybox=`${img}`)
+			+e.preview(href=`https://${link}`  target="_blank")
 					//- img.lazy.res-i(src="#" data-src=`img/${img}-md.png` alt='')
 					img.lazy.res-i(src="#" data-src=`img/@2x/${img}-md.png` alt='')
 			+e.indicators.d-none.d-lg-flex

@@ -7,7 +7,7 @@
 			padding-bottom: rem(55);
 		}
 		@media (min-width: 992px) and (max-width: 1440px) {
-			padding-bottom: rem(15);
+			padding-bottom: 2.5rem;
 		}
 		justify-content: center;
 		@include media-breakpoint-up(lg){
@@ -80,6 +80,7 @@
 		@media (min-width: 992px) and (max-width: 1440px) {
 			padding-top: rem(15);
 			padding-bottom: rem(14);
+			margin-top: 1.5rem;
 		}
 		font-weight: 600;
 		max-width: 280px;
@@ -89,10 +90,6 @@
 		padding: rem(13) rem(0) rem(11);
 		@include media-breakpoint-up(sm) {
 			max-width: rem(320);
-		}
-
-		@media (min-width: 992px) and (max-width: 1440px) {
-			margin-top: 1rem;
 		}
 	}
 
@@ -172,19 +169,20 @@
 		}
 
 		&:hover {
+			background-color: transparent !important;
 			@include media-breakpoint-up(lg) {
 				border-color: #C7C7C7 !important;
-				background-color: transparent !important;
 
 			}
 		}
 
-		// &:focus {
-		// 	@include media-breakpoint-up(lg) {
-		// 		background-color: transparent !important;
-		// 		border-color: $light !important;
-		// 	}
-		// }
+		&:focus {
+			background-color: transparent !important;
+			border-color: $light !important;
+		}
+		&:active {
+			background-color: transparent !important;
+		}
 		@extend .h6;
 		@include media-breakpoint-down(md) {
 			flex: 0 0 48.4%;
@@ -197,10 +195,6 @@
 			pointer-events: none;
 		}
 
-
-		&:hover {
-			background-color: transparent;
-		}
 
 		&:nth-child(1), &:nth-child(3) {
 			margin-right: rem(10);

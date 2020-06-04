@@ -578,9 +578,7 @@ a {
 	}
 
 	&:active, &:focus {
-		@include media-breakpoint-up(lg) {
-			background-color: $primary !important;
-		}
+		background-color: $primary !important;
 	}
 
 	&::before {
