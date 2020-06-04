@@ -243,7 +243,7 @@ $qwiz = $_SESSION['qwiz'];
 								<div class="tabs__wrap">
 									<div class="tabs__content active"></div>
 									<div class="tabs__content">
-										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Например: 21 января в 14:00" name="datetime" required="required"/>
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Например: 21 января в 14:00" name="datetime"/>
 										</div>
 										<!-- +e.input-wrap-->
 									</div>
