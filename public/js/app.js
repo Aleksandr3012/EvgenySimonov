@@ -1,19 +1,19 @@
 "use strict";
 
 // .footer scripts goes here
+var headerBlockVue = new Vue({
+	el: '#headerBlock',
+	data: {
+		imgSRc: 'img/'
+	},
+	created: function created() {},
+	computed: {}
+});
 var header = new Vue({
 	el: '#header',
 	data: {
 		imgSRc: 'img/',
 		a: a
-	},
-	created: function created() {},
-	computed: {}
-});
-var headerBlockVue = new Vue({
-	el: '#headerBlock',
-	data: {
-		imgSRc: 'img/'
 	},
 	created: function created() {},
 	computed: {}
@@ -51,8 +51,8 @@ var sFormVue = new Vue({
 	created: function created() {},
 	computed: {}
 });
-var sOurWorkVue = new Vue({
-	el: '#sOurWork',
+var sThankVue = new Vue({
+	el: '#sThank',
 	data: {
 		imgSRc: 'img/'
 	},
@@ -69,20 +69,20 @@ var sQwizVue = new Vue({
 	created: function created() {},
 	computed: {}
 });
-var sThankVue = new Vue({
-	el: '#sThank',
-	data: {
-		imgSRc: 'img/'
-	},
-	methods: {},
-	created: function created() {},
-	computed: {}
-});
 var topLineVue = new Vue({
 	el: '#topLine',
 	data: {
 		imgSRc: 'img/'
 	},
+	created: function created() {},
+	computed: {}
+});
+var sOurWorkVue = new Vue({
+	el: '#sOurWork',
+	data: {
+		imgSRc: 'img/'
+	},
+	methods: {},
 	created: function created() {},
 	computed: {}
 });
