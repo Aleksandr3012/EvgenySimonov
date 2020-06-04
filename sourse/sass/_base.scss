@@ -588,6 +588,7 @@ a {
 		right: -50%;
 		bottom: -50%;
 		left: -50%;
+		z-index: 1;
 
 
 		background: linear-gradient(
@@ -608,26 +609,22 @@ a {
 	79% {
 		opacity: 0;
 		filter: alpha(opacity=0);
-		-webkit-transform: rotateZ(60deg) translate(-5em, 7.5em);
 		transform: rotateZ(60deg) translate(-5em, 7.5em);
 	}
 	80% {
 		opacity: 1;
 		filter: alpha(opacity=100);
-		-webkit-transform: rotateZ(60deg) translate(-5em, 7.5em);
 		transform: rotateZ(60deg) translate(-5em, 7.5em);
 	}
 	95% {
 		opacity: 1;
 		filter: alpha(opacity=100);
-		-webkit-transform: rotateZ(60deg) translate(1em, -11em);
-		transform: rotateZ(60deg) translate(1em, -11em);
+		transform: rotateZ(60deg) translate(1em, -16em);
 	}
 	100% {
 		opacity: 0;
 		filter: alpha(opacity=0);
-		-webkit-transform: rotateZ(60deg) translate(1em, -9em);
-		transform: rotateZ(60deg) translate(1em, -9em);
+		transform: rotateZ(60deg) translate(1em, -50em);
 	}
 }
 
