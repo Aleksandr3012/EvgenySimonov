@@ -290,6 +290,10 @@ function eventHandler() {
 		$(".headerBlock__rbk-block").fadeToggle();
 	})
 
+	$(".tabs__preview").click(function () {
+	 var link= $(this).data("link")
+		document.querySelector("#modal-site iframe").src = link;
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

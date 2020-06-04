@@ -251,6 +251,10 @@ function eventHandler() {
 	$(".headerBlock__rbk ").click(function () {
 		$(".headerBlock__rbk-block").fadeToggle();
 	});
+	$(".tabs__preview").click(function () {
+		var link = $(this).data("link");
+		document.querySelector("#modal-site iframe").src = link;
+	});
 }
 
 ;
