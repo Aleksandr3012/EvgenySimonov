@@ -44,14 +44,15 @@ mixin sQwiz()
 															+e.toggle-block
 																+input(`${inp}`,'text','', `step-${pr}-text`)
 													+e.foot.row
+														.col-xl-4.col-sm-6.order-sm-last
+															+e.next.jsNextQuest.btn.btn-primary.h6(type="button" class= per) Далее
+																	+icon('arrowNext')
 														.col-sm
 															if not
 																+e.btn-back.jsSlideBack.h6(type="button")
 																	+icon('arrowNext')
 																	| Назад
-														.col-xl-4.col-sm-6
-															+e.next.jsNextQuest.btn.btn-primary.h6(type="button" class= per) Далее
-																	+icon('arrowNext')
+
 
 											+e.sitebar.col
 												+e.sitebarWrap

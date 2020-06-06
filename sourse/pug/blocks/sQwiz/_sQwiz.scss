@@ -8,10 +8,12 @@
 		padding-top: rem(51);
 	}
 	padding-bottom: rem(30);
-	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
-	display: flex;
-	flex-direction: column;
+	@include media-breakpoint-up(lg) {
+		min-height: 100vh;
+		min-height: calc(var(--vh, 1vh) * 100);
+		display: flex;
+		flex-direction: column;
+	}
 	
 
 	@include media-breakpoint-up(xxl) {
@@ -259,7 +261,7 @@
 		align-items: center;
 		@include media-breakpoint-down(sm) {
 			padding-top: rem(12);
-			flex-direction: column-reverse;
+			// flex-direction: column-reverse;
 		}
 		margin-top: auto;
 	}

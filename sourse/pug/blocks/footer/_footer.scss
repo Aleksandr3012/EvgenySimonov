@@ -14,7 +14,6 @@
 
 	&__polite {
 		text-decoration: none !important;
-		// text-decoration: underline;
 		@include media-breakpoint-up(md) {
 		}
 		color: $dark !important;
