@@ -290,6 +290,12 @@ function eventHandler() {
 	$(".headerBlock .icon-rbk").click(function () {
 		$(".headerBlock__rbk-block").fadeToggle();
 	})
+	$(document).mouseup(function (e) {
+		var container = $(".headerBlock__rbk");
+		if (container.has(e.target).length === 0) {
+			$(".headerBlock__rbk-block").fadeOut();
+		}
+	});
 	$(".tabs__preview").click(function () {
 		var link = $(this).data("link")
 		document.querySelector("#modal-site iframe").src = link;

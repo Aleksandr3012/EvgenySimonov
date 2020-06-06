@@ -13,9 +13,9 @@
 	}
 
 	&__polite {
-		text-decoration: underline;
+		text-decoration: none !important;
+		// text-decoration: underline;
 		@include media-breakpoint-up(md) {
-			text-decoration: none !important;
 		}
 		color: $dark !important;
 		display: inline-block;

@@ -3,7 +3,7 @@ mixin workItem(img,p,pr,t,title,link)
 		.col-xl-auto.col-lg
 			+e.body.d-lg-none
 				.h2= title
-				+e.link(href=`${link}`) 
+				+e.link( ) 
 					+icon('link')
 					span= link
 
@@ -24,7 +24,7 @@ mixin workItem(img,p,pr,t,title,link)
 			+e.body
 				.d-none.d-lg-block
 					.h2= title
-					+e.link(href=`https://${link}`  target="_blank") 
+					+e.DIV.link(  ) 
 						+icon('link')
 						span= link
 				block

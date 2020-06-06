@@ -277,13 +277,16 @@
 		margin-right: auto;
 		&__btn {
 
-			margin-right: -2px !important;
-			margin-bottom: -2px;
-			margin-top: -2px;
-			margin-left: -2px;
-			// @include media-breakpoint-up(md) {
-				flex: 0 0 50.9%;
-				max-width: 50.9%;
+			margin-right: 0 !important;
+			margin-bottom: 0;
+			margin-left: 0;
+			// margin-top: -2px;
+			// @include media-breakpoint-up(md) Х
+			flex-grow: 1;
+			margin-right: 0; 
+				flex: 0 0 50%;	
+				max-width: 50%;
+				// flex: 0 0 50.9%;	
 			// }
 
 			// &:active {
@@ -296,7 +299,19 @@
 
 		&__caption {
 			border-radius: 5px;
-			border: 2px solid #e5e5e5;
+			position: relative;
+			z-index: 2;
+			&::before{
+				border-radius: 5px;
+				content: '';
+				position: absolute;
+				border: 2px solid #e5e5e5;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
 			@include media-breakpoint-up(md) {
 				margin-bottom: rem(14);
 			}
@@ -309,6 +324,13 @@
 	width: 100%;
 	max-width: 100%;
 	padding: 0;
+	.fancybox-close-small{
+		// padding: rem(15);
+		height: rem(75px);
+		width: rem(75px);
+		opacity: 1;
+		 
+	}
 	iframe{
 		width: 100%;
 		border: none;

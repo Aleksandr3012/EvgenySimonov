@@ -305,7 +305,7 @@
 
 		&:hover span {
 			@include media-breakpoint-up(lg) {
-				color: $primary;
+				// color: $primary;
 			}
 		}
 	}
