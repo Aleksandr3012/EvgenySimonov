@@ -7,11 +7,16 @@
 	@include media-breakpoint-up(md){
 		padding-top: rem(37);
 	}
-
+	.row{
+		align-items: center;
+	}
 
 	&__logo {
 		text-decoration: none !important;
 		display: flex;
+		img{
+			max-width: rem(225);
+		}
 		// width: rem(227);
 		@include media-breakpoint-up(sm){
 			margin-right: rem(15);
@@ -19,7 +24,7 @@
 		@include media-breakpoint-up(xl) {
 			margin-right: rem(28);
 		}
-		margin-top: rem(6);
+		// margin-top: rem(6);
 	}
 	.icon-logo {
 		font-size: rem(43);

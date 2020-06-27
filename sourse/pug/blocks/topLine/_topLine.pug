@@ -3,12 +3,11 @@ mixin topLine()
 	+b.topLine#topLine&attributes(attributes)
 		.container
 			.row.justify-content-between
-				.col.d-flex.pt-2
+				.col.d-flex.align-items-center
 					+e.logo(href="/")
-						+icon('logo')
-						+icon('logo-text')
+						img.rs-i(src="img/svg/logo-top.svg", alt="")
 					.d-none.d-sm-block
-						p Агентство интернет&#8209;маркетинга и&nbsp;упаковки бизнеса
+						p.mb-0 Агентство интернет&#8209;маркетинга и&nbsp;упаковки бизнеса
 				+e.col.col.d-none.d-lg-flex
 					+messengers()
 					+e.tel(href="tel:+79630970990") +7 (963) 097-09-90
