@@ -1,11 +1,11 @@
-mixin topLine()
+mixin topLine(i='logo-3.svg')
 	// start topLine
 	+b.topLine#topLine&attributes(attributes)
 		.container
 			.row.justify-content-between
 				.col.d-flex.align-items-center
 					+e.logo(href="/")
-						img.res-i(src="img/svg/logo-3.svg", alt="")
+						img.res-i(src=`img/svg/${i}`, alt="")
 					.d-none.d-sm-block
 						p.mb-0 Агентство интернет&#8209;маркетинга и&nbsp;упаковки бизнеса
 				+e.col.col.d-none.d-lg-flex

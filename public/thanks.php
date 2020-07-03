@@ -36,7 +36,7 @@ $qwiz = $_SESSION['qwiz'];
 				<div class="topLine" id="topLine">
 					<div class="container">
 						<div class="row justify-content-between">
-							<div class="col d-flex align-items-center"><a class="topLine__logo" href="/"><img class="res-i" src="img/svg/logo-3.svg" alt=""/></a>
+							<div class="col d-flex align-items-center"><a class="topLine__logo" href="/"><img class="res-i" src="img/svg/logo-2.svg" alt=""/></a>
 								<div class="d-none d-sm-block">
 									<p class="mb-0">Агентство интернет&#8209;маркетинга и&nbsp;упаковки бизнеса</p>
 								</div>
